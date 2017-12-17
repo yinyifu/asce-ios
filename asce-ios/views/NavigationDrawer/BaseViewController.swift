@@ -47,7 +47,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         let btnShowMenu = ZFRippleButton()
         btnShowMenu.alpha = 1
         btnShowMenu.setImage(self.defaultMenuImage(), for: UIControlState.normal)
-        btnShowMenu.setImage(self.defaultMenuImage(), for: UIControlState.highlighted)
+        btnShowMenu.setImage(self.clostMenuImage(), for: UIControlState.highlighted)
         btnShowMenu.frame = CGRect(x:0, y:0, width:navigationBarHeight, height:navigationBarHeight)
         btnShowMenu.addTarget(self, action: #selector(onSlideMenuButtonPressed(sender:)), for: UIControlEvents.touchUpInside)
         let customBarItem = UIBarButtonItem.init(customView: btnShowMenu)
@@ -58,11 +58,28 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     func defaultMenuImage() -> UIImage {
         var defaultMenuImage = UIImage()
         
-        UIGraphicsBeginImageContextWithOptions(CGSize(width:27, height:22), false, 0.0)
-        UIColor.white.setFill()
-        UIBezierPath(rect: CGRect(x:0, y:3, width:27, height:2)).fill()
-        UIBezierPath(rect: CGRect(x:0, y:10, width:27, height:2)).fill()
-        UIBezierPath(rect: CGRect(x:0, y:17, width:27, height:2)).fill()
+        UIGraphicsBeginImageContextWithOptions(CGSize(width:24, height:22), false, 0.0)
+        UIColor.darkGray.setFill()
+        UIBezierPath(rect: CGRect(x:0, y:3, width:24, height:3)).fill()
+        UIBezierPath(rect: CGRect(x:0, y:10, width:24, height:3)).fill()
+        UIBezierPath(rect: CGRect(x:0, y:17, width:24, height:3)).fill()
+        
+        defaultMenuImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        return defaultMenuImage;
+    }
+    
+    func clostMenuImage() -> UIImage {
+        var defaultMenuImage = UIImage()
+        
+        UIGraphicsBeginImageContextWithOptions(CGSize(width:24, height:22), false, 0.0)
+        UIColor.darkGray.setFill()
+        UIBezierPath(rect: CGRect(x:3, y:4, width:21, height:2.5)).fill()
+        UIBezierPath(rect: CGRect(x:3, y:10, width:21, height:2.5)).fill()
+        UIBezierPath(rect: CGRect(x:3, y:16, width:21, height:2.5)).fill()
+     
         
         defaultMenuImage = UIGraphicsGetImageFromCurrentImageContext()!
         
@@ -88,7 +105,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         //Create Menu View Controller
         objMenu = TableViewMenuController()
         objMenu.setMenu(newMenu: menuToReturn)
-        objMenu.setImageName(newName: imageNameHeaderMenu)
+        //objMenu.setImageName(newName: imageNameHeaderMenu)
         objMenu.btnMenu = sender
         objMenu.delegate = self
         self.view.addSubview(objMenu.view)
@@ -136,7 +153,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         self.view.addConstraint(widthConstraint)
         self.view.addConstraint(heightConstraint)
         
-        
     }
     
     //MARK: Methods helping users to customise Menu Slider
@@ -158,10 +174,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         self.slideMenuItemSelectedAtIndex(index: 0)
     }
     
-    //Set the image background of Menu (TableView Header)
-    func setImageBackground(imageName:String){
-        imageNameHeaderMenu=imageName
-    }
-    
+  
     
 }

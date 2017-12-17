@@ -142,22 +142,13 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
         return 1;
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height/10
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
-    //MARK: - Those two methods are used for image on header tableView
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.view.frame.height/3
-    }
+  
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let imageToUse: UIImage = UIImage(named: nameOfImage)!
-        let imageViewToUse: UIImageView = UIImageView(image: imageToUse)
-        
-        return imageViewToUse
-    }
+   
     
     //MARK: - This method is for resizing menu (Landscape/Portrait)
     
@@ -168,7 +159,7 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
         if UIDevice.current.orientation.isLandscape {
             widthPurcentage = 0.4 //Purcentage applied when orientation is Landscape
         } else {
-            widthPurcentage = 0.8 //Purcentage applied when orientation is Landscape
+            widthPurcentage = 0.6 //Purcentage applied when orientation is Landscape
         }
         
         var newFrame: CGRect = self.view.frame;
@@ -178,7 +169,7 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
         self.tableViewMenu.frame = newFrame
         
         //Set Table View under TopLayoutGuide
-        let topLayoutGuide: CGFloat = self.topLayoutGuide.length;
+        let topLayoutGuide: CGFloat = self.topLayoutGuide.topAnchor.accessibilityActivationPoint.y;
         tableViewMenu.contentInset = UIEdgeInsetsMake(topLayoutGuide, 0, 0, 0);
         
     }
@@ -192,7 +183,8 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
         //Create Button View
         btnCloseTableViewMenu = UIButton()
         btnCloseTableViewMenu.backgroundColor=UIColor.black
-        btnCloseTableViewMenu.alpha=0.0
+        btnCloseTableViewMenu.tintColor = UIColor.black
+        btnCloseTableViewMenu.alpha=1.0
         btnCloseTableViewMenu.translatesAutoresizingMaskIntoConstraints = false
         btnCloseTableViewMenu.addTarget(self, action: #selector(onCloseMenuClick(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(btnCloseTableViewMenu)
@@ -210,7 +202,6 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
         
         //Applying constraints
         self.view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraintForButton, heightConstraintForButton])
-        
         //*** END Constraints for btnCloseTableViewMenu ***
     }
     
@@ -219,11 +210,6 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
     //Update menu tableView
     func setMenu (newMenu: [Dictionary<String,String>]){
         arrayMenu = newMenu
-    }
-    
-    //Update Image of Header
-    func setImageName(newName: String){
-        nameOfImage=newName
     }
     
 }
