@@ -11,7 +11,7 @@ import Foundation
 class MainViewVontroller : BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
-        addChildView(storyBoardID: "board1", titleOfChildren: "Home", iconName: "bluehouse")
+        addChildView(storyBoardID: "board1", titleOfChildren: "Home", iconName: "home")
         addChildView(storyBoardID: "board1", titleOfChildren: "Schedule", iconName: "time")
         addChildView(storyBoardID: "board1", titleOfChildren: "Speakers", iconName: "msg")
         addChildView(storyBoardID: "board1", titleOfChildren: "Sponsers", iconName: "bag")

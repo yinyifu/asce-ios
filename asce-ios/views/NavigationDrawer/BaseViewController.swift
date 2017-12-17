@@ -79,7 +79,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         UIBezierPath(rect: CGRect(x:3, y:4, width:21, height:2.5)).fill()
         UIBezierPath(rect: CGRect(x:3, y:10, width:21, height:2.5)).fill()
         UIBezierPath(rect: CGRect(x:3, y:16, width:21, height:2.5)).fill()
-     
         
         defaultMenuImage = UIGraphicsGetImageFromCurrentImageContext()!
         

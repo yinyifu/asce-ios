@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
+		B9BB593A1FE6B99A00F689F5 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB59391FE6B99900F689F5 /* ChildViewController.swift */; };
+		B9BB593C1FE6B9F800F689F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */; };
 		B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CB21FC7000400956099 /* AppDelegate.swift */; };
 		B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CB41FC7000400956099 /* asce_ios.xcdatamodeld */; };
 		B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CB71FC7000400956099 /* MasterViewController.swift */; };
@@ -21,7 +23,6 @@
 		B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE61FC7056700956099 /* ZFRippleButton.swift */; };
 		B9FA4CEC1FC7056700956099 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE71FC7056700956099 /* BaseViewController.swift */; };
 		B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE81FC7056700956099 /* MenuTableViewCell.swift */; };
-		B9FA4CEE1FC7056700956099 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE91FC7056700956099 /* ChildViewController.swift */; };
 		B9FA4CF41FC70F3500956099 /* BoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CF31FC70F3500956099 /* BoringViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B9BB59391FE6B99900F689F5 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewController.swift; path = ../../../../../../.Trash/ChildViewController.swift; sourceTree = "<group>"; };
+		B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B9FA4CAF1FC7000400956099 /* asce-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "asce-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FA4CB21FC7000400956099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9FA4CB51FC7000400956099 /* asce_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = asce_ios.xcdatamodel; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		B9FA4CE61FC7056700956099 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		B9FA4CE71FC7056700956099 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9FA4CE81FC7056700956099 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		B9FA4CE91FC7056700956099 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		B9FA4CF31FC70F3500956099 /* BoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoringViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				B9FA4CB91FC7000400956099 /* DetailViewController.swift */,
 				B9FA4CF31FC70F3500956099 /* BoringViewController.swift */,
 				B9B6CE891FC710F300435F86 /* MainViewController.swift */,
+				B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -179,7 +182,7 @@
 				B9FA4CE51FC7056600956099 /* TableViewMenuController.swift */,
 				B9FA4CE61FC7056700956099 /* ZFRippleButton.swift */,
 				B9FA4CE71FC7056700956099 /* BaseViewController.swift */,
-				B9FA4CE91FC7056700956099 /* ChildViewController.swift */,
+				B9BB59391FE6B99900F689F5 /* ChildViewController.swift */,
 			);
 			path = NavigationDrawer;
 			sourceTree = "<group>";
@@ -318,10 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9BB593A1FE6B99A00F689F5 /* ChildViewController.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
 				B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */,
-				B9FA4CEE1FC7056700956099 /* ChildViewController.swift in Sources */,
 				B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */,
 				B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */,
 				B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */,
@@ -329,6 +332,7 @@
 				B9FA4CEC1FC7056700956099 /* BaseViewController.swift in Sources */,
 				B9FA4CBA1FC7000400956099 /* DetailViewController.swift in Sources */,
 				B9FA4CF41FC70F3500956099 /* BoringViewController.swift in Sources */,
+				B9BB593C1FE6B9F800F689F5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
