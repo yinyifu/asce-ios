@@ -8,7 +8,12 @@
 
 import Foundation
 
-class Schedule{
+class Schedule : NSObject{
     var scheduleId:Int = 0;
-    
+    var name:String = "testing";
+    init(id: Int, name: String){
+        super.init()
+        self.scheduleId = id;
+        self.name = name;
+    }
 }

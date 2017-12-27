@@ -6,10 +6,12 @@
 //  Copyright © 2017 tutorials. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
     static let BUNDLE_NAME = "DC-Theme";
+    static let kFavoriteEventColour = "FavoriteEventColour";
+    static let defaultEventColour = UIColor.black
 }
 
 

@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B98175701FF39F29001A1F6C /* EventLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981756F1FF39F29001A1F6C /* EventLoader.swift */; };
-		B98175721FF39F3B001A1F6C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98175711FF39F3B001A1F6C /* EventViewController.swift */; };
+		B98175721FF39F3B001A1F6C /* MyScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98175711FF39F3B001A1F6C /* MyScheduleViewController.swift */; };
 		B98175741FF3A8D7001A1F6C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98175731FF3A8D7001A1F6C /* Schedule.swift */; };
 		B98175761FF3C17C001A1F6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98175751FF3C17C001A1F6C /* Constants.swift */; };
 		B981757A1FF3C4AA001A1F6C /* DC-Theme.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B98175791FF3C4AA001A1F6C /* DC-Theme.bundle */; };
+		B981757C1FF449DB001A1F6C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981757B1FF449DB001A1F6C /* EventViewController.swift */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
 		B9BB593A1FE6B99A00F689F5 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB59391FE6B99900F689F5 /* ChildViewController.swift */; };
 		B9BB593C1FE6B9F800F689F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */; };
@@ -50,10 +51,11 @@
 
 /* Begin PBXFileReference section */
 		B981756F1FF39F29001A1F6C /* EventLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLoader.swift; sourceTree = "<group>"; };
-		B98175711FF39F3B001A1F6C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		B98175711FF39F3B001A1F6C /* MyScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleViewController.swift; sourceTree = "<group>"; };
 		B98175731FF3A8D7001A1F6C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		B98175751FF3C17C001A1F6C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B98175791FF3C4AA001A1F6C /* DC-Theme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "DC-Theme.bundle"; sourceTree = "<group>"; };
+		B981757B1FF449DB001A1F6C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B9BB59391FE6B99900F689F5 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewController.swift; path = ../../../../../../.Trash/ChildViewController.swift; sourceTree = "<group>"; };
 		B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B981757D1FF44A78001A1F6C /* base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		B9FA4CA61FC7000400956099 = {
 			isa = PBXGroup;
 			children = (
@@ -177,13 +186,9 @@
 		B9FA4CEF1FC7056C00956099 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				B9FA4CF21FC7065E00956099 /* NavigationDrawer */,
 				B9FA4CB71FC7000400956099 /* MasterViewController.swift */,
 				B9FA4CB91FC7000400956099 /* DetailViewController.swift */,
-				B9FA4CF31FC70F3500956099 /* BoringViewController.swift */,
-				B9B6CE891FC710F300435F86 /* MainViewController.swift */,
-				B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */,
-				B98175711FF39F3B001A1F6C /* EventViewController.swift */,
+				B9FA4CF21FC7065E00956099 /* NavigationDrawer */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -191,6 +196,12 @@
 		B9FA4CF01FC7057800956099 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				B981757D1FF44A78001A1F6C /* base */,
+				B98175711FF39F3B001A1F6C /* MyScheduleViewController.swift */,
+				B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */,
+				B9B6CE891FC710F300435F86 /* MainViewController.swift */,
+				B9FA4CF31FC70F3500956099 /* BoringViewController.swift */,
+				B981757B1FF449DB001A1F6C /* EventViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -359,7 +370,7 @@
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
 				B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */,
 				B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */,
-				B98175721FF39F3B001A1F6C /* EventViewController.swift in Sources */,
+				B98175721FF39F3B001A1F6C /* MyScheduleViewController.swift in Sources */,
 				B98175761FF3C17C001A1F6C /* Constants.swift in Sources */,
 				B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */,
 				B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */,
@@ -369,6 +380,7 @@
 				B9FA4CBA1FC7000400956099 /* DetailViewController.swift in Sources */,
 				B9FA4CF41FC70F3500956099 /* BoringViewController.swift in Sources */,
 				B9BB593C1FE6B9F800F689F5 /* HomeViewController.swift in Sources */,
+				B981757C1FF449DB001A1F6C /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
