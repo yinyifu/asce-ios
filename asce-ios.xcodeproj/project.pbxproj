@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B98175701FF39F29001A1F6C /* EventLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981756F1FF39F29001A1F6C /* EventLoader.swift */; };
+		B98175721FF39F3B001A1F6C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98175711FF39F3B001A1F6C /* EventViewController.swift */; };
+		B98175741FF3A8D7001A1F6C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98175731FF3A8D7001A1F6C /* Schedule.swift */; };
+		B98175761FF3C17C001A1F6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98175751FF3C17C001A1F6C /* Constants.swift */; };
+		B981757A1FF3C4AA001A1F6C /* DC-Theme.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B98175791FF3C4AA001A1F6C /* DC-Theme.bundle */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
 		B9BB593A1FE6B99A00F689F5 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB59391FE6B99900F689F5 /* ChildViewController.swift */; };
 		B9BB593C1FE6B9F800F689F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */; };
@@ -44,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B981756F1FF39F29001A1F6C /* EventLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLoader.swift; sourceTree = "<group>"; };
+		B98175711FF39F3B001A1F6C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		B98175731FF3A8D7001A1F6C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		B98175751FF3C17C001A1F6C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B98175791FF3C4AA001A1F6C /* DC-Theme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "DC-Theme.bundle"; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B9BB59391FE6B99900F689F5 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewController.swift; path = ../../../../../../.Trash/ChildViewController.swift; sourceTree = "<group>"; };
 		B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -94,9 +104,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B98175771FF3C451001A1F6C /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				B9FA4CC31FC7000400956099 /* Info.plist */,
+				B98175781FF3C466001A1F6C /* Resources */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		B98175781FF3C466001A1F6C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B98175791FF3C4AA001A1F6C /* DC-Theme.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B9FA4CA61FC7000400956099 = {
 			isa = PBXGroup;
 			children = (
+				B98175771FF3C451001A1F6C /* Targets */,
 				B9FA4CB11FC7000400956099 /* asce-ios */,
 				B9FA4CCB1FC7000400956099 /* asce-iosTests */,
 				B9FA4CD61FC7000400956099 /* asce-iosUITests */,
@@ -123,7 +151,6 @@
 				B9FA4CBB1FC7000400956099 /* Main.storyboard */,
 				B9FA4CBE1FC7000400956099 /* Assets.xcassets */,
 				B9FA4CC01FC7000400956099 /* LaunchScreen.storyboard */,
-				B9FA4CC31FC7000400956099 /* Info.plist */,
 				B9FA4CB41FC7000400956099 /* asce_ios.xcdatamodeld */,
 			);
 			path = "asce-ios";
@@ -156,6 +183,7 @@
 				B9FA4CF31FC70F3500956099 /* BoringViewController.swift */,
 				B9B6CE891FC710F300435F86 /* MainViewController.swift */,
 				B9BB593B1FE6B9F800F689F5 /* HomeViewController.swift */,
+				B98175711FF39F3B001A1F6C /* EventViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -171,6 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				B9FA4CB21FC7000400956099 /* AppDelegate.swift */,
+				B981756F1FF39F29001A1F6C /* EventLoader.swift */,
+				B98175731FF3A8D7001A1F6C /* Schedule.swift */,
+				B98175751FF3C17C001A1F6C /* Constants.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -296,6 +327,7 @@
 			files = (
 				B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
+				B981757A1FF3C4AA001A1F6C /* DC-Theme.bundle in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,13 +354,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9BB593A1FE6B99A00F689F5 /* ChildViewController.swift in Sources */,
+				B98175701FF39F29001A1F6C /* EventLoader.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
 				B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */,
 				B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */,
+				B98175721FF39F3B001A1F6C /* EventViewController.swift in Sources */,
+				B98175761FF3C17C001A1F6C /* Constants.swift in Sources */,
 				B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */,
 				B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */,
 				B9FA4CEA1FC7056700956099 /* TableViewMenuController.swift in Sources */,
+				B98175741FF3A8D7001A1F6C /* Schedule.swift in Sources */,
 				B9FA4CEC1FC7056700956099 /* BaseViewController.swift in Sources */,
 				B9FA4CBA1FC7000400956099 /* DetailViewController.swift in Sources */,
 				B9FA4CF41FC70F3500956099 /* BoringViewController.swift in Sources */,
@@ -500,7 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9VG23FDGEM;
-				INFOPLIST_FILE = "asce-ios/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Targets/info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tutorials.asce-ios";
@@ -516,7 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9VG23FDGEM;
-				INFOPLIST_FILE = "asce-ios/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Targets/info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tutorials.asce-ios";

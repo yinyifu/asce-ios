@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="-519.20000000000005" y="-1140.1799100449775"/>
         </scene>
-        <!--Boring View Controller-->
+        <!--Event View Controller-->
         <scene sceneID="pWl-7n-GDv">
             <objects>
-                <viewController storyboardIdentifier="board2" id="3BJ-aa-Kcd" customClass="BoringViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="board2" id="3BJ-aa-Kcd" customClass="EventViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pwP-dw-Lg1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
