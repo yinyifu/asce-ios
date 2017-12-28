@@ -28,6 +28,7 @@ class FacebookViewController : UIViewController
             return //be safe
         }
         
+        
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
