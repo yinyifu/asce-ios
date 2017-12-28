@@ -11,5 +11,5 @@ import UIKit
 
 class SponsorTableViewCell : UITableViewCell
 {
-    
+    @IBOutlet weak var sponsorImage: UIImageView!
 }

@@ -12,7 +12,27 @@ import UIKit
 class FacebookViewController : UIViewController
 {
     override func viewDidLoad() {
+        guard let url = URL(string: "http://www.facebook.com") else {
+            return //be safe
+        }
         
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }    }
+    @IBOutlet weak var BUTTON: UIButton!
+    
+    @IBAction func onClick(_ sender: UIButton) {
+        guard let url = URL(string: "http://www.facebook.com") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
+    
 }
-
