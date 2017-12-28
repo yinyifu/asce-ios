@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:asce-ios.xcodeproj">
+      location = "group:../asce-ios/Twitter.plist">
+   </FileRef>
+   <FileRef
+      location = "group:../asce-ios/ViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

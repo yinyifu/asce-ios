@@ -8,12 +8,16 @@
 
 import UIKit
 import CoreData
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-
+    
+    let consumer_key: String = "VGALxbf0t3DLpGZ3nexIJv2g3"
+    let consumer_secret: String = "IzIH36MpXyAMLdvUEMPBkKGebelqHoSbLPrOFfTX6oupA0LK7S"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
       /*  // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
@@ -24,6 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
         let controller = masterNavigationController.topViewController as! MasterViewController
         controller.managedObjectContext = self.persistentContainer.viewContext*/
+        
+        /*This block of code intends to read key and secret from the file which I created constants in the field for, no longer needed
+        if let url = Bundle.main.url(forResource:"Twitter", withExtension: "plist") {
+            do {
+                let data = try Data(contentsOf:url)
+                _ = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:Any]
+            } catch {
+                print(error)
+            }
+        }*/
+        
+        Twitter.sharedInstance().start(withConsumerKey:consumer_key, consumerSecret:consumer_secret)
+        
         return true
     }
 

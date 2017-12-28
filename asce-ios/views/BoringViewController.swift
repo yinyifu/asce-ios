@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
-class BoringViewController : ChildViewController{
-    
+class BoringViewController : UIViewController{
+    //I suppose the two boring view controllers are just there so the UISplitViewControllerDelegate
+    //in AppDelegate.swift can remain functioning
 }
