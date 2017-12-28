@@ -17,3 +17,10 @@ class Schedule : NSObject{
         self.name = name;
     }
 }
+class ScheEvent : NSObject{
+    var tracks = ["name": "tracks"]
+}
+protocol EventScheProtocol
+{
+    func didSelectCell(eventCell : EventCell);
+}

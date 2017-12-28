@@ -22,15 +22,12 @@ class MyScheduleViewController : UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar();
-        print(self.schedules.count)
         self.selectCellForSelectedSchedule();
-        print(self.schedules.count)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        print(self.schedules.count)
     }
 
     func selectCellForSelectedSchedule(){

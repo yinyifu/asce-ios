@@ -9,9 +9,19 @@
 import UIKit
 
 struct Constants {
+    //resource bundle name
     static let BUNDLE_NAME = "DC-Theme";
+    
+    //events property
     static let kFavoriteEventColour = "FavoriteEventColour";
     static let defaultEventColour = UIColor.black
+    static let eventCellSubtitleHeight = 16;
+    static let eventCellImageHeight = 16;
+    static let hashtagHeightOffset = 4;
+    
+    // left button property
+    static let leftButtonEnabledColor = UIColor.init(white: 245.0/255.0, alpha: 1.0)
+    static let leftButtonDisabledColor = UIColor.init(white: 229.0/255.0, alpha: 1.0)
 }
 
 
