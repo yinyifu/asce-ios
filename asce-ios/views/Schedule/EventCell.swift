@@ -54,7 +54,7 @@ class EventCell:UITableViewCell{
     
 
     func initData(data: ScheEvent, delegate: EventScheProtocol){
-        let trackName = data.tracks["name"];
+        let trackName = data.name;
         
     }
     //func getHeightForEvent(event:ScheEvent, isFirst: Bool)->Float{}

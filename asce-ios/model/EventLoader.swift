@@ -9,11 +9,11 @@
 import UIKit
 
 class EventLoader{
-    static var eventBundle:Bundle = Bundle.init(path: Bundle.main.path(forResource: Constants.BUNDLE_NAME , ofType: "bundle")!)!;
+    static var eventBundle:Bundle?;
     static var favoriteEventColor:UIColor?;
     static var schedulee:Array<Schedule>?;
     init(){
-        print(EventLoader.eventBundle.infoDictionary!)
+        
         let colorId = "#659f65";
         //EventLoader.eventBundle.infoDictionary![Constants.kFavoriteEventColour] as! String
         EventLoader.favoriteEventColor = UIColor.color(fromHexString: colorId)
