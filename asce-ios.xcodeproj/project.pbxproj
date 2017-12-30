@@ -16,7 +16,6 @@
 		5FCDB1D51FF21C7900D638A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1D41FF21C7900D638A8 /* HomeViewController.swift */; };
 		5FCDB1D81FF21E4500D638A8 /* SpeakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1D71FF21E4500D638A8 /* SpeakerViewController.swift */; };
 		5FCDB1DA1FF21E5700D638A8 /* SponsorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1D91FF21E5700D638A8 /* SponsorViewController.swift */; };
-		5FCDB1DC1FF21EAD00D638A8 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1DB1FF21EAD00D638A8 /* ScheduleViewController.swift */; };
 		5FCDB1DE1FF21EBF00D638A8 /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1DD1FF21EBF00D638A8 /* ProgramViewController.swift */; };
 		5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1DF1FF21ED100D638A8 /* EventMapViewController.swift */; };
 		5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1E11FF21EF100D638A8 /* EntertainmentViewController.swift */; };
@@ -88,7 +87,6 @@
 		5FCDB1D41FF21C7900D638A8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5FCDB1D71FF21E4500D638A8 /* SpeakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerViewController.swift; sourceTree = "<group>"; };
 		5FCDB1D91FF21E5700D638A8 /* SponsorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorViewController.swift; sourceTree = "<group>"; };
-		5FCDB1DB1FF21EAD00D638A8 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		5FCDB1DD1FF21EBF00D638A8 /* ProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
 		5FCDB1DF1FF21ED100D638A8 /* EventMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapViewController.swift; sourceTree = "<group>"; };
 		5FCDB1E11FF21EF100D638A8 /* EntertainmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntertainmentViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				B92E29971FF7429A00C43E7B /* Schedule */,
-				5FCDB1DB1FF21EAD00D638A8 /* ScheduleViewController.swift */,
 				B92E29A01FF7443800C43E7B /* MyScheduleViewController.swift */,
 				B92E299E1FF7443300C43E7B /* EventViewController.swift */,
 			);
@@ -488,7 +485,6 @@
 			files = (
 				B92E29961FF7428000C43E7B /* Database.swift in Sources */,
 				5FCDB2341FF22C1700D638A8 /* SponsorTableCellUIView.swift in Sources */,
-				5FCDB1DC1FF21EAD00D638A8 /* ScheduleViewController.swift in Sources */,
 				5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */,
 				5FCDB1D81FF21E4500D638A8 /* SpeakerViewController.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
