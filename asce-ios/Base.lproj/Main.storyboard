@@ -185,6 +185,34 @@
             </objects>
             <point key="canvasLocation" x="3222" y="-1021"/>
         </scene>
+        <!--Twitter View Controller-->
+        <scene sceneID="3LH-sn-UOM">
+            <objects>
+                <tableViewController storyboardIdentifier="TwitterStoryBoard" id="41R-lx-vza" customClass="TwitterViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ROm-t1-yiQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="39a-ck-d7y">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="39a-ck-d7y" id="TCP-ZW-ZCN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="41R-lx-vza" id="Rqq-Nk-wq0"/>
+                            <outlet property="delegate" destination="41R-lx-vza" id="laM-Tn-yd5"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ft-zf-UXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3222" y="-1677"/>
+        </scene>
         <!--Speaker View Controller-->
         <scene sceneID="DZN-oY-zs6">
             <objects>
@@ -313,21 +341,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLa-jY-xZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5145" y="-1021"/>
-        </scene>
-        <!--Twitter View Controller-->
-        <scene sceneID="5NS-3n-w9w">
-            <objects>
-                <viewController storyboardIdentifier="TwitterStoryBoard" id="Y0T-EM-18i" customClass="TwitterViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8R6-53-a9t">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="5Gk-R2-NNu"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8jV-cm-oSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3222" y="-1676"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">

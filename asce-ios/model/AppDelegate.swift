@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {    
         EventLoader.init();
         Twitter.sharedInstance().start(withConsumerKey:consumer_key, consumerSecret:consumer_secret)
-        
         return true
     }
 

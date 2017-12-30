@@ -166,15 +166,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         
         menuToReturn.append(["title":titleOfChildren, "icon":iconName])
     }
-    func addChildView(storyBoardID: String, titleOfChildren: String, iconName: String, viewController:UIViewController) {
-        
-        let childViewToAdd: UIViewController = viewController
-        tabOfChildViewController += [childViewToAdd]
-        tabOfChildViewControllerName += [titleOfChildren]
-        tabOfChildViewControllerIconName += [iconName]
-        
-        menuToReturn.append(["title":titleOfChildren, "icon":iconName])
-    }
     
     //Show the first child at startup of application
     func showFirstChild(){

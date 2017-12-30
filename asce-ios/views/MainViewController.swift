@@ -18,8 +18,8 @@ class MainViewVontroller : BaseViewController{
         addChildView(storyBoardID: "ProgramStoryBoard", titleOfChildren: "Program", iconName: "book")
         addChildView(storyBoardID: "EventMapStoryBoard", titleOfChildren: "Event Map", iconName: "door")
         addChildView(storyBoardID: "EntertainmentStoryBoard", titleOfChildren: "Entertainments", iconName: "dinner")
-        addChildView(storyBoardID: "TwitterStoryBoard", titleOfChildren: "Twitter", iconName: "bird",viewController:TwitterViewController())
+        addChildView(storyBoardID: "TwitterStoryBoard", titleOfChildren: "Twitter", iconName: "bird")
         
-        showFirstChild()
+       showFirstChild()
     }
 }
