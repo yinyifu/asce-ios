@@ -25,6 +25,8 @@ class EventLoader{
     }
 }
 
+
+
 public extension UIColor {
     public static func color(fromHexString: String, alpha:CGFloat? = 1.0) -> UIColor {
         // Convert hex string to an integer

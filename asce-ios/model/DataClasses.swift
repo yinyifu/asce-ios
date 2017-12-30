@@ -17,8 +17,15 @@ class Schedule : NSObject{
         self.name = name;
     }
 }
-class ScheEvent : NSObject{
-    var tracks = ["name": "tracks"]
+struct ScheEvent{
+    var name : String;
+    var startTime: Date;
+    var endTime: Date;
+    var speaker : String;
+    var room : String;
+    var description: String;
+    var moderator : String;
+    var sponsors : String;
 }
 protocol EventScheProtocol
 {
