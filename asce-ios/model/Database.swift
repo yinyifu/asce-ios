@@ -13,7 +13,7 @@ class Database : NSObject{
     private var documentDir : String!;
     private var dbResult : Array<[String: String]>! = [];
     private var arrColumnNames : Array<String>! = [];
-    private var affectedRows : Int32!;
+    var affectedRows : Int32!;
     private var lastInsertedId: Int64!;
     
     override init() {
@@ -27,8 +27,8 @@ class Database : NSObject{
             fatalError("Error! Document directory not found.")
         }
         self.documentDir = paths[0]
-        self.dbFileName = name;
-        self.copyDatabaseIntoDocumentsDirectory();
+        self.dbFileName = name
+        self.copyDatabaseIntoDocumentsDirectory()
     }
     
     private func copyDatabaseIntoDocumentsDirectory(){
@@ -36,6 +36,7 @@ class Database : NSObject{
         let destinationPath : String = self.documentDir.stringByAppendingPathComponent(path: self.dbFileName!)
         if(!FileManager.default.fileExists(atPath: destinationPath)){
             let sourcePath : String = Bundle.main.resourcePath!.stringByAppendingPathComponent(path: self.dbFileName!)
+            
             do{
                 try FileManager.default.copyItem(atPath: sourcePath, toPath: destinationPath)
                 
@@ -57,11 +58,11 @@ class Database : NSObject{
         // open database
         var sqlDatabase : OpaquePointer?;
         let databasePath = self.documentDir.stringByAppendingPathComponent(path: self.dbFileName)
-        var buffer : [CChar] = [];
-        
-        if(!databasePath.getCString(&buffer, maxLength: 100, encoding: String.Encoding.utf8)){
-            fatalError("Convert C String Error.")
-        }
+        let buffer : [CChar] = Array.init(databasePath.utf8CString);
+        /*
+        if(!databasePath.getCString(&buffer, maxLength: 1000, encoding: String.Encoding.utf8)){
+            fatalError(Error.desciption)
+        }*/
         if(sqlite3_open(buffer, &sqlDatabase) != SQLITE_OK){
             fatalError("SQL open error.")
         }
@@ -73,19 +74,18 @@ class Database : NSObject{
         }
         
         //query
-        if(queryExe){
+        if(!queryExe){
             var arrDataRow : [String : String]!;
             while(sqlite3_step(compiledStatement) == SQLITE_ROW){
                 arrDataRow = [:];
                 let totalColumns = sqlite3_column_count(compiledStatement)
-                for i in 0...totalColumns{
+                for i in 0...totalColumns-1{
                     
                     if(name_array.count != totalColumns){
                         fatalError("Name array is different than database data!")
                     }
                     
                     let dbDataAsChars : UnsafePointer<UInt8>! = sqlite3_column_text(compiledStatement, i)
-                    
                     if(dbDataAsChars == nil){
                         fatalError("Database string as nil")
                     }

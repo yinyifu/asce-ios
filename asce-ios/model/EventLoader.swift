@@ -12,16 +12,32 @@ class EventLoader{
     static var eventBundle:Bundle?;
     static var favoriteEventColor:UIColor?;
     static var schedulee:Array<Schedule>?;
+    static var schedulee2:Array<ScheEvent>?;
+    static var db : Database = Database.init(withDBFileName: "ascedb.sql");
     init(){
-        
         let colorId = "#659f65";
-        //EventLoader.eventBundle.infoDictionary![Constants.kFavoriteEventColour] as! String
         EventLoader.favoriteEventColor = UIColor.color(fromHexString: colorId)
-        
-        var events = Array<Schedule>.init();
-        events.append(Schedule(id: 0, name: "event1"))
-        events.append(Schedule(id: 1, name: "event2"))
-        EventLoader.schedulee = events
+        let events = EventLoader.getQueryEvents(query: "SELECT * from Event;");
+        EventLoader.schedulee2 = events
+        EventLoader.schedulee = Array()
+        EventLoader.schedulee!.append(Schedule(id: 9, name: "testing"))
+    }
+    static func getQueryEvents(query : String)->Array<ScheEvent>{
+        let horray :Array<[String : String]> = EventLoader.db.loadDataFromDB(query: query)
+        var newRay = Array<ScheEvent>()
+        for dict in horray{
+            
+            let newevent:ScheEvent = ScheEvent(name: dict["name"]!, starttime: dict["starttime"]!, endtime: dict["endtime"]!, speakers : dict["speakers"], room : dict["room"], desc: dict["desc"], mods: dict["mods"], organizations: dict["organizations"]!, date: dict["date"]!);
+            newRay.append(newevent)
+            
+        }
+        if(EventLoader.db.affectedRows != 0){
+            print("query execute success");
+            
+        }else{
+            fatalError("query execution failed");
+        }
+        return newRay;
     }
 }
 

@@ -11,14 +11,15 @@ import UIKit
 class EventViewController : UITableViewController{
     private var scheduleName:String?;
     private var selectedIndexPath : IndexPath?;
-    private var schedules:Array<Schedule> = EventLoader.schedulee!;
-    private var _selectedSchedule: Schedule?;
+    private var schedules = EventLoader.schedulee2!;
+    private var _selectedSchedule: ScheEvent?;
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         
-        self.selectCellForSelectedSchedule();
+        //self.selectCellForSelectedSchedule();
     }
+    /*
     func selectCellForSelectedSchedule(){
         var row = 0;
         if((_selectedSchedule) != nil){
@@ -33,6 +34,7 @@ class EventViewController : UITableViewController{
         self.tableView.selectRow(at: self.selectedIndexPath!, animated: false, scrollPosition: UITableViewScrollPosition.none)
         self.tableView(self.tableView, didSelectRowAt: self.selectedIndexPath!)
     }
+ */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.registerCells()
@@ -51,26 +53,32 @@ class EventViewController : UITableViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1+self.schedules.count;
+        return self.schedules.count;
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let classname :String = NSStringFromClass(EventCell.self)
+        var patho = indexPath;
         let cell = Bundle.main.loadNibNamed("EventCell", owner: EventCell.self, options: nil)![0] as! EventCell
-        
-        
         cell.selectionStyle = UITableViewCellSelectionStyle.none;
         cell.tintColor = EventLoader.favoriteEventColor!;
-        
-        
-        if(indexPath.row == selectedIndexPath!.row){
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark;
+        print(patho)
+        cell.endLabel.text = self.schedules[patho.row ].endtime
+        cell.startLabel.text = self.schedules[patho.row ].starttime
+        cell.speakerLabel.text = self.schedules[patho.row ].speakers
+        if(self.schedules[patho.row ].speakers == ""){
+            cell.speakerLabel.text = "n/a"
         }
+        cell.titleLabel.text = self.schedules[patho.row ].name
+        cell.locationLabel.text = self.schedules[patho.row ].room
+                
+        /*if(indexPath.row == selectedIndexPath!.row){
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark;
+        }*/
         
         return cell;
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 100
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -84,11 +92,11 @@ class EventViewController : UITableViewController{
         }else{
             _selectedSchedule = schedules[indexPath.row - 1];
         }
-        
+        /*
         if(selectedIndexPath!.row != indexPath.row){
             selectedIndexPath = indexPath;
             self.closeController();
-        }
+        }*/
     }
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let previous = tableView.cellForRow(at: indexPath)

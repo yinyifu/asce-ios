@@ -19,13 +19,14 @@ class Schedule : NSObject{
 }
 struct ScheEvent{
     var name : String;
-    var startTime: Date;
-    var endTime: Date;
-    var speaker : String;
-    var room : String;
-    var description: String;
-    var moderator : String;
-    var sponsors : String;
+    var starttime: String;
+    var endtime: String;
+    var speakers : String?;
+    var room : String?;
+    var desc: String?;
+    var mods : String?;
+    var organizations : String;
+    var date : String;
 }
 protocol EventScheProtocol
 {

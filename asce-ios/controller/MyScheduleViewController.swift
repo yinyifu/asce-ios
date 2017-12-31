@@ -14,7 +14,7 @@ class MyScheduleViewController : UITableViewController{
     
     private var scheduleName:String?;
     private var selectedIndexPath : IndexPath?;
-    private var schedules:Array<Schedule> = EventLoader.schedulee!;
+    private var schedules = EventLoader.schedulee!;
     private var _selectedSchedule: Schedule?;
     
     
@@ -23,6 +23,9 @@ class MyScheduleViewController : UITableViewController{
         super.viewDidLoad()
         self.setupNavigationBar();
         self.selectCellForSelectedSchedule();
+        let distinctdates = EventLoader.getQueryEvents(query: "SELECT DISTINCT date from Event;");
+        print(distinctdates)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

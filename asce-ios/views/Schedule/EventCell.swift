@@ -22,9 +22,9 @@ class EventCell:UITableViewCell{
     @IBOutlet weak var leftCoverButton: UIButton!
     
     @IBOutlet weak var startLabel: UILabel!
-    @IBOutlet weak var endLabel: UILabel!
-    @IBOutlet weak var eventImage: UIImageView!
     
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var speakerLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var trackLabel: UILabel!
@@ -32,6 +32,7 @@ class EventCell:UITableViewCell{
     
     @IBOutlet weak var highlightedView: UIView!
     @IBOutlet weak var objectView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +47,10 @@ class EventCell:UITableViewCell{
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(false, animated: animated)
+    }
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        
     }
     
     func setCustomFonts(){
