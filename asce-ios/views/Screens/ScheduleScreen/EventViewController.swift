@@ -85,8 +85,6 @@ class EventViewController : UITableViewController{
         let currentCell : UITableViewCell = tableView.cellForRow(at: indexPath)!
         currentCell.accessoryType = UITableViewCellAccessoryType.checkmark;
         
-        
-        
         if(indexPath.row == 0){
             _selectedSchedule = nil;
         }else{

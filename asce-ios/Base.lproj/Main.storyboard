@@ -26,48 +26,37 @@
             </objects>
             <point key="canvasLocation" x="-660" y="-1498"/>
         </scene>
-        <!--Event View Controller-->
-        <scene sceneID="bEo-z6-Mmg">
-            <objects>
-                <tableViewController storyboardIdentifier="board2" id="asO-ye-uxT" customClass="EventViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TTC-48-Es2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UwF-2m-wuS">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UwF-2m-wuS" id="gs7-Eu-nVg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="asO-ye-uxT" id="xf9-07-mao"/>
-                            <outlet property="delegate" destination="asO-ye-uxT" id="S1q-Gt-cSN"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vt6-EH-M8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="402" y="-1498"/>
-       </scene>
-        <!--Boring View Controller-->
+        <!--Facebook View Controller-->
         <scene sceneID="0MA-yA-2t5">
             <objects>
-                <viewController storyboardIdentifier="board1" id="LTg-DZ-AaT" customClass="BoringViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FacebookStoryBoard" id="LTg-DZ-AaT" customClass="FacebookViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a8c-nh-tb1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEh-de-Sdn">
+                                <rect key="frame" x="0.0" y="318" width="375" height="30"/>
+                                <state key="normal" title="Login to Your Facebook"/>
+                                <connections>
+                                    <action selector="onClick:" destination="LTg-DZ-AaT" eventType="touchUpInside" id="MOe-w1-adx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hEh-de-Sdn" firstAttribute="leading" secondItem="GKO-GM-PnG" secondAttribute="leading" id="Gvv-gB-pm2"/>
+                            <constraint firstItem="hEh-de-Sdn" firstAttribute="trailing" secondItem="GKO-GM-PnG" secondAttribute="trailing" id="YkH-Gc-uFy"/>
+                            <constraint firstItem="hEh-de-Sdn" firstAttribute="centerY" secondItem="a8c-nh-tb1" secondAttribute="centerY" id="dpj-qu-BbH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GKO-GM-PnG"/>
                     </view>
+                    <connections>
+                        <outlet property="BUTTON" destination="hEh-de-Sdn" id="jJB-ag-iFr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJv-OC-FOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="-1498"/>
+            <point key="canvasLocation" x="5773.6000000000004" y="-1676.311844077961"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="nVo-Sx-eiD">
@@ -119,34 +108,6 @@
             </objects>
             <point key="canvasLocation" x="3222" y="-1677"/>
         </scene>
-        <!--Speaker View Controller-->
-        <scene sceneID="DZN-oY-zs6">
-            <objects>
-                <tableViewController storyboardIdentifier="SpeakerStoryBoard" id="O99-ns-WXD" customClass="SpeakerViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ncW-bg-eCh" customClass="SpeakerTableView" customModule="asce_ios" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nGk-Sy-peH" customClass="SpeakerTableViewCell" customModule="asce_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nGk-Sy-peH" id="wfY-PT-KcD" customClass="SpeakerTableCellUIView" customModule="asce_ios" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="O99-ns-WXD" id="MC6-GP-8xV"/>
-                            <outlet property="delegate" destination="O99-ns-WXD" id="McG-E7-iFG"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ueb-St-m75" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3862" y="-1676"/>
-        </scene>
         <!--Event View Controller-->
         <scene sceneID="0jU-Nq-Q1Z">
             <objects>
@@ -189,34 +150,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMA-Su-85p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5146" y="-1676"/>
-        </scene>
-        <!--Sponsor View Controller-->
-        <scene sceneID="7OW-3P-5la">
-            <objects>
-                <tableViewController storyboardIdentifier="SponsorStoryBoard" id="lIe-yZ-dYE" customClass="SponsorViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rOC-Xz-lwn" customClass="SponsorTableView" customModule="asce_ios" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="U5j-Pm-GvZ" customClass="SponsorTableViewCell" customModule="asce_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U5j-Pm-GvZ" id="cCX-rd-JwM" customClass="SponsorTableViewCellUIView" customModule="asce_ios" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lIe-yZ-dYE" id="2m1-kB-sfF"/>
-                            <outlet property="delegate" destination="lIe-yZ-dYE" id="RL8-pR-dv0"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LXw-fd-4Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3862" y="-1021"/>
         </scene>
         <!--Program View Controller-->
         <scene sceneID="Bls-SQ-lcg">
@@ -265,6 +198,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxd-vQ-y6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1423" y="-1498"/>
+        </scene>
+        <!--Sponsor View Controller-->
+        <scene sceneID="eGv-5z-Ufr">
+            <objects>
+                <tableViewController storyboardIdentifier="SponsorStoryBoard" id="Y6q-X2-ovC" customClass="SponsorViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="VWD-KZ-xel">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SponsorTableViewCell" rowHeight="200" id="id9-vo-83D" customClass="SponsorTableViewCell" customModule="asce_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="id9-vo-83D" id="Zgg-7M-s6s">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1Y-af-6mZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="sponsorImage" destination="i1Y-af-6mZ" id="irD-5O-Qk6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Y6q-X2-ovC" id="2cp-mf-dAK"/>
+                            <outlet property="delegate" destination="Y6q-X2-ovC" id="af9-gu-2JF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVy-FK-dAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3861.5999999999999" y="-1021.4392803598201"/>
+        </scene>
+        <!--Speaker View Controller-->
+        <scene sceneID="ciq-yC-k6d">
+            <objects>
+                <tableViewController storyboardIdentifier="SpeakerStoryBoard" id="7O1-uI-JVs" customClass="SpeakerViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Y7-dA-9b0" userLabel="SpeakerTableView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpeakerTableViewCell" rowHeight="200" id="hwX-Ll-pYO" userLabel="SpeakerTableViewCell" customClass="SpeakerTableViewCell" customModule="asce_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hwX-Ll-pYO" id="g1k-a6-Lob">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Akw-f9-Qk3">
+                                            <rect key="frame" x="20" y="40" width="187" height="159"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <bool key="isElement" value="NO"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxo-Qu-k7J">
+                                            <rect key="frame" x="174" y="40" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="Akw-f9-Qk3" id="xyZ-A6-gm4"/>
+                                    <outlet property="profileImage" destination="Zxo-Qu-k7J" id="MZv-7O-xL4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7O1-uI-JVs" id="Hrq-3F-WNY"/>
+                            <outlet property="delegate" destination="7O1-uI-JVs" id="qkJ-tR-djP"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zNb-dk-g9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3862" y="-1676"/>
         </scene>
     </scenes>
 </document>
