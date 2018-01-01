@@ -25,15 +25,15 @@
 		5FCDB2301FF22BF400D638A8 /* SponsorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB22F1FF22BF400D638A8 /* SponsorTableViewCell.swift */; };
 		5FCDB2321FF22C0000D638A8 /* SponsorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2311FF22C0000D638A8 /* SponsorTableView.swift */; };
 		5FCDB2341FF22C1700D638A8 /* SponsorTableCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2331FF22C1700D638A8 /* SponsorTableCellUIView.swift */; };
-		B92E29931FF7428000C43E7B /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E298F1FF7428000C43E7B /* DataClasses.swift */; };
-		B92E29941FF7428000C43E7B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E29901FF7428000C43E7B /* Constants.swift */; };
-		B92E29951FF7428000C43E7B /* EventLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E29911FF7428000C43E7B /* EventLoader.swift */; };
-		B92E29961FF7428000C43E7B /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E29921FF7428000C43E7B /* Database.swift */; };
-		B92E299A1FF7429A00C43E7B /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E29981FF7429A00C43E7B /* EventCell.swift */; };
-		B92E299B1FF7429A00C43E7B /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92E29991FF7429A00C43E7B /* EventCell.xib */; };
-		B92E299F1FF7443300C43E7B /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E299E1FF7443300C43E7B /* EventViewController.swift */; };
-		B92E29A11FF7443800C43E7B /* MyScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E29A01FF7443800C43E7B /* MyScheduleViewController.swift */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
+		B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */; };
+		B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */; };
+		B9DF2EFE1FF9B81200F99037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EFD1FF9B81200F99037 /* Constants.swift */; };
+		B9DF2F031FF9B8C500F99037 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2F021FF9B8C500F99037 /* EventCell.swift */; };
+		B9DF2F051FF9B91200F99037 /* MyScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2F041FF9B91200F99037 /* MyScheduleViewController.swift */; };
+		B9DF2F071FF9B91E00F99037 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2F061FF9B91E00F99037 /* EventViewController.swift */; };
+		B9DF2F0B1FF9BA5F00F99037 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2F0A1FF9BA5F00F99037 /* Database.swift */; };
+		B9DF2F0E1FF9BC8A00F99037 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DF2F0D1FF9BBB500F99037 /* EventCell.xib */; };
 		B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CB21FC7000400956099 /* AppDelegate.swift */; };
 		B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CB41FC7000400956099 /* asce_ios.xcdatamodeld */; };
 		B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CB71FC7000400956099 /* MasterViewController.swift */; };
@@ -96,18 +96,18 @@
 		5FCDB22F1FF22BF400D638A8 /* SponsorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorTableViewCell.swift; sourceTree = "<group>"; };
 		5FCDB2311FF22C0000D638A8 /* SponsorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorTableView.swift; sourceTree = "<group>"; };
 		5FCDB2331FF22C1700D638A8 /* SponsorTableCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorTableCellUIView.swift; sourceTree = "<group>"; };
-		B92E298F1FF7428000C43E7B /* DataClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataClasses.swift; path = "../../../../asce-ios/asce-ios/model/DataClasses.swift"; sourceTree = "<group>"; };
-		B92E29901FF7428000C43E7B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "../../../../asce-ios/asce-ios/model/Constants.swift"; sourceTree = "<group>"; };
-		B92E29911FF7428000C43E7B /* EventLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventLoader.swift; path = "../../../../asce-ios/asce-ios/model/EventLoader.swift"; sourceTree = "<group>"; };
-		B92E29921FF7428000C43E7B /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = "../../../../asce-ios/asce-ios/model/Database.swift"; sourceTree = "<group>"; };
-		B92E29981FF7429A00C43E7B /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		B92E29991FF7429A00C43E7B /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
-		B92E299E1FF7443300C43E7B /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = "../../../../../../asce-ios/asce-ios/controller/EventViewController.swift"; sourceTree = "<group>"; };
-		B92E29A01FF7443800C43E7B /* MyScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyScheduleViewController.swift; path = "../../../../../../asce-ios/asce-ios/controller/MyScheduleViewController.swift"; sourceTree = "<group>"; };
 		B92E29A41FF744DF00C43E7B /* DC-Theme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "DC-Theme.bundle"; sourceTree = "<group>"; };
 		B92E29A51FF744DF00C43E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataClasses.swift; sourceTree = "<group>"; };
+		B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLoader.swift; sourceTree = "<group>"; };
+		B9DF2EFD1FF9B81200F99037 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B9DF2F021FF9B8C500F99037 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		B9DF2F041FF9B91200F99037 /* MyScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScheduleViewController.swift; sourceTree = "<group>"; };
+		B9DF2F061FF9B91E00F99037 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		B9DF2F0A1FF9BA5F00F99037 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		B9DF2F0D1FF9BBB500F99037 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EventCell.xib; path = "/Users/iosdesigncoding/Desktop/Projects/asce-ios/asce-ios/views/Screens/ScheduleScreen/Schedule/EventCell.xib"; sourceTree = "<absolute>"; };
 		B9FA4CAF1FC7000400956099 /* asce-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "asce-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FA4CB21FC7000400956099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9FA4CB51FC7000400956099 /* asce_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = asce_ios.xcdatamodel; sourceTree = "<group>"; };
@@ -184,9 +184,9 @@
 		5FCDB2221FF2292F00D638A8 /* ScheduleScreen */ = {
 			isa = PBXGroup;
 			children = (
-				B92E29971FF7429A00C43E7B /* Schedule */,
-				B92E29A01FF7443800C43E7B /* MyScheduleViewController.swift */,
-				B92E299E1FF7443300C43E7B /* EventViewController.swift */,
+				B9DF2F0C1FF9BAE700F99037 /* Schedule */,
+				B9DF2F041FF9B91200F99037 /* MyScheduleViewController.swift */,
+				B9DF2F061FF9B91E00F99037 /* EventViewController.swift */,
 			);
 			path = ScheduleScreen;
 			sourceTree = "<group>";
@@ -238,16 +238,6 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		B92E29971FF7429A00C43E7B /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				B92E29981FF7429A00C43E7B /* EventCell.swift */,
-				B92E29991FF7429A00C43E7B /* EventCell.xib */,
-			);
-			name = Schedule;
-			path = "../../../../../../asce-ios/asce-ios/views/Schedule";
-			sourceTree = "<group>";
-		};
 		B92E29A21FF744DF00C43E7B /* Targets */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +265,15 @@
 				B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9DF2F0C1FF9BAE700F99037 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				B9DF2F0D1FF9BBB500F99037 /* EventCell.xib */,
+				B9DF2F021FF9B8C500F99037 /* EventCell.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		B9FA4CA61FC7000400956099 = {
@@ -326,10 +325,10 @@
 			isa = PBXGroup;
 			children = (
 				B9FA4CB21FC7000400956099 /* AppDelegate.swift */,
-				B92E29901FF7428000C43E7B /* Constants.swift */,
-				B92E29921FF7428000C43E7B /* Database.swift */,
-				B92E298F1FF7428000C43E7B /* DataClasses.swift */,
-				B92E29911FF7428000C43E7B /* EventLoader.swift */,
+				B9DF2EFD1FF9B81200F99037 /* Constants.swift */,
+				B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */,
+				B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */,
+				B9DF2F0A1FF9BA5F00F99037 /* Database.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -460,7 +459,7 @@
 				B98175821FF453AC001A1F6C /* EventCell.xib in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
 				5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */,
-				B92E299B1FF7429A00C43E7B /* EventCell.xib in Resources */,
+				B9DF2F0E1FF9BC8A00F99037 /* EventCell.xib in Resources */,
 				5F7C97E81FEC5BFA0007F8E4 /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,38 +485,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B92E29961FF7428000C43E7B /* Database.swift in Sources */,
+				B9DF2F0B1FF9BA5F00F99037 /* Database.swift in Sources */,
 				5FCDB2341FF22C1700D638A8 /* SponsorTableCellUIView.swift in Sources */,
+				B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */,
 				5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */,
 				5FCDB1D81FF21E4500D638A8 /* SpeakerViewController.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
+				B9DF2EFE1FF9B81200F99037 /* Constants.swift in Sources */,
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
 				B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */,
-				B92E299F1FF7443300C43E7B /* EventViewController.swift in Sources */,
+				B9DF2F071FF9B91E00F99037 /* EventViewController.swift in Sources */,
 				5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */,
 				5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */,
-				B92E29A11FF7443800C43E7B /* MyScheduleViewController.swift in Sources */,
 				5F7C97F21FEC66640007F8E4 /* TwitterViewController.swift in Sources */,
+				B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */,
 				B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */,
 				B98175721FF39F3B001A1F6C /* MyScheduleViewController.swift in Sources */,
 				B98175761FF3C17C001A1F6C /* Constants.swift in Sources */,
 				B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */,
 				5FCDB22C1FF22A7000D638A8 /* SpeakerTableView.swift in Sources */,
-				B92E29951FF7428000C43E7B /* EventLoader.swift in Sources */,
+				B9DF2F051FF9B91200F99037 /* MyScheduleViewController.swift in Sources */,
 				B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */,
 				B98175801FF4516F001A1F6C /* EventCell.swift in Sources */,
 				B9FA4CEA1FC7056700956099 /* TableViewMenuController.swift in Sources */,
 				5FCDB2301FF22BF400D638A8 /* SponsorTableViewCell.swift in Sources */,
-				B92E29931FF7428000C43E7B /* DataClasses.swift in Sources */,
+				B9DF2F031FF9B8C500F99037 /* EventCell.swift in Sources */,
 				5FCDB1DA1FF21E5700D638A8 /* SponsorViewController.swift in Sources */,
 				5FCDB2321FF22C0000D638A8 /* SponsorTableView.swift in Sources */,
 				B9FA4CEC1FC7056700956099 /* BaseViewController.swift in Sources */,
-				B92E299A1FF7429A00C43E7B /* EventCell.swift in Sources */,
 				B9FA4CBA1FC7000400956099 /* DetailViewController.swift in Sources */,
 				5FCDB1DE1FF21EBF00D638A8 /* ProgramViewController.swift in Sources */,
 				5FCDB22E1FF22B6700D638A8 /* SpeakerTableCellUIView.swift in Sources */,
 				5FCDB1D51FF21C7900D638A8 /* HomeViewController.swift in Sources */,
-				B92E29941FF7428000C43E7B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
