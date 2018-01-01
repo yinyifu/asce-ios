@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/iosdesigncoding/Desktop/Projects/asce-ios/asce-ios/views/Screens/ScheduleScreen/Schedule/EventCell.xib">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

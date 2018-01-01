@@ -11,17 +11,15 @@ import CoreData
 import TwitterKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
-    
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate { 
     var window: UIWindow?
-    
     let consumer_key: String = "VGALxbf0t3DLpGZ3nexIJv2g3"
     let consumer_secret: String = "IzIH36MpXyAMLdvUEMPBkKGebelqHoSbLPrOFfTX6oupA0LK7S"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         EventLoader.init();
         Twitter.sharedInstance().start(withConsumerKey:consumer_key, consumerSecret:consumer_secret)
-        return true
+       return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -100,6 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             }
         }
     }
-    
 }
+
+
 

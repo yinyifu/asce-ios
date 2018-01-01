@@ -25,6 +25,7 @@
 		5FCDB2301FF22BF400D638A8 /* SponsorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB22F1FF22BF400D638A8 /* SponsorTableViewCell.swift */; };
 		5FCDB2321FF22C0000D638A8 /* SponsorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2311FF22C0000D638A8 /* SponsorTableView.swift */; };
 		5FCDB2341FF22C1700D638A8 /* SponsorTableCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2331FF22C1700D638A8 /* SponsorTableCellUIView.swift */; };
+		B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
 		B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */; };
 		B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */; };
@@ -43,7 +44,6 @@
 		B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9FA4CC01FC7000400956099 /* LaunchScreen.storyboard */; };
 		B9FA4CEA1FC7056700956099 /* TableViewMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE51FC7056600956099 /* TableViewMenuController.swift */; };
 		B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE61FC7056700956099 /* ZFRippleButton.swift */; };
-		B9FA4CEC1FC7056700956099 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE71FC7056700956099 /* BaseViewController.swift */; };
 		B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE81FC7056700956099 /* MenuTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +99,7 @@
 		B92E29A41FF744DF00C43E7B /* DC-Theme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "DC-Theme.bundle"; sourceTree = "<group>"; };
 		B92E29A51FF744DF00C43E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataClasses.swift; sourceTree = "<group>"; };
 		B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLoader.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		B9FA4CD31FC7000400956099 /* asce-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "asce-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FA4CE51FC7056600956099 /* TableViewMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewMenuController.swift; sourceTree = "<group>"; };
 		B9FA4CE61FC7056700956099 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
-		B9FA4CE71FC7056700956099 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9FA4CE81FC7056700956099 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,10 +336,10 @@
 		B9FA4CF21FC7065E00956099 /* NavigationDrawer */ = {
 			isa = PBXGroup;
 			children = (
+				B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */,
 				B9FA4CE81FC7056700956099 /* MenuTableViewCell.swift */,
 				B9FA4CE51FC7056600956099 /* TableViewMenuController.swift */,
 				B9FA4CE61FC7056700956099 /* ZFRippleButton.swift */,
-				B9FA4CE71FC7056700956099 /* BaseViewController.swift */,
 			);
 			path = NavigationDrawer;
 			sourceTree = "<group>";
@@ -413,6 +413,7 @@
 				TargetAttributes = {
 					B9FA4CAE1FC7000400956099 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					B9FA4CC71FC7000400956099 = {
@@ -487,6 +488,7 @@
 				B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */,
 				5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */,
 				5FCDB1D81FF21E4500D638A8 /* SpeakerViewController.swift in Sources */,
+				B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
 				B9DF2EFE1FF9B81200F99037 /* Constants.swift in Sources */,
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
@@ -506,7 +508,6 @@
 				B9DF2F031FF9B8C500F99037 /* EventCell.swift in Sources */,
 				5FCDB1DA1FF21E5700D638A8 /* SponsorViewController.swift in Sources */,
 				5FCDB2321FF22C0000D638A8 /* SponsorTableView.swift in Sources */,
-				B9FA4CEC1FC7056700956099 /* BaseViewController.swift in Sources */,
 				B9FA4CBA1FC7000400956099 /* DetailViewController.swift in Sources */,
 				5FCDB1DE1FF21EBF00D638A8 /* ProgramViewController.swift in Sources */,
 				5FCDB22E1FF22B6700D638A8 /* SpeakerTableCellUIView.swift in Sources */,
@@ -674,6 +675,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8ZNSX6Y5B;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -696,6 +698,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8ZNSX6Y5B;
 				FRAMEWORK_SEARCH_PATHS = (
