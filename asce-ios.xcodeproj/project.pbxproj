@@ -25,6 +25,7 @@
 		B9C29EA21FFA9C18004E914F /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C29EA11FFA9C18004E914F /* EventCell.xib */; };
 		B9C29EA71FFA9CEC004E914F /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C29EA61FFA9CEC004E914F /* FacebookViewController.swift */; };
 		B9C29EAD1FFAA337004E914F /* SponsorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C29EAB1FFAA2F8004E914F /* SponsorTableViewCell.swift */; };
+		B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */ = {isa = PBXBuildFile; fileRef = B9C29E9F1FFA9393004E914F /* ascedb.sql */; };
 		B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */; };
 		B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */; };
 		B9DF2EFE1FF9B81200F99037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EFD1FF9B81200F99037 /* Constants.swift */; };
@@ -96,6 +97,7 @@
 		B9C29EA11FFA9C18004E914F /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		B9C29EA61FFA9CEC004E914F /* FacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		B9C29EAB1FFAA2F8004E914F /* SponsorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorTableViewCell.swift; sourceTree = "<group>"; };
+		B9C29E9F1FFA9393004E914F /* ascedb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ascedb.sql; sourceTree = "<group>"; };
 		B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataClasses.swift; sourceTree = "<group>"; };
 		B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLoader.swift; sourceTree = "<group>"; };
 		B9DF2EFD1FF9B81200F99037 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				B92E29A51FF744DF00C43E7B /* Info.plist */,
+				B9C29E9F1FFA9393004E914F /* ascedb.sql */,
 				B92E29A31FF744DF00C43E7B /* Resources */,
 			);
 			path = Targets;
@@ -454,6 +457,7 @@
 			files = (
 				B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
+				B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
 				5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */,
 				5F7C97E81FEC5BFA0007F8E4 /* TwitterKitResources.bundle in Resources */,

@@ -57,7 +57,8 @@ class Database : NSObject{
         
         // open database
         var sqlDatabase : OpaquePointer?;
-        let databasePath = self.documentDir.stringByAppendingPathComponent(path: self.dbFileName)
+        let databasePath = Bundle.main.resourcePath!.stringByAppendingPathComponent(path: self.dbFileName!)
+        
         let buffer : [CChar] = Array.init(databasePath.utf8CString);
         /*
         if(!databasePath.getCString(&buffer, maxLength: 1000, encoding: String.Encoding.utf8)){
