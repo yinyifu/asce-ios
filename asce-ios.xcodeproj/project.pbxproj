@@ -413,6 +413,7 @@
 				TargetAttributes = {
 					B9FA4CAE1FC7000400956099 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					B9FA4CC71FC7000400956099 = {
@@ -454,6 +455,8 @@
 			files = (
 				B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
+				B981757A1FF3C4AA001A1F6C /* DC-Theme.bundle in Resources */,
+				B98175821FF453AC001A1F6C /* EventCell.xib in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
 				5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */,
 				B9DF2F0E1FF9BC8A00F99037 /* EventCell.xib in Resources */,
@@ -497,10 +500,13 @@
 				5F7C97F21FEC66640007F8E4 /* TwitterViewController.swift in Sources */,
 				B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */,
 				B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */,
+				B98175721FF39F3B001A1F6C /* MyScheduleViewController.swift in Sources */,
+				B98175761FF3C17C001A1F6C /* Constants.swift in Sources */,
 				B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */,
 				5FCDB22C1FF22A7000D638A8 /* SpeakerTableView.swift in Sources */,
 				B9DF2F051FF9B91200F99037 /* MyScheduleViewController.swift in Sources */,
 				B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */,
+				B98175801FF4516F001A1F6C /* EventCell.swift in Sources */,
 				B9FA4CEA1FC7056700956099 /* TableViewMenuController.swift in Sources */,
 				5FCDB2301FF22BF400D638A8 /* SponsorTableViewCell.swift in Sources */,
 				B9DF2F031FF9B8C500F99037 /* EventCell.swift in Sources */,
@@ -674,6 +680,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8ZNSX6Y5B;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -696,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8ZNSX6Y5B;
 				FRAMEWORK_SEARCH_PATHS = (
