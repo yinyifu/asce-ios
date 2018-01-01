@@ -11,6 +11,7 @@ import UIKit
 
 class SponsorViewController : UITableViewController
 {
+    var sponsorN = ["B&L","CPL"]
     override func viewDidLoad() {
         
     }
@@ -20,13 +21,13 @@ class SponsorViewController : UITableViewController
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return sponsorN.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SponsorTableViewCell", for: indexPath) as! SponsorTableViewCell
-        let fruitName = "Apple"
-        cell.sponsorImage?.image = UIImage(named:fruitName)
+        let name = sponsorN[indexPath.row]
+        cell.sponsorImage?.image = UIImage(named:name)
         return cell
     }
 }
