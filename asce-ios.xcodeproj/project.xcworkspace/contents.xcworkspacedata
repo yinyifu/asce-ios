@@ -2,10 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../asce-ios/Twitter.plist">
-   </FileRef>
-   <FileRef
-      location = "group:../asce-ios/ViewController.swift">
+      location = "group:/Users/iosdesigncoding/Desktop/Projects/asce-ios/asce-ios/views/Screens/ScheduleScreen/Schedule/EventCell.xib">
    </FileRef>
    <FileRef
       location = "self:">
