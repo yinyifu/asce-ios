@@ -17,10 +17,15 @@ class SpeakerViewController : UITableViewController
     
     override func viewDidLoad(){
         for events in schedules{
-            for name in (events.speakers?.split(separator: ","))!{
-                names.append(String(name))
+            for nameSS in (events.speakers?.split(separator: ","))!{
+                let name = String(nameSS).trimmingCharacters(in: .whitespacesAndNewlines)
+                if(!names.contains(name)){
+                    names.append(name)
+                }
             }
         }
+        print(names)
+        print(String(names.count))
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
