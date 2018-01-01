@@ -2,14 +2,12 @@
 //  SponsorTableViewCell.swift
 //  asce-ios
 //
-//  Created by Baicheng Chen on 12/26/17.
-//  Copyright © 2017 tutorials. All rights reserved.
+//  Created by IOS Design Coding on 1/1/18.
+//  Copyright © 2018 tutorials. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class SponsorTableViewCell : UITableViewCell
-{
-    
+class SponsorTableViewCell : UITableViewCell{
+    @IBOutlet weak var sponsorImage: UIImageView!
 }
