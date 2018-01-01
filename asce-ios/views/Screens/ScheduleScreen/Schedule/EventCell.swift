@@ -30,18 +30,12 @@ class EventCell:UITableViewCell{
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var highlightedView: UIView!
-    
+    var date:String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setCustomFonts()
         self.layoutIfNeeded()
-    }
-    @IBAction func coverDidTouchUp(_ sender: Any) {
-        self.highlightedView.isHidden = true;
-    }
-    @IBAction func coverTouchDown(_ sender: Any) {
-        self.highlightedView.isHidden = false;
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(false, animated: animated)
