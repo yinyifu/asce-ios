@@ -13,62 +13,59 @@ class EventViewController : UITableViewController{
     private var selectedIndexPath : IndexPath?;
     private var schedules = EventLoader.schedulee2!;
     private var _selectedSchedule: ScheEvent?;
+    private var columnCount : Int!;
+    private var columnDatas : Array<[String:String]>!;
+    private var dataAccordingToSection : Array<Array<ScheEvent>>!;
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataAccordingToSection = [];
         registerCells()
         
         //self.selectCellForSelectedSchedule();
     }
-    /*
-    func selectCellForSelectedSchedule(){
-        var row = 0;
-        if((_selectedSchedule) != nil){
-            for schedule in self.schedules{
-                row+=1;
-                if(schedule.scheduleId == _selectedSchedule!.scheduleId){
-                    break;
-                }
-            }
-        }
-        self.selectedIndexPath = IndexPath.init(row: row, section: 0);
-        self.tableView.selectRow(at: self.selectedIndexPath!, animated: false, scrollPosition: UITableViewScrollPosition.none)
-        self.tableView(self.tableView, didSelectRowAt: self.selectedIndexPath!)
-    }
- */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.registerCells()
     }
     func registerCells(){
         let classname :String = NSStringFromClass(EventCell.self)
         self.tableView.register(UINib.init(nibName: classname, bundle: nil), forCellReuseIdentifier: classname)
-        
+        let Columns = EventLoader.db.loadDataFromDB(query: "SELECT DISTINCT date FROM Event");
+        self.columnCount = Columns.count
+        self.columnDatas = Columns
+        // do the column initialization here
+        for i in 0...self.columnCount!-1{
+            let temp = EventLoader.getQueryEvents(query: "SELECT * FROM Event WHERE date = '\(Columns[i]["0"]!)\'");
+            self.dataAccordingToSection!.append(temp)
+        }
     }
     
-    
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.columnCount;
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.schedules.count;
+        return self.dataAccordingToSection[section].count;
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var patho = indexPath;
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> EventCell {
+        let section = indexPath.first!
         let cell = Bundle.main.loadNibNamed("EventCell", owner: EventCell.self, options: nil)![0] as! EventCell
         cell.selectionStyle = UITableViewCellSelectionStyle.none;
-        cell.tintColor = EventLoader.favoriteEventColor!;
-        print(patho)
-        cell.endLabel.text = self.schedules[patho.row ].endtime
-        cell.startLabel.text = self.schedules[patho.row ].starttime
-        cell.speakerLabel.text = self.schedules[patho.row ].speakers
-        if(self.schedules[patho.row ].speakers == ""){
+        cell.tintColor = UIColor.white;
+        
+        let thisEvent = self.dataAccordingToSection[section][indexPath.row];
+        
+        cell.endLabel.text = thisEvent.endtime
+        cell.startLabel.text = thisEvent.starttime
+        cell.speakerLabel.text = thisEvent.speakers
+        cell.date = thisEvent.date
+        if(thisEvent.speakers == ""){
             cell.speakerLabel.text = "n/a"
         }
-        cell.titleLabel.text = self.schedules[patho.row ].name
-        cell.locationLabel.text = self.schedules[patho.row ].room
+        cell.titleLabel.text = thisEvent.name
+        cell.locationLabel.text = thisEvent.room
                 
         /*if(indexPath.row == selectedIndexPath!.row){
             cell.accessoryType = UITableViewCellAccessoryType.checkmark;
@@ -82,19 +79,23 @@ class EventViewController : UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentCell : UITableViewCell = tableView.cellForRow(at: indexPath)!
-        currentCell.accessoryType = UITableViewCellAccessoryType.checkmark;
+        let currentCell : EventCell = tableView.cellForRow(at: indexPath)! as! EventCell
+        let date : String = currentCell.date!
+        let time = currentCell.startLabel.text!
+        let ary = EventLoader.db.loadDataFromDB(query: "SELECT * from Event WHERE date = \(date) and starttime = \(time)")
         
+        print(ary)
         if(indexPath.row == 0){
             _selectedSchedule = nil;
         }else{
             _selectedSchedule = schedules[indexPath.row - 1];
         }
-        /*
-        if(selectedIndexPath!.row != indexPath.row){
-            selectedIndexPath = indexPath;
-            self.closeController();
-        }*/
+    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return super.tableView(tableView, viewForHeaderInSection: section)
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.columnDatas[section]["0"]
     }
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let previous = tableView.cellForRow(at: indexPath)
