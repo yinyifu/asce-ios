@@ -47,23 +47,25 @@ class EventViewController : UITableViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataAccordingToSection[section].count;
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> EventCell {
-        var patho = indexPath;
+        let section = indexPath.first!
         let cell = Bundle.main.loadNibNamed("EventCell", owner: EventCell.self, options: nil)![0] as! EventCell
         cell.selectionStyle = UITableViewCellSelectionStyle.none;
         cell.tintColor = UIColor.white;
-        cell.endLabel.text = self.schedules[patho.row ].endtime
-        cell.startLabel.text = self.schedules[patho.row ].starttime
-        cell.speakerLabel.text = self.schedules[patho.row ].speakers
-        cell.date = self.schedules[patho.row].date
-        if(self.schedules[patho.row ].speakers == ""){
+        
+        let thisEvent = self.dataAccordingToSection[section][indexPath.row];
+        
+        cell.endLabel.text = thisEvent.endtime
+        cell.startLabel.text = thisEvent.starttime
+        cell.speakerLabel.text = thisEvent.speakers
+        cell.date = thisEvent.date
+        if(thisEvent.speakers == ""){
             cell.speakerLabel.text = "n/a"
         }
-        cell.titleLabel.text = self.schedules[patho.row ].name
-        cell.locationLabel.text = self.schedules[patho.row ].room
+        cell.titleLabel.text = thisEvent.name
+        cell.locationLabel.text = thisEvent.room
                 
         /*if(indexPath.row == selectedIndexPath!.row){
             cell.accessoryType = UITableViewCellAccessoryType.checkmark;
