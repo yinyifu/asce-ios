@@ -81,9 +81,10 @@ class Database : NSObject{
                 arrDataRow = [:];
                 let totalColumns = sqlite3_column_count(compiledStatement)
                 for i in 0...totalColumns-1{
-                    
+                    var useNameChars : Bool = true;
                     if(name_array.count != totalColumns){
-                        fatalError("Name array is different than database data!")
+                        print("Name array is different than database data!")
+                        useNameChars = false;
                     }
                     
                     let dbDataAsChars : UnsafePointer<UInt8>! = sqlite3_column_text(compiledStatement, i)
@@ -92,7 +93,11 @@ class Database : NSObject{
                     }
                     
                     let result = String.init(cString: dbDataAsChars)
-                    arrDataRow[name_array[Int(i)]] = result
+                    if(useNameChars){
+                        arrDataRow[name_array[Int(i)]] = result
+                    }else{
+                        arrDataRow[String(i)] = result
+                    }
                     if(self.arrColumnNames.count != totalColumns){
                         self.arrColumnNames.append(result)
                     }
@@ -121,4 +126,6 @@ class Database : NSObject{
     func executeQuery(query:String){
         self.runQuery(query: query, queryExe: true, name_array: Constants.nameArray)
     }
+    
+    
 }

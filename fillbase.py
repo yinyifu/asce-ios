@@ -13,8 +13,14 @@ with open('database.txt', 'r') as infile:
 	desc =  infile.readline().strip()
 	mod =  infile.readline().strip()
 	organ =  infile.readline().strip()
-
+	splet = set()
 	while(infile.readline().strip() == "------"):
+		arysp = speaker.split(",")
+		for item in arysp:
+			splet.add(item.strip())
+		arymd = mod.split(",")
+		for item in arymd:
+			splet.add(item.strip())
 		c.execute("INSERT INTO Event (date, starttime, endtime, speakers, room, name, desc, mods, organizations) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (datefield, stime, etime, speaker, room, name, desc, mod, organ))
 		
 		datefield = infile.readline().strip()
@@ -26,6 +32,7 @@ with open('database.txt', 'r') as infile:
 		desc =  infile.readline().strip()
 		mod =  infile.readline().strip()
 		organ =  infile.readline().strip()
+	print(splet)	
 
 	conn.commit()
 conn.close()
