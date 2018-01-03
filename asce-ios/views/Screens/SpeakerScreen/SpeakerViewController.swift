@@ -18,14 +18,14 @@ class SpeakerViewController : UITableViewController
     override func viewDidLoad(){
         for events in schedules{
             for nameSS in (events.speakers?.split(separator: ","))!{
+                
                 let name = String(nameSS).trimmingCharacters(in: .whitespacesAndNewlines)
                 if(!names.contains(name)){
                     names.append(name)
                 }
             }
         }
-        print(names)
-        print(String(names.count))
+        print(String(names.count)+(" is the total count of speakers."))
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
