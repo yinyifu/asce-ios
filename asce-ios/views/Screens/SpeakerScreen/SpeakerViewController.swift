@@ -28,7 +28,6 @@ class SpeakerViewController : UITableViewController
             }
         }
         sortNamesByLastName()
-        print(names)
     }
     func sortNamesByLastName()
     {
@@ -109,13 +108,13 @@ class SpeakerViewController : UITableViewController
         cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
         let Name = namesInSections[indexPath.section][indexPath.row]
         cell.nameLabel?.text = Name
-        cell.profileImage?.image = UIImage(named:Name)
+        //cell.profileImage?.image = UIImage(named:Name)
+        cell.profileImage.image = UIImage(named:"Apple")
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let destination = HomeViewController() // Your destination
-        navigationController?.pushViewController(destination, animated: true)
+        print(indexPath)
     }
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return lastnameInits

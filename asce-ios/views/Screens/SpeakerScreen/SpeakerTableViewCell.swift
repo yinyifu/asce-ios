@@ -13,6 +13,6 @@ class SpeakerTableViewCell : UITableViewCell
 {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var titleLabel: UILabel!
 }
 
