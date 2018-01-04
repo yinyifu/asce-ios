@@ -82,7 +82,8 @@ class EventViewController : UITableViewController{
         let currentCell : EventCell = tableView.cellForRow(at: indexPath)! as! EventCell
         let date : String = currentCell.date!
         let time = currentCell.startLabel.text!
-        let ary = EventLoader.db.loadDataFromDB(query: "SELECT * from Event WHERE date = \(date) and starttime = \(time)")
+        let ary = EventLoader.db.loadDataFromDB(query: "SELECT * from Event WHERE date = '\(date)' and starttime = '\(time)'")
+        print(ary)
         
         print(ary)
         if(indexPath.row == 0){

@@ -110,6 +110,22 @@
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-Ur-fSG">
                         <rect key="frame" x="-62" y="89" width="413" height="102"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-cp-CAq" customClass="ZFRippleButton" customModule="asce_ios" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="102"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                <color key="value" red="0.84245466321243523" green="0.83905123051656394" blue="0.83685774720465378" alpha="0.64015735035211263" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="rippleOverBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="ripplePercent">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="D2X-ND-qwa" secondAttribute="bottom" id="5mA-2R-aFM"/>
@@ -126,12 +142,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="coverButton" destination="Xir-cp-CAq" id="std-Ma-Uq2"/>
                 <outlet property="endLabel" destination="Hoh-g2-JBz" id="cw5-B2-b1z"/>
                 <outlet property="eventImage" destination="0Pe-yP-J90" id="qw3-OG-ohS"/>
                 <outlet property="leftContentView" destination="D2X-ND-qwa" id="kjV-Za-NZu"/>
                 <outlet property="locationLabel" destination="ihD-2W-iib" id="dJa-4Y-A4I"/>
                 <outlet property="rightContentView" destination="t3H-TD-Jcs" id="8dJ-8D-Dnq"/>
-                <outlet property="rightCoverButton" destination="HfW-Ur-fSG" id="Mu1-2V-RfQ"/>
                 <outlet property="speakerLabel" destination="WaI-R4-AvU" id="xx9-oG-X9P"/>
                 <outlet property="startLabel" destination="K4s-L2-MvH" id="NN9-xg-eaR"/>
                 <outlet property="titleLabel" destination="Zph-PZ-3Vh" id="UT4-gF-2CU"/>

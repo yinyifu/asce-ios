@@ -18,8 +18,7 @@ class EventCell:UITableViewCell{
     @IBOutlet weak var leftContentView: UIView!
     
     
-    @IBOutlet weak var rightCoverButton: UIButton!
-    @IBOutlet weak var leftCoverButton: UIButton!
+    @IBOutlet weak var coverButton: ZFRippleButton!
     
     @IBOutlet weak var startLabel: UILabel!
     
@@ -44,6 +43,7 @@ class EventCell:UITableViewCell{
         super.layoutIfNeeded()
         
     }
+    
     
     func setCustomFonts(){
         //No implementation
