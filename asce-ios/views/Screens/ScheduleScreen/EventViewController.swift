@@ -20,7 +20,7 @@ class EventViewController : UITableViewController, TableButtonDelegate, TableDet
     
     func buttonClicked(at path: IndexPath) {
         let eventViewController = EventLoader.generateEventDetailViewController(self.dataAccordingToSection[path.first!][path.row])
-        self.present(eventViewController, animated: true, completion: completationStub)
+        self.navigationController!.pushViewController(eventViewController, animated: true)
     }
     
     func completationStub(){
@@ -74,11 +74,6 @@ class EventViewController : UITableViewController, TableButtonDelegate, TableDet
         
         let thisEvent = self.dataAccordingToSection[section][indexPath.row];
         cell.initData(thisEvent, indexPath, self)
-        
-                
-        /*if(indexPath.row == selectedIndexPath!.row){
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark;
-        }*/
         
         return cell;
     }

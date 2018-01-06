@@ -27,6 +27,7 @@ class EventCell:UITableViewCell{
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
+    private var event : ScheEvent!;
     private var uniquePath : IndexPath!
     private var delegate : TableButtonDelegate!
     var date:String!
@@ -50,6 +51,7 @@ class EventCell:UITableViewCell{
     
 
     func initData(_ thisEvent: ScheEvent, _ path: IndexPath, _ delegate: TableButtonDelegate){
+        self.event = thisEvent
         self.endLabel.text = thisEvent.endtime
         self.startLabel.text = thisEvent.starttime
         self.speakerLabel.text = thisEvent.speakers
