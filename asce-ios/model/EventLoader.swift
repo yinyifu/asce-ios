@@ -39,6 +39,34 @@ class EventLoader{
         }
         return newRay;
     }
+    static func getQuerySpeakers(query : String)->Array<Speaker>{
+        let horray :Array<[String : String]> = EventLoader.db.loadDataFromDB(query: query)
+        var newRay = Array<Speaker>()
+        for dict in horray{
+            let image = UIImage.init(data: Data.init(base64Encoded: dict["profile_pic"] as! Data, options: NSData.Base64DecodingOptions.init(rawValue: 0))!)!
+            let newevent:Speaker = Speaker(name: dict["name"]!, title : dict["title"]!, profile_pic : image);
+            newRay.append(newevent)
+            
+        }
+        if(EventLoader.db.affectedRows != 0){
+            print("query execute success");
+            
+        }else{
+            fatalError("query execution failed");
+        }
+        return newRay;
+    }
+    static func generateEventDetailViewController(_ event: ScheEvent) -> EventDetailViewController{
+        let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let viewController = sb.instantiateViewController(withIdentifier: "EventDetailStoryBoard") as! EventDetailViewController
+        return viewController
+    }
+    static func getEventSpeakers(_ event: ScheEvent)->[Speaker]?{
+        return nil
+    }
+    static func getSpeakerEvents(_ speaker: Speaker)->[ScheEvent]?{
+        return nil
+    }
 }
 
 

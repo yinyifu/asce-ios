@@ -5,7 +5,10 @@
 //  Created by IOS Design Coding on 12/28/17.
 //  Copyright © 2017 tutorials. All rights reserved.
 //
-
+/*
+ Needs improvement
+ On SQL name columns :)
+ */
 import Foundation
 import SQLite3
 class Database : NSObject{

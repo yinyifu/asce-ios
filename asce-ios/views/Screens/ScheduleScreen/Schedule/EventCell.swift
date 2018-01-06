@@ -17,7 +17,6 @@ class EventCell:UITableViewCell{
     @IBOutlet weak var rightContentView: UIView!
     @IBOutlet weak var leftContentView: UIView!
     
-    
     @IBOutlet weak var coverButton: ZFRippleButton!
     
     @IBOutlet weak var startLabel: UILabel!
@@ -28,7 +27,8 @@ class EventCell:UITableViewCell{
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var highlightedView: UIView!
+    private var uniquePath : IndexPath!
+    private var delegate : TableButtonDelegate!
     var date:String!
     
     override func awakeFromNib() {
@@ -41,7 +41,6 @@ class EventCell:UITableViewCell{
     }
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        
     }
     
     
@@ -50,10 +49,25 @@ class EventCell:UITableViewCell{
     }
     
 
-    func initData(data: ScheEvent, delegate: EventScheProtocol){
-        
-        
+    func initData(_ thisEvent: ScheEvent, _ path: IndexPath, _ delegate: TableButtonDelegate){
+        self.endLabel.text = thisEvent.endtime
+        self.startLabel.text = thisEvent.starttime
+        self.speakerLabel.text = thisEvent.speakers
+        self.date = thisEvent.date
+        if(thisEvent.speakers == ""){
+            self.speakerLabel.text = "n/a"
+        }
+        self.titleLabel.text = thisEvent.name
+        self.locationLabel.text = thisEvent.room
+        self.uniquePath = path
+        self.delegate = delegate
+        self.coverButton.addTarget(self, action: #selector(coverButtonClicked), for: UIControlEvents.touchUpInside)
     }
+    @objc
+    func coverButtonClicked(_ sender: Any){
+        delegate.buttonClicked(at:self.uniquePath)
+    }
+    
     //func getHeightForEvent(event:ScheEvent, isFirst: Bool)->Float{}
     
 }
