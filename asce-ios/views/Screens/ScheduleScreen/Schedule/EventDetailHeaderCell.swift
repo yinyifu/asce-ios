@@ -26,10 +26,9 @@ class EventDetailHeaderCell : UITableViewCell{
     }
     
     func initData(_ event:ScheEvent){
-        let preferedWidth = UIScreen.main.bounds.size.width-30
+        let preferedWidth = UIScreen.main.bounds.size.width - 30
         self.titleLabel.preferredMaxLayoutWidth = preferedWidth
         self.locLabel.preferredMaxLayoutWidth = preferedWidth
-        
         self.titleLabel.text = event.name
         let date = event.date
         let start_time = event.starttime

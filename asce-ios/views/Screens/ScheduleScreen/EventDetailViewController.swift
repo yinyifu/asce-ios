@@ -19,16 +19,18 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var eventDetailTableView: UITableView!
     convenience init(_ event : ScheEvent){
         self.init()
+        self.initData(event)
+    }
+    
+    func initData(_ event:ScheEvent){
         self.event = event
         let speakers = event.speakers
-        self.eventDetailTableView.delegate = self
-        self.eventDetailTableView.dataSource = self
         if let speakersexists = speakers{
             self.speakers = []
             let strfg = speakersexists.split(separator: ",")
             for ele in strfg {
                 let strfgnospace = ele.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speakers where name = '\(strfgnospace)'")
+                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speaker where name = '\(strfgnospace)'")
                 self.speakers!.append(contentsOf: speaker)
                 print(speaker)
             }
@@ -36,8 +38,12 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             self.speakers = nil;
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.eventDetailTableView.delegate = self
+        self.eventDetailTableView.dataSource = self
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -50,16 +56,15 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.first!;
         if(section == EventDetailViewController.headerSectionIndex){
-            let cell =  EventDetailHeaderCell();
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailHeader") as! EventDetailHeaderCell
             cell.initData(self.event)
             return cell
         }else if(section == EventDetailViewController.speakersSectionIndex){
-            let cell = SpeakerCell()
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailSpeaker") as! SpeakerCell
             cell.initDate(self.speakers![indexPath.row])
             return cell
         }else{
-            let cell = DescriptionCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailDesc") as! DescriptionCell
             cell.initData(self.event.desc!)
             return cell
         }
@@ -73,7 +78,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             
             return 48
         }else{
-            let dcell = tableView.cellForRow(at: indexPath) as! DescriptionCell
+            let dcell = tableView.dequeueReusableCell(withIdentifier: "DetailDesc") as! DescriptionCell
             return dcell.heightForCell(withText: self.event.desc!)
         }
     }
@@ -82,7 +87,10 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         if(section == EventDetailViewController.headerSectionIndex){
             return 1
         }else if(section == EventDetailViewController.speakersSectionIndex){
-            return speakers!.count+1
+            if speakers == nil{
+                return 0
+            }
+            return speakers!.count
         }else{
             return 1
         }

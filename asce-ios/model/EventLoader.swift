@@ -43,10 +43,14 @@ class EventLoader{
         let horray :Array<[String : String]> = EventLoader.db.loadDataFromDB(query: query)
         var newRay = Array<Speaker>()
         for dict in horray{
-            let image = UIImage.init(data: Data.init(base64Encoded: dict["profile_pic"] as! Data, options: NSData.Base64DecodingOptions.init(rawValue: 0))!)!
-            let newevent:Speaker = Speaker(name: dict["name"]!, title : dict["title"]!, profile_pic : image);
-            newRay.append(newevent)
-            
+            if let imageData : Data = dict["2"]!.data(using: String.Encoding.utf8){
+                print(imageData)
+                let image = UIImage.init(data: imageData)!
+                let newevent:Speaker = Speaker(name: dict["name"]!, title : dict["title"]!, profile_pic : image);
+                newRay.append(newevent)
+            }else{
+                fatalError("extract data failed")
+            }
         }
         if(EventLoader.db.affectedRows != 0){
             print("query execute success");
@@ -59,6 +63,8 @@ class EventLoader{
     static func generateEventDetailViewController(_ event: ScheEvent) -> EventDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let viewController = sb.instantiateViewController(withIdentifier: "EventDetailStoryBoard") as! EventDetailViewController
+        //let viewController = EventDetailViewController.init(event)
+        viewController.initData(event)
         return viewController
     }
     static func getEventSpeakers(_ event: ScheEvent)->[Speaker]?{
