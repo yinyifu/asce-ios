@@ -20,17 +20,21 @@
 		5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1DF1FF21ED100D638A8 /* EventMapViewController.swift */; };
 		5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1E11FF21EF100D638A8 /* EntertainmentViewController.swift */; };
 		5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */; };
+		B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B957CCF81FFE9C0C00FE935D /* Speaker.xib */; };
+		B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */; };
+		B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */; };
+		B957CD052000728500FE935D /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD042000728500FE935D /* SpeakerCell.swift */; };
+		B957CD07200078A600FE935D /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD06200078A600FE935D /* DescriptionCell.swift */; };
 		B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
+		B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */ = {isa = PBXBuildFile; fileRef = B9C29E9F1FFA9393004E914F /* ascedb.sql */; };
 		B9C29EA21FFA9C18004E914F /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C29EA11FFA9C18004E914F /* EventCell.xib */; };
 		B9C29EA71FFA9CEC004E914F /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C29EA61FFA9CEC004E914F /* FacebookViewController.swift */; };
 		B9C29EAD1FFAA337004E914F /* SponsorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C29EAB1FFAA2F8004E914F /* SponsorTableViewCell.swift */; };
-		B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */ = {isa = PBXBuildFile; fileRef = B9C29E9F1FFA9393004E914F /* ascedb.sql */; };
 		B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */; };
 		B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */; };
 		B9DF2EFE1FF9B81200F99037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EFD1FF9B81200F99037 /* Constants.swift */; };
 		B9DF2F031FF9B8C500F99037 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2F021FF9B8C500F99037 /* EventCell.swift */; };
-		B9DF2F051FF9B91200F99037 /* MyScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2F041FF9B91200F99037 /* MyScheduleViewController.swift */; };
 		B9DF2F071FF9B91E00F99037 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2F061FF9B91E00F99037 /* EventViewController.swift */; };
 		B9DF2F0B1FF9BA5F00F99037 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2F0A1FF9BA5F00F99037 /* Database.swift */; };
 		B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CB21FC7000400956099 /* AppDelegate.swift */; };
@@ -92,17 +96,21 @@
 		B92E29A41FF744DF00C43E7B /* DC-Theme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "DC-Theme.bundle"; sourceTree = "<group>"; };
 		B92E29A51FF744DF00C43E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B957CCF81FFE9C0C00FE935D /* Speaker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Speaker.xib; sourceTree = "<group>"; };
+		B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHeaderCell.swift; sourceTree = "<group>"; };
+		B957CD042000728500FE935D /* SpeakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
+		B957CD06200078A600FE935D /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
 		B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B9C29E9F1FFA9393004E914F /* ascedb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ascedb.sql; sourceTree = "<group>"; };
 		B9C29EA11FFA9C18004E914F /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		B9C29EA61FFA9CEC004E914F /* FacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		B9C29EAB1FFAA2F8004E914F /* SponsorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorTableViewCell.swift; sourceTree = "<group>"; };
-		B9C29E9F1FFA9393004E914F /* ascedb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ascedb.sql; sourceTree = "<group>"; };
 		B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataClasses.swift; sourceTree = "<group>"; };
 		B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLoader.swift; sourceTree = "<group>"; };
 		B9DF2EFD1FF9B81200F99037 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B9DF2F021FF9B8C500F99037 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		B9DF2F041FF9B91200F99037 /* MyScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScheduleViewController.swift; sourceTree = "<group>"; };
 		B9DF2F061FF9B91E00F99037 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		B9DF2F0A1FF9BA5F00F99037 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		B9FA4CAF1FC7000400956099 /* asce-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "asce-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +168,7 @@
 			children = (
 				5FCDB1D71FF21E4500D638A8 /* SpeakerViewController.swift */,
 				5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */,
+				B957CCF81FFE9C0C00FE935D /* Speaker.xib */,
 			);
 			path = SpeakerScreen;
 			sourceTree = "<group>";
@@ -177,8 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				B9DF2F0C1FF9BAE700F99037 /* Schedule */,
-				B9DF2F041FF9B91200F99037 /* MyScheduleViewController.swift */,
 				B9DF2F061FF9B91E00F99037 /* EventViewController.swift */,
+				B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */,
 			);
 			path = ScheduleScreen;
 			sourceTree = "<group>";
@@ -274,6 +283,9 @@
 			children = (
 				B9C29EA11FFA9C18004E914F /* EventCell.xib */,
 				B9DF2F021FF9B8C500F99037 /* EventCell.swift */,
+				B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */,
+				B957CD042000728500FE935D /* SpeakerCell.swift */,
+				B957CD06200078A600FE935D /* DescriptionCell.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -456,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */,
+				B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
 				B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
@@ -489,7 +502,9 @@
 				B9DF2F0B1FF9BA5F00F99037 /* Database.swift in Sources */,
 				B9C29EA71FFA9CEC004E914F /* FacebookViewController.swift in Sources */,
 				B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */,
+				B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */,
 				5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */,
+				B957CD07200078A600FE935D /* DescriptionCell.swift in Sources */,
 				5FCDB1D81FF21E4500D638A8 /* SpeakerViewController.swift in Sources */,
 				B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
@@ -502,8 +517,8 @@
 				5F7C97F21FEC66640007F8E4 /* TwitterViewController.swift in Sources */,
 				B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */,
 				B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */,
+				B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */,
 				B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */,
-				B9DF2F051FF9B91200F99037 /* MyScheduleViewController.swift in Sources */,
 				B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */,
 				B9FA4CEA1FC7056700956099 /* TableViewMenuController.swift in Sources */,
 				B9DF2F031FF9B8C500F99037 /* EventCell.swift in Sources */,
@@ -512,6 +527,7 @@
 				B9C29EAD1FFAA337004E914F /* SponsorTableViewCell.swift in Sources */,
 				5FCDB1DE1FF21EBF00D638A8 /* ProgramViewController.swift in Sources */,
 				5FCDB1D51FF21C7900D638A8 /* HomeViewController.swift in Sources */,
+				B957CD052000728500FE935D /* SpeakerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

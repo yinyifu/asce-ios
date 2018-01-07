@@ -6,7 +6,7 @@
 //  Copyright © 2017 tutorials. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Schedule : NSObject{
     var scheduleId:Int = 0;
@@ -28,7 +28,22 @@ struct ScheEvent{
     var organizations : String;
     var date : String;
 }
+struct Speaker{
+    var name : String;
+    var title : String;
+    var profile_pic : UIImage;
+}
 protocol EventScheProtocol
 {
     func didSelectCell(eventCell : EventCell);
 }
+
+protocol TableButtonDelegate {
+    func buttonClicked(at path: IndexPath);
+}
+
+protocol TableDetailParentDelegate {
+    func backClicked();
+    func speakerClicked(name speaker: String);
+}
+
