@@ -15,6 +15,7 @@ class SpeakerCell : UITableViewCell {
     
     @IBOutlet weak var speakerProfileImage: UIImageView!
     private var speaker : Speaker!;
+    @IBOutlet weak var coverButton: ZFRippleButton!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -67,6 +67,14 @@ class EventLoader{
         viewController.initData(event)
         return viewController
     }
+    
+    static func generateSpeakerDetailViewController(_ speaker: Speaker) -> SpeakerDetailViewController{
+        let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let viewController = sb.instantiateViewController(withIdentifier: "SpeakerDetailViewController") as! SpeakerDetailViewController
+        //let viewController = EventDetailViewController.init(event)
+        viewController.initData(speaker: speaker)
+        return viewController
+    }
     static func getEventSpeakers(_ event: ScheEvent)->[Speaker]?{
         return nil
     }

@@ -99,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="39a-ck-d7y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="unusedCell" id="39a-ck-d7y">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="39a-ck-d7y" id="TCP-ZW-ZCN">
@@ -349,7 +349,7 @@
                                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="date and location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s7-wi-3dg">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="date and location" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8s7-wi-3dg">
                                                                     <rect key="frame" x="15" y="70" width="290" height="17.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17.5" id="PaX-7x-mMZ"/>
@@ -480,21 +480,40 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Ls-fV7" userLabel="coverButton" customClass="ZFRippleButton" customModule="asce_ios" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                            <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                                            <color key="value" red="0.75131557640000002" green="0.74828033650000003" blue="0.74632415029999999" alpha="0.6969630282" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="ripplePercent">
+                                                            <real key="value" value="200"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Oe4-sY-Rvw" firstAttribute="top" secondItem="ha5-Iv-Gvd" secondAttribute="bottom" constant="1" id="4T3-EW-okD"/>
                                                 <constraint firstItem="u2L-CS-i8p" firstAttribute="leading" secondItem="vkW-pg-OrS" secondAttribute="leading" constant="15" id="4my-AW-m25"/>
+                                                <constraint firstAttribute="trailing" secondItem="XHU-Ls-fV7" secondAttribute="trailing" id="5um-jx-bmO"/>
+                                                <constraint firstItem="XHU-Ls-fV7" firstAttribute="top" secondItem="vkW-pg-OrS" secondAttribute="top" id="JzM-n1-3qi"/>
                                                 <constraint firstAttribute="trailing" secondItem="ha5-Iv-Gvd" secondAttribute="trailing" constant="15" id="KVo-Sb-WHX"/>
                                                 <constraint firstAttribute="trailing" secondItem="Oe4-sY-Rvw" secondAttribute="trailing" constant="15" id="SUH-Mq-nNB"/>
                                                 <constraint firstItem="u2L-CS-i8p" firstAttribute="top" secondItem="vkW-pg-OrS" secondAttribute="top" constant="5" id="YLD-WB-KnC"/>
                                                 <constraint firstAttribute="bottom" secondItem="u2L-CS-i8p" secondAttribute="bottom" constant="5" id="Zxq-ol-0dz"/>
                                                 <constraint firstItem="Oe4-sY-Rvw" firstAttribute="leading" secondItem="u2L-CS-i8p" secondAttribute="trailing" constant="15" id="fOM-Yv-AKs"/>
+                                                <constraint firstAttribute="bottom" secondItem="XHU-Ls-fV7" secondAttribute="bottom" id="hGf-g6-3C9"/>
                                                 <constraint firstItem="ha5-Iv-Gvd" firstAttribute="top" secondItem="vkW-pg-OrS" secondAttribute="top" constant="5" id="pkt-rL-uKG"/>
                                                 <constraint firstAttribute="bottom" secondItem="Oe4-sY-Rvw" secondAttribute="bottom" constant="5" id="q79-z1-b5g"/>
                                                 <constraint firstItem="ha5-Iv-Gvd" firstAttribute="leading" secondItem="u2L-CS-i8p" secondAttribute="trailing" constant="14" id="tEf-RW-KRi"/>
+                                                <constraint firstItem="XHU-Ls-fV7" firstAttribute="leading" secondItem="vkW-pg-OrS" secondAttribute="leading" id="zXy-9a-ieK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="coverButton" destination="XHU-Ls-fV7" id="n0t-ug-LXQ"/>
                                             <outlet property="speakerNameLabel" destination="ha5-Iv-Gvd" id="HoC-qj-9SK"/>
                                             <outlet property="speakerProfileImage" destination="u2L-CS-i8p" id="MLZ-BF-X5L"/>
                                             <outlet property="speakerTitleLabel" destination="Oe4-sY-Rvw" id="KzU-Bb-2p3"/>
