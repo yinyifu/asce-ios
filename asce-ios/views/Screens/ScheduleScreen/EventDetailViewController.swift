@@ -24,8 +24,8 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     
     func initData(_ event:ScheEvent){
         self.event = event
-        let speakers = event.speakers
-        if let speakersexists = speakers{
+        let speakersexists = event.speakers!
+        if speakersexists.count > 0{
             self.speakers = []
             let strfg = speakersexists.split(separator: ",")
             for ele in strfg {
@@ -52,6 +52,18 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if(scrollView.contentOffset.y <= 0){
+            scrollView.contentOffset = CGPoint.zero
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            
+           self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+        }else{
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.first!;
