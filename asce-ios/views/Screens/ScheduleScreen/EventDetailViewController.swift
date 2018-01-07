@@ -55,15 +55,6 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if(scrollView.contentOffset.y <= 0){
-            scrollView.contentOffset = CGPoint.zero
-            self.navigationController?.navigationBar.tintColor = UIColor.white
-            
-           self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
-        }else{
-            self.navigationController?.navigationBar.tintColor = UIColor.white
-        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.first!;

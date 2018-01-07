@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class EventMapViewController : UIViewController
+class EventMapViewController : UITabBarController
 {
     override func viewDidLoad() {
         
