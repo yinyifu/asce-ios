@@ -43,7 +43,7 @@ class EventLoader{
         let horray : Array<[String : Any]> = EventLoader.db.loadDataFromDB(query: query, tname: tname)
         var newRay = Array<Speaker>()
         for dict in horray{
-            if let imageData : Data = dict["profile_pic"]! as! Data{
+            if let imageData : Data = dict["profile_pic"]! as? Data{
                 print(imageData)
                 let image = UIImage.init(data: imageData)!
                 let newevent:Speaker = Speaker(name: dict["name"]! as! String, title : dict["title"]! as! String, profile_pic : image);

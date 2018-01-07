@@ -44,7 +44,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         
         self.eventDetailTableView.delegate = self
         self.eventDetailTableView.dataSource = self
-        
+        self.eventDetailTableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,14 +58,22 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         if(section == EventDetailViewController.headerSectionIndex){
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailHeader") as! EventDetailHeaderCell
             cell.initData(self.event)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }else if(section == EventDetailViewController.speakersSectionIndex){
+            if(indexPath.row == 0){
+                let cell = tableView.dequeueReusableCell(withIdentifier: "DetailSpeakerHeader")!;
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                return cell
+            }
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailSpeaker") as! SpeakerCell
-            cell.initDate(self.speakers![indexPath.row])
+            cell.initDate(self.speakers![indexPath.row-1])
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailDesc") as! DescriptionCell
             cell.initData(self.event.desc!)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }
     }
@@ -75,14 +83,25 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             
             return 170
         }else if(section == EventDetailViewController.speakersSectionIndex){
-            
+            if(indexPath.row == 0){
+                return 25
+            }
             return 48
         }else{
             let dcell = tableView.dequeueReusableCell(withIdentifier: "DetailDesc") as! DescriptionCell
+            
             return dcell.heightForCell(withText: self.event.desc!)
         }
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        return
+    }
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        return
+    }
+    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == EventDetailViewController.headerSectionIndex){
             return 1
@@ -90,7 +109,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             if speakers == nil{
                 return 0
             }
-            return speakers!.count
+            return speakers!.count + 1
         }else if(section == EventDetailViewController.descriptionSectionIndex){
             return 1
         }

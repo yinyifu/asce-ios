@@ -434,8 +434,29 @@
                                             <outlet property="titleLabel" destination="mjp-YJ-SkE" id="D72-hr-8fc"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailSpeakerHeader" rowHeight="25" id="veh-7l-Zhu">
+                                        <rect key="frame" x="0.0" y="222" width="320" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="veh-7l-Zhu" id="bUq-j6-0mM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="24.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speakers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzN-h1-aap">
+                                                    <rect key="frame" x="15" y="5.5" width="290" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fzN-h1-aap" firstAttribute="leading" secondItem="bUq-j6-0mM" secondAttribute="leading" constant="15" id="A8z-uD-0yf"/>
+                                                <constraint firstAttribute="trailing" secondItem="fzN-h1-aap" secondAttribute="trailing" constant="15" id="dVD-aR-QvC"/>
+                                                <constraint firstItem="fzN-h1-aap" firstAttribute="centerY" secondItem="bUq-j6-0mM" secondAttribute="centerY" id="uxv-7Z-HYI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailSpeaker" id="pGY-GI-EZ0" customClass="SpeakerCell" customModule="asce_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="222" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="247" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pGY-GI-EZ0" id="vkW-pg-OrS">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -480,7 +501,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailDesc" rowHeight="164" id="M7V-8a-L0G" customClass="DescriptionCell" customModule="asce_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="266" width="320" height="164"/>
+                                        <rect key="frame" x="0.0" y="291" width="320" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M7V-8a-L0G" id="0ZH-43-r4Y">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="163.5"/>
