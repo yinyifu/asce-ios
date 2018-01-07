@@ -11,7 +11,7 @@ import CoreData
 import TwitterKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate { 
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate{
     var window: UIWindow?
     let consumer_key: String = "VGALxbf0t3DLpGZ3nexIJv2g3"
     let consumer_secret: String = "IzIH36MpXyAMLdvUEMPBkKGebelqHoSbLPrOFfTX6oupA0LK7S"
