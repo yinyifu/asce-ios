@@ -30,41 +30,6 @@
             </objects>
             <point key="canvasLocation" x="2012" y="-1677"/>
         </scene>
-        <!--Facebook View Controller-->
-        <scene sceneID="0MA-yA-2t5">
-            <objects>
-                <viewController storyboardIdentifier="FacebookStoryBoard" id="LTg-DZ-AaT" customClass="FacebookViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ffM-z5-XeY"/>
-                        <viewControllerLayoutGuide type="bottom" id="dDN-sX-EMN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a8c-nh-tb1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEh-de-Sdn">
-                                <rect key="frame" x="0.0" y="318.5" width="375" height="30"/>
-                                <state key="normal" title="Login to Your Facebook"/>
-                                <connections>
-                                    <action selector="onClick:" destination="LTg-DZ-AaT" eventType="touchUpInside" id="MOe-w1-adx"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="hEh-de-Sdn" firstAttribute="leading" secondItem="a8c-nh-tb1" secondAttribute="leading" id="Gvv-gB-pm2"/>
-                            <constraint firstItem="hEh-de-Sdn" firstAttribute="trailing" secondItem="a8c-nh-tb1" secondAttribute="trailing" id="YkH-Gc-uFy"/>
-                            <constraint firstItem="hEh-de-Sdn" firstAttribute="centerY" secondItem="a8c-nh-tb1" secondAttribute="centerY" id="dpj-qu-BbH"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="BUTTON" destination="hEh-de-Sdn" id="jJB-ag-iFr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uJv-OC-FOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5773.6000000000004" y="-1676.311844077961"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="nVo-Sx-eiD">
             <objects>

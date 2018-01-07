@@ -30,7 +30,6 @@
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
 		B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */ = {isa = PBXBuildFile; fileRef = B9C29E9F1FFA9393004E914F /* ascedb.sql */; };
 		B9C29EA21FFA9C18004E914F /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C29EA11FFA9C18004E914F /* EventCell.xib */; };
-		B9C29EA71FFA9CEC004E914F /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C29EA61FFA9CEC004E914F /* FacebookViewController.swift */; };
 		B9C29EAD1FFAA337004E914F /* SponsorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C29EAB1FFAA2F8004E914F /* SponsorTableViewCell.swift */; };
 		B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */; };
 		B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */; };
@@ -107,7 +106,6 @@
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B9C29E9F1FFA9393004E914F /* ascedb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ascedb.sql; sourceTree = "<group>"; };
 		B9C29EA11FFA9C18004E914F /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
-		B9C29EA61FFA9CEC004E914F /* FacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		B9C29EAB1FFAA2F8004E914F /* SponsorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorTableViewCell.swift; sourceTree = "<group>"; };
 		B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataClasses.swift; sourceTree = "<group>"; };
 		B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLoader.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 		5FCDB2281FF229DD00D638A8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B9C29EA81FFA9CF5004E914F /* FacebookScreen */,
 				5FCDB2271FF2296E00D638A8 /* TwitterScreen */,
 				5FCDB2251FF2295800D638A8 /* EntertainmentScreen */,
 				5FCDB2241FF2294E00D638A8 /* EventMapScreen */,
@@ -271,14 +268,6 @@
 				B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B9C29EA81FFA9CF5004E914F /* FacebookScreen */ = {
-			isa = PBXGroup;
-			children = (
-				B9C29EA61FFA9CEC004E914F /* FacebookViewController.swift */,
-			);
-			path = FacebookScreen;
 			sourceTree = "<group>";
 		};
 		B9DF2F0C1FF9BAE700F99037 /* Schedule */ = {
@@ -503,7 +492,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DF2F0B1FF9BA5F00F99037 /* Database.swift in Sources */,
-				B9C29EA71FFA9CEC004E914F /* FacebookViewController.swift in Sources */,
 				B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */,
 				B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */,
 				5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */,
