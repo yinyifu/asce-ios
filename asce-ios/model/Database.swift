@@ -86,7 +86,6 @@ class Database : NSObject{
         // get the table names
         var columnStatement : OpaquePointer?
         var name_array : [String] = [];
-        var type_array : [Int32] = [];
         if(sqlite3_prepare_v2(sqlDatabase, "PRAGMA table_info(\(tablename))", -1, &columnStatement, nil) != SQLITE_OK){
             fatalError("SQL getting column names error.")
         }else{

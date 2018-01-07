@@ -25,6 +25,7 @@
 		B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */; };
 		B957CD052000728500FE935D /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD042000728500FE935D /* SpeakerCell.swift */; };
 		B957CD07200078A600FE935D /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD06200078A600FE935D /* DescriptionCell.swift */; };
+		B96528ED20027D8A00D498F5 /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */; };
 		B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
 		B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */ = {isa = PBXBuildFile; fileRef = B9C29E9F1FFA9393004E914F /* ascedb.sql */; };
@@ -101,6 +102,7 @@
 		B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHeaderCell.swift; sourceTree = "<group>"; };
 		B957CD042000728500FE935D /* SpeakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
 		B957CD06200078A600FE935D /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B9C29E9F1FFA9393004E914F /* ascedb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ascedb.sql; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				5FCDB1D71FF21E4500D638A8 /* SpeakerViewController.swift */,
 				5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */,
 				B957CCF81FFE9C0C00FE935D /* Speaker.xib */,
+				B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */,
 			);
 			path = SpeakerScreen;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
 				B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */,
 				B9DF2F071FF9B91E00F99037 /* EventViewController.swift in Sources */,
+				B96528ED20027D8A00D498F5 /* SpeakerDetailViewController.swift in Sources */,
 				5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */,
 				5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */,
 				5F7C97F21FEC66640007F8E4 /* TwitterViewController.swift in Sources */,
