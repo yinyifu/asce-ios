@@ -15,6 +15,7 @@ with open('speakers.txt', 'r') as infile:
 		c.execute("INSERT INTO Speaker (name, title, profile_pic) VALUES (?, ?, ?)" , (name, title,ablob))
 		
 		name = infile.readline().strip()
+		print(ablob)
 		if(name == ""):
 			break
 		title =	infile.readline().strip()

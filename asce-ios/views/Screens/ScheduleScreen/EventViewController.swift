@@ -48,12 +48,12 @@ class EventViewController : UITableViewController, TableButtonDelegate, TableDet
     func registerCells(){
         let classname :String = NSStringFromClass(EventCell.self)
         self.tableView.register(UINib.init(nibName: classname, bundle: nil), forCellReuseIdentifier: classname)
-        let Columns = EventLoader.db.loadDataFromDB(query: "SELECT DISTINCT date FROM Event");
+        let Columns = EventLoader.db.loadDataFromDB(query: "SELECT DISTINCT date FROM Event", tname: "Event") as! [[String : String]];
         self.columnCount = Columns.count
         self.columnDatas = Columns
         // do the column initialization here
         for i in 0...self.columnCount!-1{
-            let temp = EventLoader.getQueryEvents(query: "SELECT * FROM Event WHERE date = '\(Columns[i]["0"]!)\'");
+            let temp = EventLoader.getQueryEvents(query: "SELECT * FROM Event WHERE date = '\(Columns[i]["0"]!)\'", tname: "Event");
             self.dataAccordingToSection!.append(temp)
         }
     }
@@ -86,7 +86,7 @@ class EventViewController : UITableViewController, TableButtonDelegate, TableDet
         let currentCell : EventCell = tableView.cellForRow(at: indexPath)! as! EventCell
         let date : String = currentCell.date!
         let time = currentCell.startLabel.text!
-        let ary = EventLoader.db.loadDataFromDB(query: "SELECT * from Event WHERE date = '\(date)' and starttime = '\(time)'")
+        let ary = EventLoader.db.loadDataFromDB(query: "SELECT * from Event WHERE date = '\(date)' and starttime = '\(time)'", tname: "Event")
         print(ary)
         
         

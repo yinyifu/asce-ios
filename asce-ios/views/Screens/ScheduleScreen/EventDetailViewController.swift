@@ -30,7 +30,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             let strfg = speakersexists.split(separator: ",")
             for ele in strfg {
                 let strfgnospace = ele.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speaker where name = '\(strfgnospace)'")
+                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speaker where name = '\(strfgnospace)'", tname: "Speaker")
                 self.speakers!.append(contentsOf: speaker)
                 print(speaker)
             }
@@ -91,9 +91,10 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
                 return 0
             }
             return speakers!.count
-        }else{
+        }else if(section == EventDetailViewController.descriptionSectionIndex){
             return 1
         }
+        return 0
     }
     func updateView(){
         

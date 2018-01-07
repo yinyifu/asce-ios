@@ -14,7 +14,7 @@ import SQLite3
 class Database : NSObject{
     private var dbFileName : String!;
     private var documentDir : String!;
-    private var dbResult : Array<[String: String]>! = [];
+    private var dbResult : Array<[String: Any]>! = [];
     private var arrColumnNames : Array<String>! = [];
     var affectedRows : Int32!;
     private var lastInsertedId: Int64!;
@@ -44,12 +44,23 @@ class Database : NSObject{
                 try FileManager.default.copyItem(atPath: sourcePath, toPath: destinationPath)
                 
             }catch{
-                print("File manager copy item failed")
+                fatalError("File manager copy item failed")
             }
         }
     }
-
-    private func runQuery(query:String, queryExe: Bool, name_array : Array<String>){
+    /**
+     
+     To perform the sql operation from query and other information.
+     - Author:
+        Web Tutorials + Yifu Yin
+     - Parameters:
+        - query: User query that is either select all or select single column.
+        - queryExe: true is query is SELECT, false otherwise
+        - tablename: the name of table the user is selecting from.
+     - Remark: Does not support multiple column select.
+     
+    */
+    private func runQuery(query:String, queryExe: Bool, tablename : String){
         //empty database
         if(self.dbResult.count > 0){
             self.dbResult.removeAll()
@@ -57,6 +68,8 @@ class Database : NSObject{
         if(self.arrColumnNames.count > 0){
             self.arrColumnNames.removeAll()
         }
+        
+        
         
         // open database
         var sqlDatabase : OpaquePointer?;
@@ -70,6 +83,19 @@ class Database : NSObject{
         if(sqlite3_open(buffer, &sqlDatabase) != SQLITE_OK){
             fatalError("SQL open error.")
         }
+        // get the table names
+        var columnStatement : OpaquePointer?
+        var name_array : [String] = [];
+        var type_array : [Int32] = [];
+        if(sqlite3_prepare_v2(sqlDatabase, "PRAGMA table_info(\(tablename))", -1, &columnStatement, nil) != SQLITE_OK){
+            fatalError("SQL getting column names error.")
+        }else{
+            while(sqlite3_step(columnStatement) == SQLITE_ROW){
+                let columnNameChars : UnsafePointer<UInt8>! = sqlite3_column_text(columnStatement, 1)
+                let name = String.init(cString: columnNameChars)
+                name_array.append(name)
+           }
+        }
         
         //prepare database
         var compiledStatement : OpaquePointer?
@@ -79,30 +105,45 @@ class Database : NSObject{
         
         //query
         if(!queryExe){
-            var arrDataRow : [String : String]!;
+            var arrDataRow : [String : Any]!;
+            
             while(sqlite3_step(compiledStatement) == SQLITE_ROW){
                 arrDataRow = [:];
                 let totalColumns = sqlite3_column_count(compiledStatement)
                 for i in 0...totalColumns-1{
-                    var useNameChars : Bool = true;
-                    if(name_array.count != totalColumns){
-                        print("Name array is different than database data!")
-                        useNameChars = false;
+                    let type : Int32 = sqlite3_column_type(compiledStatement, i)
+                    if(name_array.count != totalColumns && totalColumns != 1){
+                        fatalError("Name array is different than database data!")
                     }
-                    
-                    let dbDataAsChars : UnsafePointer<UInt8>! = sqlite3_column_text(compiledStatement, i)
-                    if(dbDataAsChars == nil){
-                        fatalError("Database string as nil")
+                    if(totalColumns == 1){
+                        name_array = ["0"]
                     }
-                    
-                    let result = String.init(cString: dbDataAsChars)
-                    if(useNameChars){
-                        arrDataRow[name_array[Int(i)]] = result
+                    if(type == SQLITE_BLOB){
+                        let size : Int32 = sqlite3_column_bytes(compiledStatement, i)
+                        
+                        let data : UnsafeRawPointer! = sqlite3_column_blob(compiledStatement, i)
+                        if(data == nil){
+                            fatalError("Database string as nil")
+                        }
+                        let blob : Data = Data.init(bytes: data, count: Int(size))
+                        arrDataRow[name_array[Int(i)]] = blob
+                        if(self.arrColumnNames.count != totalColumns){
+                            self.arrColumnNames.append("profile_pic")
+                        }
                     }else{
-                        arrDataRow[String(i)] = result
-                    }
-                    if(self.arrColumnNames.count != totalColumns){
-                        self.arrColumnNames.append(result)
+                    
+                        let dbDataAsChars : UnsafePointer<UInt8>! = sqlite3_column_text(compiledStatement, i)
+                        if(dbDataAsChars == nil){
+                            fatalError("Database string as nil")
+                        }
+                        
+                        let result = String.init(cString: dbDataAsChars)
+                        
+                        arrDataRow[name_array[Int(i)]] = result
+                        
+                        if(self.arrColumnNames.count != totalColumns){
+                            self.arrColumnNames.append(result)
+                        }
                     }
                 }
                 if(arrDataRow.count > 0){
@@ -122,12 +163,12 @@ class Database : NSObject{
         sqlite3_close_v2(sqlDatabase)
     }
     
-    func loadDataFromDB(query:String) -> Array<[String:String]>{
-        self.runQuery(query: query, queryExe: false, name_array: Constants.nameArray)
+    func loadDataFromDB(query:String, tname: String) -> Array<[String:Any]>{
+        self.runQuery(query: query, queryExe: false, tablename: tname)
         return self.dbResult
     }
-    func executeQuery(query:String){
-        self.runQuery(query: query, queryExe: true, name_array: Constants.nameArray)
+    func executeQuery(query:String, tname: String){
+        self.runQuery(query: query, queryExe: true, tablename: tname)
     }
     
     
