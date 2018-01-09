@@ -9,8 +9,12 @@
 import UIKit
 
 class PdfViewerController : UIViewController{
+    var pdfAy : String?;
+    private var fresh : Bool = true;
+    
     
     func initData(linkForPdf : String) {
+        pdfAy = linkForPdf
         if let url = Bundle.main.url(forResource: linkForPdf, withExtension: "pdf"){
             let webview = UIWebView.init(frame: self.view.frame)
             let urlRequest = URLRequest.init(url: url)
@@ -18,6 +22,8 @@ class PdfViewerController : UIViewController{
             self.view.addSubview(webview)
             self.tabBarItem.title = linkForPdf
             self.tabBarItem.image = UIImage.init(named: "floor2")
+            self.fresh = false
         }
+        
     }
 }

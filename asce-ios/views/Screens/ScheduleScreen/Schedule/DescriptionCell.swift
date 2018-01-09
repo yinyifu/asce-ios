@@ -13,7 +13,9 @@ class DescriptionCell : UITableViewCell {
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var descriptionCover: UIView!
     
+    private var desc : String?;
     func heightForCell(withText text:String)->CGFloat{
+      //  return 99
         let view = textViewWithText(text: text)
         let sizeShouldFit = view.sizeThatFits(view.frame.size)
         return sizeShouldFit.height
@@ -23,8 +25,13 @@ class DescriptionCell : UITableViewCell {
         initData(text)
         return descriptionView;
     }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
     func initData(_ desc:String){
-        descriptionView.textColor = UIColor.color(fromHexString: "#A0A0A0")
+        //self.desc = desc
+        descriptionView.textColor = UIColor.color(fromHexString: "#707070")
         descriptionView.text = desc
     }
 }

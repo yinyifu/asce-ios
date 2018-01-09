@@ -22,9 +22,9 @@ class GlobalMapViewController: UIViewController, CLLocationManagerDelegate{
         self.manager = CLLocationManager.init()
        self.manager.delegate = self;
         self.manager.startUpdatingLocation()
-        var display = UIImage(named : "door")
+        var display = UIImage.init(cgImage: (UIImage.init(named: "door")?.cgImage)!, scale: 1.7, orientation: UIImageOrientation.down)
         
-        self.tabBarItem.image = display?.stretchableImage(withLeftCapWidth: 32, topCapHeight: 32)
+        self.tabBarItem.image = display
     }
     
     func initData(_ destinat : CLLocation){
@@ -35,6 +35,7 @@ class GlobalMapViewController: UIViewController, CLLocationManagerDelegate{
         guard dest != nil else{
             return
         }
+        self.coverView.isHidden = true;
         if(self.heading != nil){
             self.mapview.camera.heading = self.heading!.trueHeading
             self.mapview.camera.pitch = 45

@@ -29,6 +29,8 @@
 		B96528ED20027D8A00D498F5 /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */; };
 		B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */; };
 		B97D77A92004968700427071 /* PdfViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97D77A82004968700427071 /* PdfViewerController.swift */; };
+		B97D77AB20049D0E00427071 /* YMC agenda.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B97D77AA20049D0E00427071 /* YMC agenda.pdf */; };
+		B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97D77AC2004ABFC00427071 /* DescriptionCell.xib */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
 		B9BBC60520044A1B0072B911 /* Second Level.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B9BBC60320044A1B0072B911 /* Second Level.pdf */; };
 		B9BBC60620044A1B0072B911 /* Mezzanine.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B9BBC60420044A1B0072B911 /* Mezzanine.pdf */; };
@@ -109,6 +111,8 @@
 		B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B97D77A82004968700427071 /* PdfViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewerController.swift; sourceTree = "<group>"; };
+		B97D77AA20049D0E00427071 /* YMC agenda.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "YMC agenda.pdf"; sourceTree = "<group>"; };
+		B97D77AC2004ABFC00427071 /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B9BBC60320044A1B0072B911 /* Second Level.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Second Level.pdf"; sourceTree = "<group>"; };
 		B9BBC60420044A1B0072B911 /* Mezzanine.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Mezzanine.pdf; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 		B9BBC60220044A0F0072B911 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
+				B97D77AA20049D0E00427071 /* YMC agenda.pdf */,
 				B9BBC60420044A1B0072B911 /* Mezzanine.pdf */,
 				B9BBC60320044A1B0072B911 /* Second Level.pdf */,
 			);
@@ -297,6 +302,7 @@
 				B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */,
 				B957CD042000728500FE935D /* SpeakerCell.swift */,
 				B957CD06200078A600FE935D /* DescriptionCell.swift */,
+				B97D77AC2004ABFC00427071 /* DescriptionCell.xib */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -483,7 +489,9 @@
 				B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
 				B9BBC60520044A1B0072B911 /* Second Level.pdf in Resources */,
+				B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */,
 				B9BBC60620044A1B0072B911 /* Mezzanine.pdf in Resources */,
+				B97D77AB20049D0E00427071 /* YMC agenda.pdf in Resources */,
 				B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
 				5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */,

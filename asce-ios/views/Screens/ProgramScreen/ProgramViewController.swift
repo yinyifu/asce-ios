@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-class ProgramViewController : UIViewController
+class ProgramViewController : PdfViewerController
 {
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+        self.initData(linkForPdf: "YMC agenda")
     }
 }
