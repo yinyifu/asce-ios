@@ -25,11 +25,15 @@ class SpeakerDetailViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:SpeakerDetailViewCell = tableView.dequeueReusableCell(withIdentifier: "SpeakerDetailViewCell", for: indexPath) as! SpeakerDetailViewCell
         cell.labelForName.text = speakers[0].name
         cell.labelForTitle.text = speakers[0].title
         cell.profileImage.image = speakers[0].profile_pic
         return cell
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 1000
     }
 }

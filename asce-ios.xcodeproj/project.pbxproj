@@ -84,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewCell.swift; sourceTree = "<group>"; };
+		5F13EDF020048F46000B1F3E /* speakerPictures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = speakerPictures; path = "/Users/baichengchen/Documents/GitHub/asce-ios/speakerPictures"; sourceTree = "<absolute>"; };
 		5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
 		5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		5F7C97E51FEC5BFA0007F8E4 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
@@ -274,6 +275,7 @@
 		B92E29A61FF7450B00C43E7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F13EDF020048F46000B1F3E /* speakerPictures */,
 				5F7C97E61FEC5BFA0007F8E4 /* TwitterKit.framework */,
 				5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */,
 				5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */,
