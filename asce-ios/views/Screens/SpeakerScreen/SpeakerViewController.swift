@@ -16,6 +16,7 @@ class SpeakerViewController : UITableViewController
     var lastnameInits: Array<String> = Array()
     var lastnameCounts: Array<Int> = Array()
     var namesInSections: Array<Array<String>> = Array<Array>()
+    var speakers:Array<Array<Speaker>> = Array<Array>()
     
     override func viewDidLoad(){
         for events in schedules{
@@ -28,6 +29,17 @@ class SpeakerViewController : UITableViewController
             }
         }
         sortNamesByLastName()
+        
+        for namesecs in namesInSections
+        {
+            var secs:Array<Speaker> = Array()
+            for name in namesecs
+            {
+                secs.append(Speaker(name: name, title: name, profile_pic: UIImage(named:"Apple")!))
+            }
+            speakers.append(secs)
+        }
+        
     }
     func sortNamesByLastName()
     {
@@ -104,17 +116,21 @@ class SpeakerViewController : UITableViewController
         return lastnameInits[section]
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SpeakerTableViewCell", for: indexPath) as! SpeakerTableViewCell
+        let cell:SpeakerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SpeakerTableViewCell", for: indexPath) as! SpeakerTableViewCell
+        
         cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
         let Name = namesInSections[indexPath.section][indexPath.row]
         cell.nameLabel?.text = Name
         //cell.profileImage?.image = UIImage(named:Name)
         cell.profileImage.image = UIImage(named:"Apple")
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath)
+        let speaker:Speaker = speakers[indexPath.section][indexPath.row]
+        let speakerViewController = EventLoader.generateSpeakerDetailViewController(speaker)
+        self.navigationController!.pushViewController(speakerViewController, animated: true)
     }
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return lastnameInits
