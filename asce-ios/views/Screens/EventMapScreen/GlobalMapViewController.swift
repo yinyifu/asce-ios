@@ -22,6 +22,9 @@ class GlobalMapViewController: UIViewController, CLLocationManagerDelegate{
         self.manager = CLLocationManager.init()
        self.manager.delegate = self;
         self.manager.startUpdatingLocation()
+        var display = UIImage(named : "door")
+        
+        self.tabBarItem.image = display?.stretchableImage(withLeftCapWidth: 32, topCapHeight: 32)
     }
     
     func initData(_ destinat : CLLocation){

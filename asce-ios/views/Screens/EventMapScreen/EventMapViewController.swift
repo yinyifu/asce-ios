@@ -17,6 +17,5 @@ class EventMapViewController : UITabBarController
         let second = self.viewControllers![2] as! PdfViewerController
         mezz.initData(linkForPdf: "Mezzanine")
         second.initData(linkForPdf: "Second Level")
-        
     }
 }

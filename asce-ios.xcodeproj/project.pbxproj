@@ -20,7 +20,6 @@
 		5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1DF1FF21ED100D638A8 /* EventMapViewController.swift */; };
 		5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1E11FF21EF100D638A8 /* EntertainmentViewController.swift */; };
 		5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */; };
-		B9438D5520043BA0002C457E /* PdfViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9438D5420043BA0002C457E /* PdfViewerController.swift */; };
 		B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9438D5620043D40002C457E /* GlobalMapViewController.swift */; };
 		B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B957CCF81FFE9C0C00FE935D /* Speaker.xib */; };
 		B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */; };
@@ -29,6 +28,7 @@
 		B957CD07200078A600FE935D /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD06200078A600FE935D /* DescriptionCell.swift */; };
 		B96528ED20027D8A00D498F5 /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */; };
 		B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */; };
+		B97D77A92004968700427071 /* PdfViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97D77A82004968700427071 /* PdfViewerController.swift */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
 		B9BBC60520044A1B0072B911 /* Second Level.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B9BBC60320044A1B0072B911 /* Second Level.pdf */; };
 		B9BBC60620044A1B0072B911 /* Mezzanine.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B9BBC60420044A1B0072B911 /* Mezzanine.pdf */; };
@@ -100,7 +100,6 @@
 		B92E29A41FF744DF00C43E7B /* DC-Theme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "DC-Theme.bundle"; sourceTree = "<group>"; };
 		B92E29A51FF744DF00C43E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		B9438D5420043BA0002C457E /* PdfViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewerController.swift; sourceTree = "<group>"; };
 		B9438D5620043D40002C457E /* GlobalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMapViewController.swift; sourceTree = "<group>"; };
 		B957CCF81FFE9C0C00FE935D /* Speaker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Speaker.xib; sourceTree = "<group>"; };
 		B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		B957CD06200078A600FE935D /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
 		B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B97D77A82004968700427071 /* PdfViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewerController.swift; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B9BBC60320044A1B0072B911 /* Second Level.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Second Level.pdf"; sourceTree = "<group>"; };
 		B9BBC60420044A1B0072B911 /* Mezzanine.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Mezzanine.pdf; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				5FCDB1DF1FF21ED100D638A8 /* EventMapViewController.swift */,
-				B9438D5420043BA0002C457E /* PdfViewerController.swift */,
+				B97D77A82004968700427071 /* PdfViewerController.swift */,
 				B9438D5620043D40002C457E /* GlobalMapViewController.swift */,
 			);
 			path = EventMapScreen;
@@ -519,6 +519,7 @@
 				5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */,
 				B957CD07200078A600FE935D /* DescriptionCell.swift in Sources */,
 				5FCDB1D81FF21E4500D638A8 /* SpeakerViewController.swift in Sources */,
+				B97D77A92004968700427071 /* PdfViewerController.swift in Sources */,
 				B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
 				B9DF2EFE1FF9B81200F99037 /* Constants.swift in Sources */,
@@ -542,7 +543,6 @@
 				B9C29EAD1FFAA337004E914F /* SponsorTableViewCell.swift in Sources */,
 				5FCDB1DE1FF21EBF00D638A8 /* ProgramViewController.swift in Sources */,
 				5FCDB1D51FF21C7900D638A8 /* HomeViewController.swift in Sources */,
-				B9438D5520043BA0002C457E /* PdfViewerController.swift in Sources */,
 				B957CD052000728500FE935D /* SpeakerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
