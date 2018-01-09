@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F02B774200455B9004D0098 /* SpeakerDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */; };
+		5F13EE372004C074000B1F3E /* speakers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F13EE362004C074000B1F3E /* speakers.txt */; };
 		5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */; };
 		5F7C97E81FEC5BFA0007F8E4 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */; };
 		5F7C97E91FEC5BFA0007F8E4 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7C97E51FEC5BFA0007F8E4 /* TwitterCore.framework */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewCell.swift; sourceTree = "<group>"; };
 		5F13EDF020048F46000B1F3E /* speakerPictures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = speakerPictures; path = "/Users/baichengchen/Documents/GitHub/asce-ios/speakerPictures"; sourceTree = "<absolute>"; };
+		5F13EE362004C074000B1F3E /* speakers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = speakers.txt; sourceTree = SOURCE_ROOT; };
 		5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
 		5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		5F7C97E51FEC5BFA0007F8E4 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		B9FA4CB11FC7000400956099 /* asce-ios */ = {
 			isa = PBXGroup;
 			children = (
+				5F13EE362004C074000B1F3E /* speakers.txt */,
 				B9FA4CF11FC7057E00956099 /* model */,
 				B9FA4CEF1FC7056C00956099 /* views */,
 				B9FA4CBE1FC7000400956099 /* Assets.xcassets */,
@@ -486,6 +489,7 @@
 				B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */,
 				B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
+				5F13EE372004C074000B1F3E /* speakers.txt in Resources */,
 				B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
 				5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */,
