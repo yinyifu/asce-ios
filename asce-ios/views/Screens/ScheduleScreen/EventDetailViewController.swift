@@ -38,13 +38,20 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             self.speakers = nil;
         }
     }
-    
+    @objc
+    func bookmarkJustClicked(){
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.eventDetailTableView.delegate = self
         self.eventDetailTableView.dataSource = self
         self.eventDetailTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        // identify if the object is already bookmarked
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: self, action: #selector(bookmarkJustClicked))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,6 +63,9 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
     }
+    
+  
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.first!;
         if(section == EventDetailViewController.headerSectionIndex){
@@ -77,6 +87,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
             cell.initData(self.event.desc!)
             cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.isUserInteractionEnabled = false
             return cell
         }
     }
