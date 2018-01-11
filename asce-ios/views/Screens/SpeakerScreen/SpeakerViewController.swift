@@ -271,7 +271,8 @@ class SpeakerViewController : UITableViewController
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let speaker:Speaker = speakers[indexPath.section][indexPath.row]
+        
+        let speaker:Speaker = speakersAndModeratorsInSections[indexPath.section][indexPath.row]
         let speakerViewController = EventLoader.generateSpeakerDetailViewController(speaker)
         self.navigationController!.pushViewController(speakerViewController, animated: true)
     }
