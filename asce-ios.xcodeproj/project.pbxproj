@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F02B774200455B9004D0098 /* SpeakerDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */; };
+		5F13EE372004C074000B1F3E /* speakers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F13EE362004C074000B1F3E /* speakers.txt */; };
 		5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */; };
 		5F7C97E81FEC5BFA0007F8E4 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */; };
 		5F7C97E91FEC5BFA0007F8E4 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7C97E51FEC5BFA0007F8E4 /* TwitterCore.framework */; };
@@ -87,6 +89,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewCell.swift; sourceTree = "<group>"; };
+		5F13EDF020048F46000B1F3E /* speakerPictures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = speakerPictures; path = "/Users/baichengchen/Documents/GitHub/asce-ios/speakerPictures"; sourceTree = "<absolute>"; };
+		5F13EE362004C074000B1F3E /* speakers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = speakers.txt; sourceTree = SOURCE_ROOT; };
 		5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
 		5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		5F7C97E51FEC5BFA0007F8E4 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
@@ -167,6 +172,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F9149B920042F490076A8FE /* SpeakerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */,
+				5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */,
+			);
+			path = SpeakerDetail;
+			sourceTree = "<group>";
+		};
 		5FCDB21F1FF2290000D638A8 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,10 +192,9 @@
 		5FCDB2201FF2290F00D638A8 /* SpeakerScreen */ = {
 			isa = PBXGroup;
 			children = (
+				5F9149B920042F490076A8FE /* SpeakerDetail */,
 				5FCDB1D71FF21E4500D638A8 /* SpeakerViewController.swift */,
 				5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */,
-				B957CCF81FFE9C0C00FE935D /* Speaker.xib */,
-				B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */,
 			);
 			path = SpeakerScreen;
 			sourceTree = "<group>";
@@ -275,6 +288,7 @@
 		B92E29A61FF7450B00C43E7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F13EDF020048F46000B1F3E /* speakerPictures */,
 				5F7C97E61FEC5BFA0007F8E4 /* TwitterKit.framework */,
 				5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */,
 				5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */,
@@ -298,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				B9C29EA11FFA9C18004E914F /* EventCell.xib */,
+				B957CCF81FFE9C0C00FE935D /* Speaker.xib */,
 				B9DF2F021FF9B8C500F99037 /* EventCell.swift */,
 				B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */,
 				B957CD042000728500FE935D /* SpeakerCell.swift */,
@@ -331,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				B9BBC60220044A0F0072B911 /* PDF */,
+				5F13EE362004C074000B1F3E /* speakers.txt */,
 				B9FA4CF11FC7057E00956099 /* model */,
 				B9FA4CEF1FC7056C00956099 /* views */,
 				B9FA4CBE1FC7000400956099 /* Assets.xcassets */,
@@ -492,6 +508,7 @@
 				B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */,
 				B9BBC60620044A1B0072B911 /* Mezzanine.pdf in Resources */,
 				B97D77AB20049D0E00427071 /* YMC agenda.pdf in Resources */,
+				5F13EE372004C074000B1F3E /* speakers.txt in Resources */,
 				B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
 				5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */,
@@ -522,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DF2F0B1FF9BA5F00F99037 /* Database.swift in Sources */,
+				5F02B774200455B9004D0098 /* SpeakerDetailViewCell.swift in Sources */,
 				B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */,
 				B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */,
 				5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */,

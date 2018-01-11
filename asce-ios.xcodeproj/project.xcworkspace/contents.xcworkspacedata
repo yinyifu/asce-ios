@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/baichengchen/Documents/GitHub/asce-ios/speakerPictures">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
