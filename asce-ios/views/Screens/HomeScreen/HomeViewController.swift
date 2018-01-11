@@ -21,14 +21,14 @@ class HomeViewController : UITableViewController
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
-            return 2
-        case 1:
-            return 2
-        case 2:
-            return 2
-        default:
-            return 1
+            case 0:
+                return 2
+            case 1:
+                return 2
+            case 2:
+                return 2
+            default:
+                return 1
         }
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,11 +67,14 @@ class HomeViewController : UITableViewController
             }else{
                 let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
                 cell.initData(self.descriptionText)
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                cell.isUserInteractionEnabled = false
                 return cell;
             }
         case 1:
             if(indexPath.row == 0){
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventName")!
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
                 return cell;
             }else{
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")!
@@ -80,6 +83,7 @@ class HomeViewController : UITableViewController
         case 2:
             if(indexPath.row == 0){
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "myEventName")!
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
                 return cell;
             }else{
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "myEventCell")!

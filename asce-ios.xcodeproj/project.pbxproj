@@ -33,6 +33,7 @@
 		B97D77A92004968700427071 /* PdfViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97D77A82004968700427071 /* PdfViewerController.swift */; };
 		B97D77AB20049D0E00427071 /* YMC agenda.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B97D77AA20049D0E00427071 /* YMC agenda.pdf */; };
 		B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97D77AC2004ABFC00427071 /* DescriptionCell.xib */; };
+		B97D77AF2005225A00427071 /* HeaderImageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97D77AE2005225A00427071 /* HeaderImageTableCell.swift */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
 		B9BBC60520044A1B0072B911 /* Second Level.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B9BBC60320044A1B0072B911 /* Second Level.pdf */; };
 		B9BBC60620044A1B0072B911 /* Mezzanine.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B9BBC60420044A1B0072B911 /* Mezzanine.pdf */; };
@@ -118,6 +119,7 @@
 		B97D77A82004968700427071 /* PdfViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewerController.swift; sourceTree = "<group>"; };
 		B97D77AA20049D0E00427071 /* YMC agenda.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "YMC agenda.pdf"; sourceTree = "<group>"; };
 		B97D77AC2004ABFC00427071 /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
+		B97D77AE2005225A00427071 /* HeaderImageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderImageTableCell.swift; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B9BBC60320044A1B0072B911 /* Second Level.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Second Level.pdf"; sourceTree = "<group>"; };
 		B9BBC60420044A1B0072B911 /* Mezzanine.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Mezzanine.pdf; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				5FCDB1D41FF21C7900D638A8 /* HomeViewController.swift */,
+				B97D77AE2005225A00427071 /* HeaderImageTableCell.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				B97D77A92004968700427071 /* PdfViewerController.swift in Sources */,
 				B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
+				B97D77AF2005225A00427071 /* HeaderImageTableCell.swift in Sources */,
 				B9DF2EFE1FF9B81200F99037 /* Constants.swift in Sources */,
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
 				B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */,

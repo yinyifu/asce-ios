@@ -14,19 +14,43 @@ class GlobalMapViewController: UIViewController, CLLocationManagerDelegate{
     private var manager : CLLocationManager!
     private var heading : CLHeading?
     private var loc : CLLocation?;
-    private var dest : CLLocation?;
+    var dest : CLLocation?;
+    var hisLocation : MKMapItem?;
+    //var locationTuples : [(textField : UITextField?, mapItem : MKMapItem?)]!
     @IBOutlet weak var mapview: MKMapView!
+    @IBOutlet weak var authorizationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.manager = CLLocationManager.init()
-       self.manager.delegate = self;
-        self.manager.startUpdatingLocation()
-        var display = UIImage.init(cgImage: (UIImage.init(named: "door")?.cgImage)!, scale: 1.7, orientation: UIImageOrientation.down)
+        let display = UIImage.init(cgImage: (UIImage.init(named: "door")?.cgImage)!, scale: 1.7, orientation: UIImageOrientation.down)
         
         self.tabBarItem.image = display
+        
+        self.manager = CLLocationManager.init()
+        self.manager.delegate = self;
+        self.manager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            self.manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            self.manager.startUpdatingLocation()
+            self.mapview.camera.altitude = 1000
+            
+        }
+        let stat = CLLocationManager.authorizationStatus()
+        
+        self.hideLabelOnStatus(status: stat)
     }
     
+    
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        self.hideLabelOnStatus(status: status)
+    }
+    func hideLabelOnStatus(status : CLAuthorizationStatus){
+        if(status == CLAuthorizationStatus.authorizedAlways || status == CLAuthorizationStatus.authorizedWhenInUse){
+            self.authorizationLabel.isHidden = true;
+        }
+    }
     func initData(_ destinat : CLLocation){
         self.dest = destinat;
     }
@@ -35,15 +59,29 @@ class GlobalMapViewController: UIViewController, CLLocationManagerDelegate{
         guard dest != nil else{
             return
         }
-        self.coverView.isHidden = true;
+        
         if(self.heading != nil){
             self.mapview.camera.heading = self.heading!.trueHeading
             self.mapview.camera.pitch = 45
         }
         
-        //let camera : MKMapCamera = MKMapCamera.init(lookingAtCenter: locations[0].coordinate, fromEyeCoordinate: eyecoor, eyeAltitude: 200)
-        self.mapview.camera.centerCoordinate = locations[0].coordinate
-        
+        self.mapview.camera.centerCoordinate = dest!.coordinate
+       
+        self.coverView.isHidden = true;
+        CLGeocoder().reverseGeocodeLocation(locations.last!) {(placemarks:[CLPlacemark]?, error:Error?) in
+            if let placemarks = placemarks {
+                let placemark = placemarks[0]
+                self.hisLocation = MKMapItem.init(placemark: MKPlacemark.init(coordinate: placemark.location!.coordinate, addressDictionary: placemark.addressDictionary as! [String : Any]))
+                
+                
+                
+            }
+        };
+    }
+    
+    func formatAddressFromPlacemark(placemark: CLPlacemark) -> String {
+        return (placemark.addressDictionary!["FormattedAddressLines"] as!
+            [String]).joined(separator: ", ")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading
@@ -54,9 +92,6 @@ class GlobalMapViewController: UIViewController, CLLocationManagerDelegate{
         guard self.loc != nil else{
             return
         }
-        
-        
         self.mapview.camera.heading = newHeading.trueHeading;
-        
     }
 }
