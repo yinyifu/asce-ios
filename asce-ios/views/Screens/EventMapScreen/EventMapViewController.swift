@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 
-class EventMapViewController : UIViewController
+class EventMapViewController : UITabBarController
 {
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+        let mezz = self.viewControllers![1] as! PdfViewerController
+        let second = self.viewControllers![2] as! PdfViewerController
+        mezz.initData(linkForPdf: "Mezzanine")
+        second.initData(linkForPdf: "Second Level")
     }
 }

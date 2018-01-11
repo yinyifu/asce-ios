@@ -24,8 +24,8 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     
     func initData(_ event:ScheEvent){
         self.event = event
-        let speakers = event.speakers
-        if let speakersexists = speakers{
+        let speakersexists = event.speakers!
+        if speakersexists.count > 0{
             self.speakers = []
             let strfg = speakersexists.split(separator: ",")
             for ele in strfg {
@@ -53,6 +53,9 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.first!;
         if(section == EventDetailViewController.headerSectionIndex){
@@ -71,7 +74,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailDesc") as! DescriptionCell
+            let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
             cell.initData(self.event.desc!)
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
@@ -88,7 +91,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             }
             return 48
         }else{
-            let dcell = tableView.dequeueReusableCell(withIdentifier: "DetailDesc") as! DescriptionCell
+            let dcell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
             
             return dcell.heightForCell(withText: self.event.desc!)
         }
