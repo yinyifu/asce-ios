@@ -29,6 +29,7 @@ class SpeakerViewController : UITableViewController
         }
         sortNamesByLastName()
     }
+
     func sortNamesByLastName()
     {
         var lastnames: Array<String> = Array()

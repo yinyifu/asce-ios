@@ -19,7 +19,7 @@ class MainViewVontroller : BaseViewController{
         addChildView(storyBoardID: "EventMapStoryBoard", titleOfChildren: "Event Map", iconName: "door")
         addChildView(storyBoardID: "EntertainmentStoryBoard", titleOfChildren: "Entertainments", iconName: "dinner")
         addChildView(storyBoardID: "TwitterStoryBoard", titleOfChildren: "Twitter", iconName: "bird")
-        
+        navigationController?.navigationBar.isTranslucent = false;
        showFirstChild()
     }
 }

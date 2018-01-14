@@ -61,7 +61,9 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         return 3
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        if(scrollView.contentOffset.y < 0){
+            scrollView.contentOffset.y = 0;
+        }
     }
     
   

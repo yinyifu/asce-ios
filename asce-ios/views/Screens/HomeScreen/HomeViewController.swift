@@ -51,7 +51,7 @@ class HomeViewController : UITableViewController
             if(indexPath.row == 0){
                 return 45
             }else{
-                return 85*2+25
+                return 85
             }
         default:
             return 224.5
