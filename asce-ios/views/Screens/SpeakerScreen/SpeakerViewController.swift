@@ -9,136 +9,85 @@
 import Foundation
 import UIKit
 
-class SpeakerViewController : UITableViewController
+class SpeakerViewController : UITableViewController, TableButtonDelegate
 {
- /*   private var schedules = EventLoader.schedulee2!
-    var names: Array<String> = Array()
-    var lastnameInits: Array<String> = Array()
-    var lastnameCounts: Array<Int> = Array()
-    var namesInSections: Array<Array<String>> = Array<Array>()
- */
-/*
-    override func viewDidLoad(){
-        for events in schedules{
-            for nameSS in (events.speakers?.split(separator: ","))!{
-                
-                let name = String(nameSS).trimmingCharacters(in: .whitespacesAndNewlines)
-                if(!names.contains(name)){
-                    names.append(name)
-                }
-            }
-        }
-        sortNamesByLastName()
-        
+    
+    @objc func buttonClicked(at path: IndexPath) {
+        let vc = EventLoader.generateSpeakerDetailViewController(self.returnSpeaker(at: path))
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-*/
-/*
-    func sortNamesByLastName()
-    {
-        var lastnames: Array<String> = Array()
-        for name in names
-        {
-            var nameSeg = name.split(separator: " ")
-            lastnames.append(String(nameSeg[nameSeg.count-1]))
-        }
-        var x = 0,y = 0;
-        while x < lastnames.count
-        {
-            y = x+1;
-            while y < lastnames.count
-            {
-                
-                if(lastnames[x].compare(lastnames[y]).rawValue>0)
-                {
-                    let lastname = lastnames[x];
-                    lastnames[x] = lastnames[y];
-                    lastnames[y] = lastname;
-                    
-                    let name = names[x];
-                    names [x] = names[y];
-                    names[y] = name;
-                }
-               y=y+1
-            }
-            x=x+1
-        }
-        var ct = 0
-        var nct = 0
-        var As:Array<String> = Array()
-        for name in lastnames
-        {
-            let li = String(Array(name)[0])
-            if(!lastnameInits.contains(li))
-            {
-                if !(ct==0)
-                {
-                    namesInSections.append(As)
-                    As = Array()
-                    As.append(names[nct])
-                    lastnameCounts.append(ct)
-                    ct = 1
-                }
-                else
-                {
-                    As.append(names[nct])
-                    ct = ct+1
-                }
-                lastnameInits.append(li)
-            }
-            else
-            {
-                As.append(names[nct])
-                ct = ct+1
-            }
-            nct = nct+1
-        }
-        namesInSections.append(As)
-        lastnameCounts.append(ct)
-    }
-   */
+    
     
     struct lastnameStructure {
         var total : Int;
         var index : Int;
-        var character : Int;
+        var character : Character;
     }
     
     private var speakers : [Speaker]!
-    private var initials : [Int : lastnameStructure]!
+    private var initials : [Int : lastnameStructure]! = [:]
+    
+    func returnSpeaker(at path: IndexPath)->Speaker{
+        let numbex = self.initials[path.first!]!.index + path.row
+        return self.speakers[numbex]
+    }
     
     override func viewDidLoad(){
         let query = "SELECT * from Speaker ORDER BY name ASC"
         self.speakers = EventLoader.getQuerySpeakers(query: query, tname: "Speaker")
-        for speakers in self.speakers{
-            
+        var last = self.speakers[0].name[0...0]
+        var counter = 0
+        var indextot = 0
+        var struc : lastnameStructure = lastnameStructure(total: 0, index: indextot, character : last.first!)
+        for speaker in self.speakers{
+            struc.total += 1
+            let speklast = speaker.name[0...0]
+            if(speklast != last){
+                self.initials[counter] = struc
+                struc = lastnameStructure(total: 0, index: indextot, character : speklast.first!)
+                last = speklast
+                counter += 1
+            }
+            indextot += 1
         }
+        
+        /*let gr : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(buttonClicked))
+        self.view.addGestureRecognizer(gr)
+        gr.cancelsTouchesInView = false;*/
+        self.tableView.allowsSelection = true
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return lastnameInits.count
+        return self.initials.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lastnameCounts[section]
+        return self.initials[section]!.total
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return lastnameInits[section]
+        return String(self.initials[section]!.character)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45;
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("SpeakerCell", owner: SpeakerCell.self, options: nil)![0] as! SpeakerCell
         //cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
-        let Name = namesInSections[indexPath.section][indexPath.row]
-        cell.nameLabel?.text = Name
+        //let Name = namesInSections[indexPath.section][indexPath.row]
+        //cell.nameLabel?.text = Name
         //cell.profileImage?.image = UIImage(named:Name)
-        cell.profileImage.image = UIImage(named:"Apple")
+        //cell.profileImage.image = UIImage(named:"Apple")
+        
+        cell.initDate(returnSpeaker(at: indexPath))
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath)
+        //self.tableView(tableView, didDeselectRowAt: indexPath)
+        let cell = tableView.cellForRow(at: indexPath)
+        //cell?.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        self.buttonClicked(at : indexPath);
+        //tableView.deselectRow(at: indexPath, animated: true)
     }
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return lastnameInits
-    }
-
 }

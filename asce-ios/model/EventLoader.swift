@@ -70,7 +70,7 @@ class EventLoader{
     
     static func generateSpeakerDetailViewController(_ speaker: Speaker) -> SpeakerDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        let viewController = sb.instantiateViewController(withIdentifier: "SpeakerDetailViewController") as! SpeakerDetailViewController
+        let viewController = sb.instantiateViewController(withIdentifier: "SpeakerDetailStoryBoard") as! SpeakerDetailViewController
         //let viewController = EventDetailViewController.init(event)
         viewController.initData(speaker: speaker)
         return viewController
@@ -187,5 +187,17 @@ public extension String {
         let nsSt = self as NSString
         
         return nsSt.appendingPathExtension(ext)
+    }
+    
+    subscript (bounds: CountableClosedRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[start...end])
+    }
+    
+    subscript (bounds: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[start..<end])
     }
 }

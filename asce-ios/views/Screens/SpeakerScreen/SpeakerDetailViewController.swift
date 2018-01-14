@@ -24,7 +24,7 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
     
     func initData(speaker : Speaker){
         self.theSpeaker = speaker
-        let query = "SELECT * from Event WHERE speaker LIKE '%\(speaker.name)%'"
+        let query = "SELECT * from Event WHERE speakers LIKE '%\(speaker.name)%'"
         self.speakerEvents = EventLoader.getQueryEvents(query: query, tname: "Event")
         
     }

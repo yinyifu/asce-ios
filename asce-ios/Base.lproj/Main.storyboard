@@ -291,7 +291,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="unusedCell" id="39a-ck-d7y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="unusedCell" id="39a-ck-d7y">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="39a-ck-d7y" id="TCP-ZW-ZCN">
@@ -918,10 +918,10 @@
             </objects>
             <point key="canvasLocation" x="3221" y="-2420"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Speaker Detail View Controller-->
         <scene sceneID="jDG-e4-a2C">
             <objects>
-                <tableViewController id="dzF-Ys-KO6" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SpeakerDetailStoryBoard" id="dzF-Ys-KO6" customClass="SpeakerDetailViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xfY-o0-Tcz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -935,10 +935,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="speakerHeader" rowHeight="200" id="8H0-uX-ibr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="speakerHeader" rowHeight="200" id="8H0-uX-ibr" customClass="SpeakerTableViewCell" customModule="asce_ios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8H0-uX-ibr" id="DpA-Ww-12W" customClass="SpeakerTableViewCell" customModule="asce_ios" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8H0-uX-ibr" id="DpA-Ww-12W">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -979,12 +979,12 @@
                                         <constraint firstItem="iMM-TB-VVd" firstAttribute="centerX" secondItem="DpA-Ww-12W" secondAttribute="centerX" id="kOR-kp-T4f"/>
                                         <constraint firstItem="5zI-0V-tq0" firstAttribute="top" secondItem="iMM-TB-VVd" secondAttribute="bottom" constant="8" id="wTo-0F-3t4"/>
                                     </constraints>
-                                    <connections>
-                                        <outlet property="nameLabel" destination="5zI-0V-tq0" id="OiC-Af-X1b"/>
-                                        <outlet property="profileImage" destination="iMM-TB-VVd" id="ejJ-Jw-bGc"/>
-                                        <outlet property="titleLabel" destination="lmB-wT-SEQ" id="gwp-Vo-lZl"/>
-                                    </connections>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="5zI-0V-tq0" id="nQn-sM-VBf"/>
+                                    <outlet property="profileImage" destination="iMM-TB-VVd" id="BsW-Fz-TBC"/>
+                                    <outlet property="titleLabel" destination="lmB-wT-SEQ" id="5Ac-xc-xV3"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="speakerEventName" rowHeight="45" id="NNy-IY-y1K">
                                 <rect key="frame" x="0.0" y="272" width="375" height="45"/>
@@ -1021,8 +1021,8 @@
         <!--Speaker View Controller-->
         <scene sceneID="ciq-yC-k6d">
             <objects>
-                <tableViewController storyboardIdentifier="SpeakerStoryBoard" id="7O1-uI-JVs" customClass="SpeakerViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Y7-dA-9b0" userLabel="SpeakerTableView">
+                <tableViewController storyboardIdentifier="SpeakerStoryBoard" automaticallyAdjustsScrollViewInsets="NO" id="7O1-uI-JVs" customClass="SpeakerViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Y7-dA-9b0" userLabel="SpeakerTableView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1030,7 +1030,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpeakerTableViewCell" rowHeight="58" id="hwX-Ll-pYO" userLabel="SpeakerTableViewCell" customClass="SpeakerTableViewCell" customModule="asce_ios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hwX-Ll-pYO" id="g1k-a6-Lob">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hwX-Ll-pYO" id="g1k-a6-Lob">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -1041,6 +1041,9 @@
                             <outlet property="delegate" destination="7O1-uI-JVs" id="qkJ-tR-djP"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="7Y7-dA-9b0" id="SaQ-Lf-SCq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNb-dk-g9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardForEntainment" rowHeight="188" id="sab-4n-ow6">
