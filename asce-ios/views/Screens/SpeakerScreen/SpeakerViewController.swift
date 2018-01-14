@@ -105,7 +105,7 @@ class SpeakerViewController : UITableViewController
         return lastnameInits[section]
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SpeakerTableViewCell", for: indexPath) as! SpeakerTableViewCell
+        let cell = Bundle.main.loadNibNamed("Speaker", owner: Speaker.self, options: <#T##[AnyHashable : Any]?#>)
         cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
         let Name = namesInSections[indexPath.section][indexPath.row]
         cell.nameLabel?.text = Name

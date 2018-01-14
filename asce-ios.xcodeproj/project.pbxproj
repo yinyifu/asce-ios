@@ -20,8 +20,9 @@
 		5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1DF1FF21ED100D638A8 /* EventMapViewController.swift */; };
 		5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1E11FF21EF100D638A8 /* EntertainmentViewController.swift */; };
 		5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */; };
+		B9332A88200B147800D709F8 /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332A87200B147800D709F8 /* SpeakerCell.swift */; };
 		B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9438D5620043D40002C457E /* GlobalMapViewController.swift */; };
-		B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B957CCF81FFE9C0C00FE935D /* Speaker.xib */; };
+		B957CCF91FFE9C0C00FE935D /* SpeakerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B957CCF81FFE9C0C00FE935D /* SpeakerCell.xib */; };
 		B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */; };
 		B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */; };
 		B957CD052000728500FE935D /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD042000728500FE935D /* SpeakerCell.swift */; };
@@ -103,8 +104,9 @@
 		B92E29A41FF744DF00C43E7B /* DC-Theme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "DC-Theme.bundle"; sourceTree = "<group>"; };
 		B92E29A51FF744DF00C43E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B9332A87200B147800D709F8 /* SpeakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
 		B9438D5620043D40002C457E /* GlobalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMapViewController.swift; sourceTree = "<group>"; };
-		B957CCF81FFE9C0C00FE935D /* Speaker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Speaker.xib; sourceTree = "<group>"; };
+		B957CCF81FFE9C0C00FE935D /* SpeakerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerCell.xib; sourceTree = "<group>"; };
 		B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHeaderCell.swift; sourceTree = "<group>"; };
 		B957CD042000728500FE935D /* SpeakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
@@ -183,8 +185,9 @@
 			children = (
 				5FCDB1D71FF21E4500D638A8 /* SpeakerViewController.swift */,
 				5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */,
-				B957CCF81FFE9C0C00FE935D /* Speaker.xib */,
+				B957CCF81FFE9C0C00FE935D /* SpeakerCell.xib */,
 				B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */,
+				B9332A87200B147800D709F8 /* SpeakerCell.swift */,
 			);
 			path = SpeakerScreen;
 			sourceTree = "<group>";
@@ -489,7 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */,
-				B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */,
+				B957CCF91FFE9C0C00FE935D /* SpeakerCell.xib in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
 				B9BBC60520044A1B0072B911 /* Second Level.pdf in Resources */,
 				B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */,
@@ -545,6 +548,7 @@
 				5F7C97F21FEC66640007F8E4 /* TwitterViewController.swift in Sources */,
 				B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */,
 				B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */,
+				B9332A88200B147800D709F8 /* SpeakerCell.swift in Sources */,
 				B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */,
 				B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */,
 				B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */,
