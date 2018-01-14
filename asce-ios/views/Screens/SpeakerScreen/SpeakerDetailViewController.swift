@@ -22,6 +22,11 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
     static private let header = 0;
     static private let events = 0;
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+    }
+    
     func initData(speaker : Speaker){
         self.theSpeaker = speaker
         let query = "SELECT * from Event WHERE speakers LIKE '%\(speaker.name)%'"

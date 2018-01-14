@@ -7,7 +7,16 @@
 //
 
 import UIKit
-class EventDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
+class EventDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, TableButtonDelegate{
+    func buttonClicked(at path: IndexPath) {
+        if let speakerDetail = speakers?[path.row-1]{
+            let vc = EventLoader.generateSpeakerDetailViewController(speakerDetail)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            fatalError("No Speaker Detail Found")
+        }
+    }
+    
     private var event : ScheEvent!;
     private var speakers : [Speaker]?;
     
@@ -110,7 +119,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
+        self.buttonClicked(at: indexPath)
     }
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         return

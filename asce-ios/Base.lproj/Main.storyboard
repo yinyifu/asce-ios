@@ -848,7 +848,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Ls-fV7" userLabel="coverButton" customClass="ZFRippleButton" customModule="asce_ios" customModuleProvider="target">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Ls-fV7" userLabel="coverButton" customClass="ZFRippleButton" customModule="asce_ios" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
