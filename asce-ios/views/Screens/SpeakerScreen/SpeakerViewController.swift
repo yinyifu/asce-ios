@@ -11,12 +11,13 @@ import UIKit
 
 class SpeakerViewController : UITableViewController
 {
-    private var schedules = EventLoader.schedulee2!
+ /*   private var schedules = EventLoader.schedulee2!
     var names: Array<String> = Array()
     var lastnameInits: Array<String> = Array()
     var lastnameCounts: Array<Int> = Array()
     var namesInSections: Array<Array<String>> = Array<Array>()
-    
+ */
+/*
     override func viewDidLoad(){
         for events in schedules{
             for nameSS in (events.speakers?.split(separator: ","))!{
@@ -28,8 +29,10 @@ class SpeakerViewController : UITableViewController
             }
         }
         sortNamesByLastName()
+        
     }
-
+*/
+/*
     func sortNamesByLastName()
     {
         var lastnames: Array<String> = Array()
@@ -92,7 +95,24 @@ class SpeakerViewController : UITableViewController
         namesInSections.append(As)
         lastnameCounts.append(ct)
     }
+   */
     
+    struct lastnameStructure {
+        var total : Int;
+        var index : Int;
+        var character : Int;
+    }
+    
+    private var speakers : [Speaker]!
+    private var initials : [Int : lastnameStructure]!
+    
+    override func viewDidLoad(){
+        let query = "SELECT * from Speaker ORDER BY name ASC"
+        self.speakers = EventLoader.getQuerySpeakers(query: query, tname: "Speaker")
+        for speakers in self.speakers{
+            
+        }
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return lastnameInits.count
     }
@@ -105,8 +125,8 @@ class SpeakerViewController : UITableViewController
         return lastnameInits[section]
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("Speaker", owner: Speaker.self, options: <#T##[AnyHashable : Any]?#>)
-        cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
+        let cell = Bundle.main.loadNibNamed("SpeakerCell", owner: SpeakerCell.self, options: nil)![0] as! SpeakerCell
+        //cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
         let Name = namesInSections[indexPath.section][indexPath.row]
         cell.nameLabel?.text = Name
         //cell.profileImage?.image = UIImage(named:Name)

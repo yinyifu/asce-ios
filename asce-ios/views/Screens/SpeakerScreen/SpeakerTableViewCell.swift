@@ -19,7 +19,8 @@ class SpeakerTableViewCell : UITableViewCell
         self.nameLabel.text = speaker.name
         self.titleLabel.text = speaker.title
         self.profileImage.image = speaker.profile_pic
-        self.profileImage.layer.cornerRadius = self.profileImage.bounds.width/2
+        self.profileImage.layer.cornerRadius = self.profileImage.bounds.width/4
+        self.profileImage.clipsToBounds = true
     }
 }
 

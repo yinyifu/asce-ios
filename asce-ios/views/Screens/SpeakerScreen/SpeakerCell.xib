@@ -11,39 +11,69 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="66" id="Pco-lQ-Xmz">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailSpeaker" id="SkM-he-YUS" customClass="SpeakerCell" customModule="asce_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pco-lQ-Xmz" id="LNY-yz-7Xg">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SkM-he-YUS" id="wiJ-qF-aqX">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F39-2G-8TI">
-                        <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mos-Ty-tmp">
+                        <rect key="frame" x="15" y="5" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="axo-yr-n4A"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speaker Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eda-J2-bmj">
-                        <rect key="frame" x="74" y="11" width="112" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2l-ys-nRa">
+                        <rect key="frame" x="64" y="24" width="241" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.48188675809999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SpeakerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZA-5V-fwx">
+                        <rect key="frame" x="63" y="5" width="242" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speaker Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THK-jM-32p">
-                        <rect key="frame" x="74" y="34" width="111" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sr5-kN-FHb" userLabel="coverButton" customClass="ZFRippleButton" customModule="asce_ios" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                <color key="value" red="0.75131557640000002" green="0.74828033650000003" blue="0.74632415029999999" alpha="0.6969630282" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="ripplePercent">
+                                <real key="value" value="200"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="F39-2G-8TI" firstAttribute="top" secondItem="LNY-yz-7Xg" secondAttribute="top" id="NaM-vE-T8O"/>
-                    <constraint firstAttribute="bottom" secondItem="F39-2G-8TI" secondAttribute="bottom" id="Qdr-ks-Fad"/>
-                    <constraint firstItem="F39-2G-8TI" firstAttribute="leading" secondItem="LNY-yz-7Xg" secondAttribute="leading" id="TFI-o1-Lh2"/>
-                    <constraint firstAttribute="trailing" secondItem="F39-2G-8TI" secondAttribute="trailing" constant="309" id="ar3-BY-weh"/>
+                    <constraint firstAttribute="bottom" secondItem="L2l-ys-nRa" secondAttribute="bottom" constant="5" id="0J7-Zh-XW7"/>
+                    <constraint firstAttribute="trailing" secondItem="TZA-5V-fwx" secondAttribute="trailing" constant="15" id="8QJ-L3-Fd2"/>
+                    <constraint firstAttribute="trailing" secondItem="sr5-kN-FHb" secondAttribute="trailing" id="Boj-tf-htl"/>
+                    <constraint firstItem="L2l-ys-nRa" firstAttribute="top" secondItem="TZA-5V-fwx" secondAttribute="bottom" constant="1" id="DPi-cu-E4B"/>
+                    <constraint firstItem="sr5-kN-FHb" firstAttribute="leading" secondItem="wiJ-qF-aqX" secondAttribute="leading" id="HOe-AN-IZv"/>
+                    <constraint firstItem="TZA-5V-fwx" firstAttribute="top" secondItem="wiJ-qF-aqX" secondAttribute="top" constant="5" id="MIp-V0-Z61"/>
+                    <constraint firstItem="L2l-ys-nRa" firstAttribute="leading" secondItem="mos-Ty-tmp" secondAttribute="trailing" constant="15" id="TQU-DA-mgm"/>
+                    <constraint firstItem="mos-Ty-tmp" firstAttribute="top" secondItem="wiJ-qF-aqX" secondAttribute="top" constant="5" id="Wfm-Bk-iNn"/>
+                    <constraint firstAttribute="bottom" secondItem="mos-Ty-tmp" secondAttribute="bottom" constant="5" id="YWn-3p-8NQ"/>
+                    <constraint firstItem="sr5-kN-FHb" firstAttribute="top" secondItem="wiJ-qF-aqX" secondAttribute="top" id="YcN-dh-dS7"/>
+                    <constraint firstAttribute="trailing" secondItem="L2l-ys-nRa" secondAttribute="trailing" constant="15" id="aaz-xx-LTf"/>
+                    <constraint firstItem="TZA-5V-fwx" firstAttribute="leading" secondItem="mos-Ty-tmp" secondAttribute="trailing" constant="14" id="hy3-j8-69j"/>
+                    <constraint firstItem="mos-Ty-tmp" firstAttribute="leading" secondItem="wiJ-qF-aqX" secondAttribute="leading" constant="15" id="ioD-0q-IQI"/>
+                    <constraint firstAttribute="bottom" secondItem="sr5-kN-FHb" secondAttribute="bottom" id="kcm-mB-Mfg"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="49.5" y="-14"/>
+            <connections>
+                <outlet property="coverButton" destination="sr5-kN-FHb" id="epi-CG-6Rf"/>
+                <outlet property="speakerNameLabel" destination="TZA-5V-fwx" id="0iH-FN-qpm"/>
+                <outlet property="speakerProfileImage" destination="mos-Ty-tmp" id="1wv-jJ-sfi"/>
+                <outlet property="speakerTitleLabel" destination="L2l-ys-nRa" id="43a-BY-mPs"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
