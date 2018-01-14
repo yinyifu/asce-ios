@@ -13,6 +13,7 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         let targetEvent = self.speakerEvents[path.row-1]
         let vc = EventLoader.generateEventDetailViewController(targetEvent)
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     
@@ -31,7 +32,6 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         self.theSpeaker = speaker
         let query = "SELECT * from Event WHERE speakers LIKE '%\(speaker.name)%'"
         self.speakerEvents = EventLoader.getQueryEvents(query: query, tname: "Event")
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

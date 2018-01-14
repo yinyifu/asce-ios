@@ -20,6 +20,8 @@ class EventDetailHeaderCell : UITableViewCell{
     
     @IBOutlet weak var organizationHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var favoriteIcon: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layoutIfNeeded()
@@ -43,5 +45,24 @@ class EventDetailHeaderCell : UITableViewCell{
             self.locLabel.text = "\(date_time) in \(place!)"
         }
         self.organizationLabel.text = event.organizations
+        
+        
+        self.refreshImage()
+    }
+    func refreshImage(){
+        if(inFavorite()){
+            let origImage = UIImage(named: "AddMyEvent")
+            let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            favoriteIcon.setImage(tintedImage, for: UIControlState.normal)
+            favoriteIcon.tintColor = UIColor.white
+        }else{
+            let origImage = UIImage(named: "DeleteMyEvent")
+            let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            favoriteIcon.setImage(tintedImage, for: UIControlState.normal)
+            favoriteIcon.tintColor = UIColor.white
+        }
+    }
+    func inFavorite() -> Bool {
+        return false;
     }
 }

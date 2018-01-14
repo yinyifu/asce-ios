@@ -20,7 +20,6 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     private var event : ScheEvent!;
     private var speakers : [Speaker]?;
     
-    
     static let headerSectionIndex = 0;
     static let speakersSectionIndex = 1;
     static let descriptionSectionIndex = 2;
@@ -61,10 +60,13 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         // identify if the object is already bookmarked
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: self, action: #selector(bookmarkJustClicked))
+        
+        self.parent?.automaticallyAdjustsScrollViewInsets = true
+        self.automaticallyAdjustsScrollViewInsets = true
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateView()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -130,17 +132,17 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == EventDetailViewController.headerSectionIndex){
             return 1
+    
         }else if(section == EventDetailViewController.speakersSectionIndex){
+            
             if speakers == nil{
                 return 0
             }
             return speakers!.count + 1
+            
         }else if(section == EventDetailViewController.descriptionSectionIndex){
             return 1
         }
         return 0
-    }
-    func updateView(){
-        
     }
 }

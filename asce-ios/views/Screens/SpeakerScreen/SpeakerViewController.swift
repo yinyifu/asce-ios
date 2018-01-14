@@ -40,7 +40,7 @@ class SpeakerViewController : UITableViewController, TableButtonDelegate
         var indextot = 0
         var struc : lastnameStructure = lastnameStructure(total: 0, index: indextot, character : last.first!)
         for speaker in self.speakers{
-            struc.total += 1
+            
             let speklast = speaker.name[0...0]
             if(speklast != last){
                 self.initials[counter] = struc
@@ -49,11 +49,8 @@ class SpeakerViewController : UITableViewController, TableButtonDelegate
                 counter += 1
             }
             indextot += 1
+            struc.total += 1
         }
-        
-        /*let gr : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(buttonClicked))
-        self.view.addGestureRecognizer(gr)
-        gr.cancelsTouchesInView = false;*/
         self.tableView.allowsSelection = true
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,21 +70,10 @@ class SpeakerViewController : UITableViewController, TableButtonDelegate
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("SpeakerCell", owner: SpeakerCell.self, options: nil)![0] as! SpeakerCell
-        //cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
-        //let Name = namesInSections[indexPath.section][indexPath.row]
-        //cell.nameLabel?.text = Name
-        //cell.profileImage?.image = UIImage(named:Name)
-        //cell.profileImage.image = UIImage(named:"Apple")
-        
         cell.initDate(returnSpeaker(at: indexPath))
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.tableView(tableView, didDeselectRowAt: indexPath)
-        let cell = tableView.cellForRow(at: indexPath)
-        //cell?.selectionStyle = UITableViewCellSelectionStyle.none
-        
         self.buttonClicked(at : indexPath);
-        //tableView.deselectRow(at: indexPath, animated: true)
     }
 }

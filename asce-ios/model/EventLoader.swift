@@ -9,19 +9,16 @@
 import UIKit
 
 class EventLoader{
+    
     static var eventBundle:Bundle?;
     static var favoriteEventColor:UIColor?;
-    static var schedulee:Array<Schedule>?;
-    static var schedulee2:Array<ScheEvent>?;
     static var db : Database = Database.init(withDBFileName: "ascedb.sql");
+    
     init(){
         let colorId = "#659f65";
         EventLoader.favoriteEventColor = UIColor.color(fromHexString: colorId)
-        let events = EventLoader.getQueryEvents(query: "SELECT * from Event;", tname: "Event");
-        EventLoader.schedulee2 = events
-        EventLoader.schedulee = Array()
-        EventLoader.schedulee!.append(Schedule(id: 9, name: "testing"))
     }
+    
     static func getQueryEvents(query : String, tname : String)->Array<ScheEvent>{
         let horray :Array<[String : String]> = EventLoader.db.loadDataFromDB(query: query, tname: tname) as! Array<[String : String]>
         var newRay = Array<ScheEvent>()
@@ -39,12 +36,12 @@ class EventLoader{
         }
         return newRay;
     }
+    
     static func getQuerySpeakers(query : String, tname : String)->Array<Speaker>{
         let horray : Array<[String : Any]> = EventLoader.db.loadDataFromDB(query: query, tname: tname)
         var newRay = Array<Speaker>()
         for dict in horray{
             if let imageData : Data = dict["profile_pic"]! as? Data{
-                print(imageData)
                 let image = UIImage.init(data: imageData)!
                 let newevent:Speaker = Speaker(name: dict["name"]! as! String, title : dict["title"]! as! String, profile_pic : image);
                 newRay.append(newevent)
@@ -60,6 +57,7 @@ class EventLoader{
         }
         return newRay;
     }
+    
     static func generateEventDetailViewController(_ event: ScheEvent) -> EventDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let viewController = sb.instantiateViewController(withIdentifier: "EventDetailStoryBoard") as! EventDetailViewController
@@ -75,12 +73,15 @@ class EventLoader{
         viewController.initData(speaker: speaker)
         return viewController
     }
+    
     static func getEventSpeakers(_ event: ScheEvent)->[Speaker]?{
         return nil
     }
+    
     static func getSpeakerEvents(_ speaker: Speaker)->[ScheEvent]?{
         return nil
     }
+    
 }
 
 
