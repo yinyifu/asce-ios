@@ -78,6 +78,7 @@ class EventViewController : UITableViewController, TableButtonDelegate {
         let date : String = currentCell.date!
         let time = currentCell.startLabel.text!
         let ary = EventLoader.db.loadDataFromDB(query: "SELECT * from Event WHERE date = '\(date)' and starttime = '\(time)'", tname: "Event")
+        
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.columnDatas[section]["0"]

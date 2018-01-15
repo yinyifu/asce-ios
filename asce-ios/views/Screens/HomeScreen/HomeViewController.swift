@@ -9,16 +9,62 @@
 import Foundation
 import UIKit
 
-class HomeViewController : UITableViewController
+class HomeViewController : UITableViewController, TableButtonDelegate
 {
+    
+    private var upcomingEvent : [ScheEvent]! = []
+    static var myEvent : [ScheEvent]! = []
+    func buttonClicked(at path: IndexPath) {
+        let indexType = path.first!
+        if(indexType == 0){
+            let event = upcomingEvent[path.row]
+            let vc = EventLoader.generateEventDetailViewController(event)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let event = HomeViewController.myEvent[path.row]
+            let vc = EventLoader.generateEventDetailViewController(event)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @IBOutlet weak var upcomingEventColu: UICollectionView!
+    @IBOutlet weak var myEventColu: UICollectionView!
     
     lazy var descriptionText : String = "Get access to civil engineering’s leading experts and information through our many conferences--from the ASCE Convention to specialized technical and leadership conferences. These are the perfect platforms to exchange ideas, meet a diverse group of colleagues, participate in discussions, earn the latest innovations in your field, and earn professional development hours (PDHs), all at members-only discounts."
     override func viewDidLoad() {
         super.viewDidLoad()
+        let current = Date()
+        let events = EventLoader.getQueryEvents(query: "SELECT * FROM Event", tname: "Event")
+        for event in events{
+            let date = event.date
+            let hour = event.starttime
+            let hour1 = hour.split(separator: " ")[0]
+            let dateString = "\(date) \(hour1)"
+            let dateFormatter = DateFormatter()
+            
+            // Not flexible here
+            // if double digit date error debug here
+            
+            dateFormatter.dateFormat = "yyyy-M-d-cccc H:mm"
+            
+            /* date_format_you_want_in_string from
+             * http://userguide.icu-project.org/formatparse/datetime
+             */
+            guard let dateEvent = dateFormatter.date(from: dateString) else {
+                print(dateString)
+                fatalError("ERROR: Date conversion failed due to mismatched format.")
+            }
+            if(dateEvent > current){
+                self.upcomingEvent.append(event)
+            }
+            
+        }
+        
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:

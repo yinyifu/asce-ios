@@ -21,6 +21,7 @@
 		5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1E11FF21EF100D638A8 /* EntertainmentViewController.swift */; };
 		5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */; };
 		B9332A8A200B4A8A00D709F8 /* SpeakerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9332A89200B4A8900D709F8 /* SpeakerCell.xib */; };
+		B9332A8C200C767000D709F8 /* SmallEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332A8B200C767000D709F8 /* SmallEventCell.swift */; };
 		B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9438D5620043D40002C457E /* GlobalMapViewController.swift */; };
 		B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */; };
 		B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */; };
@@ -104,6 +105,7 @@
 		B92E29A51FF744DF00C43E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B9332A89200B4A8900D709F8 /* SpeakerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerCell.xib; sourceTree = "<group>"; };
+		B9332A8B200C767000D709F8 /* SmallEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallEventCell.swift; sourceTree = "<group>"; };
 		B9438D5620043D40002C457E /* GlobalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMapViewController.swift; sourceTree = "<group>"; };
 		B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHeaderCell.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				5FCDB1D41FF21C7900D638A8 /* HomeViewController.swift */,
 				B97D77AE2005225A00427071 /* HeaderImageTableCell.swift */,
+				B9332A8B200C767000D709F8 /* SmallEventCell.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				B9DF2F071FF9B91E00F99037 /* EventViewController.swift in Sources */,
 				B96528ED20027D8A00D498F5 /* SpeakerDetailViewController.swift in Sources */,
 				5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */,
+				B9332A8C200C767000D709F8 /* SmallEventCell.swift in Sources */,
 				B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */,
 				5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */,
 				5F7C97F21FEC66640007F8E4 /* TwitterViewController.swift in Sources */,
