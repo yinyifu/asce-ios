@@ -20,6 +20,9 @@ class SpeakerViewController : UITableViewController
     var speakersAndModerators:Array<Speaker> = Array()
     var speakersAndModeratorsInSections:Array<Array<Speaker>> = Array<Array>()
     
+    var loadedViaFile:Bool = false
+    var loadedViaEvent:Bool = false
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         //Taking Speakers only
@@ -58,10 +61,10 @@ class SpeakerViewController : UITableViewController
                             photoFileName = line
                         case 3:
                             //All data is ready
-                            speakersAndModerators.append(Speaker(name: name, title: title, profile_pic:UIImage(named: "Apple")!))
+                            speakersAndModerators.append(Speaker(name: name, title: title, profile_pic:UIImage(named: photoFileName)!))
                         default:
                             print("AMAZING\(index)")
-                        //do nothing
+                            //do nothing
                         }
                         index=index+1
                     }
@@ -114,6 +117,8 @@ class SpeakerViewController : UITableViewController
             print("error1")
             loadViaEvent()
         }
+        print("loadedViaFile")
+        loadedViaFile = true
     }
     func sortByLastNameForSpeakers(AllSpeakers:Array<Speaker>) -> Array<Speaker> {
         var x = 0,y = 0;
@@ -179,10 +184,12 @@ class SpeakerViewController : UITableViewController
             var secs:Array<Speaker> = Array()
             for name in namesecs
             {
-                secs.append(Speaker(name: name, title: name, profile_pic: UIImage(named:"robink.png")!))
+                secs.append(Speaker(name: name, title: name, profile_pic: UIImage(named:"logo")!))
             }
             speakers.append(secs)
         }
+        print("loadedViaEvent")
+        loadedViaEvent = true
     }
     func sortNamesByLastName()
     {
@@ -209,7 +216,7 @@ class SpeakerViewController : UITableViewController
                     names [x] = names[y];
                     names[y] = name;
                 }
-               y=y+1
+                y=y+1
             }
             x=x+1
         }
@@ -250,7 +257,18 @@ class SpeakerViewController : UITableViewController
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return speakersAndModeratorsInSections[section].count
+        if(loadedViaFile){
+            return speakersAndModeratorsInSections[section].count
+        }
+        else if(loadedViaEvent)
+        {
+            return namesInSections[section].count
+        }
+        else
+        {
+            print("both methods failed")
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -271,12 +289,28 @@ class SpeakerViewController : UITableViewController
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let speaker:Speaker = speakers[indexPath.section][indexPath.row]
-        let speakerViewController = EventLoader.generateSpeakerDetailViewController(speaker)
-        self.navigationController!.pushViewController(speakerViewController, animated: true)
+        
+        if(loadedViaFile)
+        {
+            let speaker:Speaker = speakersAndModeratorsInSections[indexPath.section][indexPath.row]
+            let speakerViewController = EventLoader.generateSpeakerDetailViewController(speaker)
+            self.navigationController!.pushViewController(speakerViewController, animated: true)
+        }
+        else if(loadedViaEvent)
+        {
+            let speaker:Speaker = speakers[indexPath.section][indexPath.row]
+            let speakerViewController = EventLoader.generateSpeakerDetailViewController(speaker)
+            self.navigationController!.pushViewController(speakerViewController, animated: true)
+        }
+        else
+        {
+            print("failed to load")
+            return
+        }
     }
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return lastnameInits
     }
-
+    
 }
+
