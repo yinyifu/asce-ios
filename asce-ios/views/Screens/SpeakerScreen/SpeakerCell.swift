@@ -15,6 +15,8 @@ class SpeakerCell : UITableViewCell {
     
     @IBOutlet weak var speakerProfileImage: UIImageView!
     private var speaker : Speaker!;
+    private var indexp : IndexPath!;
+    private var dele : TableButtonDelegate!;
     @IBOutlet weak var coverButton: ZFRippleButton!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -36,6 +38,7 @@ class SpeakerCell : UITableViewCell {
         let preferedW = UIScreen.main.bounds.size.width-85;
         self.speakerTitleLabel.preferredMaxLayoutWidth = preferedW
         self.speakerTitleLabel.preferredMaxLayoutWidth = preferedW
+        
     }
     
     

@@ -57,8 +57,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3H-TD-Jcs">
                         <rect key="frame" x="100" y="0.0" width="313" height="102"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zph-PZ-3Vh">
-                                <rect key="frame" x="8" y="10" width="297" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="Zph-PZ-3Vh">
+                                <rect key="frame" x="8" y="10" width="297" height="42"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -107,9 +107,6 @@
                             <constraint firstItem="Zph-PZ-3Vh" firstAttribute="leading" secondItem="t3H-TD-Jcs" secondAttribute="leading" constant="8" id="x6a-9n-2Gg"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-Ur-fSG">
-                        <rect key="frame" x="-62" y="89" width="413" height="102"/>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-cp-CAq" customClass="ZFRippleButton" customModule="asce_ios" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="413" height="102"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -130,15 +127,11 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="D2X-ND-qwa" secondAttribute="bottom" id="5mA-2R-aFM"/>
                     <constraint firstItem="t3H-TD-Jcs" firstAttribute="leading" secondItem="D2X-ND-qwa" secondAttribute="trailing" id="Bjd-bx-dhy"/>
-                    <constraint firstItem="HfW-Ur-fSG" firstAttribute="top" secondItem="Ruw-hq-Cnz" secondAttribute="top" id="JVU-VZ-OvF"/>
                     <constraint firstItem="D2X-ND-qwa" firstAttribute="leading" secondItem="Ruw-hq-Cnz" secondAttribute="leading" id="Ozu-fO-Sn6"/>
                     <constraint firstItem="D2X-ND-qwa" firstAttribute="top" secondItem="Ruw-hq-Cnz" secondAttribute="top" id="QiG-ef-jO4"/>
                     <constraint firstItem="t3H-TD-Jcs" firstAttribute="top" secondItem="Ruw-hq-Cnz" secondAttribute="top" id="UIc-VH-9zl"/>
-                    <constraint firstItem="HfW-Ur-fSG" firstAttribute="leading" secondItem="Ruw-hq-Cnz" secondAttribute="leading" id="gd8-Qw-KEx"/>
                     <constraint firstAttribute="trailing" secondItem="t3H-TD-Jcs" secondAttribute="trailing" id="nW2-Ub-zo9"/>
                     <constraint firstAttribute="bottom" secondItem="t3H-TD-Jcs" secondAttribute="bottom" id="rtP-Ru-wQx"/>
-                    <constraint firstAttribute="bottom" secondItem="HfW-Ur-fSG" secondAttribute="bottom" id="uId-YF-8qc"/>
-                    <constraint firstAttribute="trailing" secondItem="HfW-Ur-fSG" secondAttribute="trailing" id="vWW-Mh-kdv"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -152,7 +145,7 @@
                 <outlet property="startLabel" destination="K4s-L2-MvH" id="NN9-xg-eaR"/>
                 <outlet property="titleLabel" destination="Zph-PZ-3Vh" id="UT4-gF-2CU"/>
             </connections>
-            <point key="canvasLocation" x="1216.5" y="-318"/>
+            <point key="canvasLocation" x="1213" y="-338"/>
         </tableViewCell>
     </objects>
     <resources>
