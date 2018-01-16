@@ -21,6 +21,7 @@ class EventDetailHeaderCell : UITableViewCell{
     @IBOutlet weak var organizationHeight: NSLayoutConstraint!
     
     @IBOutlet weak var favoriteIcon: UIButton!
+    private var thisEvent : ScheEvent!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +29,7 @@ class EventDetailHeaderCell : UITableViewCell{
     }
     
     func initData(_ event:ScheEvent){
+        self.thisEvent = event
         let preferedWidth = UIScreen.main.bounds.size.width - 30
         self.titleLabel.preferredMaxLayoutWidth = preferedWidth
         self.locLabel.preferredMaxLayoutWidth = preferedWidth
@@ -46,23 +48,29 @@ class EventDetailHeaderCell : UITableViewCell{
         }
         self.organizationLabel.text = event.organizations
         
-        
         self.refreshImage()
     }
     func refreshImage(){
         if(inFavorite()){
-            let origImage = UIImage(named: "AddMyEvent")
+            let origImage = UIImage(named: "DeleteMyEvent")
             let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
             favoriteIcon.setImage(tintedImage, for: UIControlState.normal)
             favoriteIcon.tintColor = UIColor.white
         }else{
-            let origImage = UIImage(named: "DeleteMyEvent")
+            let origImage = UIImage(named: "AddMyEvent")
             let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
             favoriteIcon.setImage(tintedImage, for: UIControlState.normal)
             favoriteIcon.tintColor = UIColor.white
         }
     }
     func inFavorite() -> Bool {
-        return false;
+        return EventLoader.myEvent!.contains { element in
+            if(element.date == self.thisEvent.date && element.starttime == self.thisEvent.starttime)
+            {
+                return true;
+            }else{
+                return false
+            }
+        }
     }
 }

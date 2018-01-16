@@ -13,6 +13,7 @@ class EventLoader{
     static var eventBundle:Bundle?;
     static var favoriteEventColor:UIColor?;
     static var db : Database = Database.init(withDBFileName: "ascedb.sql");
+    static var myEvent : [ScheEvent]! = []
     
     init(){
         let colorId = "#659f65";
@@ -23,9 +24,9 @@ class EventLoader{
         let horray :Array<[String : String]> = EventLoader.db.loadDataFromDB(query: query, tname: tname) as! Array<[String : String]>
         var newRay = Array<ScheEvent>()
         for dict in horray{
-            
             let newevent:ScheEvent = ScheEvent(name: dict["name"]!, starttime: dict["starttime"]!, endtime: dict["endtime"]!, speakers : dict["speakers"], room : dict["room"], desc: dict["desc"], mods: dict["mods"], organizations: dict["organizations"]!, date: dict["date"]!);
             newRay.append(newevent)
+            
         }
         
         if(EventLoader.db.affectedRows != 0){
@@ -58,6 +59,8 @@ class EventLoader{
         return newRay;
     }
     
+    // generate a EventDetailViewController to a certain speaker
+    
     static func generateEventDetailViewController(_ event: ScheEvent) -> EventDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let viewController = sb.instantiateViewController(withIdentifier: "EventDetailStoryBoard") as! EventDetailViewController
@@ -65,6 +68,8 @@ class EventLoader{
         viewController.initData(event)
         return viewController
     }
+    
+    // generate a SpeakerDetailViewController to a certain speaker
     
     static func generateSpeakerDetailViewController(_ speaker: Speaker) -> SpeakerDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
@@ -74,7 +79,20 @@ class EventLoader{
         return viewController
     }
     
+    
+    // return all the speaker relative to an Event
     static func getEventSpeakers(_ event: ScheEvent)->[Speaker]?{
+        let speakersexists = event.speakers!
+        if speakersexists.count > 0 {
+            var speakers : [Speaker] = []
+            let strfg = speakersexists.split(separator: ",")
+            for ele in strfg {
+                let strfgnospace = ele.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speaker where name = '\(strfgnospace)'", tname: "Speaker")
+                speakers.append(contentsOf: speaker)
+            }
+            return speakers
+        }
         return nil
     }
     
@@ -139,6 +157,8 @@ public extension UIColor {
         return yiq < 192
     }
 }
+
+
 public extension String {
     
     var lastPathComponent: String {

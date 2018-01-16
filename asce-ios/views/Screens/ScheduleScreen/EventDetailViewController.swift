@@ -32,19 +32,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     
     func initData(_ event:ScheEvent){
         self.event = event
-        let speakersexists = event.speakers!
-        if speakersexists.count > 0{
-            self.speakers = []
-            let strfg = speakersexists.split(separator: ",")
-            for ele in strfg {
-                let strfgnospace = ele.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speaker where name = '\(strfgnospace)'", tname: "Speaker")
-                self.speakers!.append(contentsOf: speaker)
-                print(speaker)
-            }
-        }else{
-            self.speakers = nil;
-        }
+        self.speakers = EventLoader.getEventSpeakers(event)
     }
     @objc
     func bookmarkJustClicked(){
@@ -117,7 +105,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         }else{
             let dcell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
             
-            return dcell.heightForCell(withText: self.event.desc!)
+            return dcell.heightForCell(withText: self.event.desc!) + 30
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

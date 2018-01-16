@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class SmallEventCell : UITableViewCell {
+class SmallEventCell : UICollectionViewCell {
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
@@ -22,10 +22,22 @@ class SmallEventCell : UITableViewCell {
     func initData(_ event : ScheEvent, _ path: IndexPath, _ delegate : TableButtonDelegate){
         let image = UIImage.init(named: "time")
         eventImage.image = image
-        eventDate.text = event.date
-        eventTime.text = "\(event.starttime) - \(event.endtime)"
-        eventLocation.text = event.room
-        self.index = path
+        let dateForm = event.date.split(separator: "-")
+        eventDate.text = "\(dateForm[1])/\(dateForm[2])"
         
+        let starttime = event.starttime.split(separator: " ")[0]
+        let startcc = event.starttime.split(separator: " ")[1]
+        let endtime = event.endtime.split(separator: " ")[0]
+        eventTime.text = "\(starttime)-\(endtime) \(startcc)"
+        
+        
+        eventLocation.text = event.room
+        if(event.room == "See Description"){
+            eventLocation.text = "See Desc"
+        }
+        
+        self.index = path
+        self.delegate = delegate
+    
     }
 }

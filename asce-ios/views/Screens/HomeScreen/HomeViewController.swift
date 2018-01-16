@@ -13,7 +13,6 @@ class HomeViewController : UITableViewController, TableButtonDelegate
 {
     
     private var upcomingEvent : [ScheEvent]! = []
-    static var myEvent : [ScheEvent]! = []
     func buttonClicked(at path: IndexPath) {
         let indexType = path.first!
         if(indexType == 0){
@@ -21,7 +20,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
             let vc = EventLoader.generateEventDetailViewController(event)
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            let event = HomeViewController.myEvent[path.row]
+            let event = EventLoader.myEvent[path.row]
             let vc = EventLoader.generateEventDetailViewController(event)
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -57,8 +56,8 @@ class HomeViewController : UITableViewController, TableButtonDelegate
             if(dateEvent > current){
                 self.upcomingEvent.append(event)
             }
-            
         }
+        
         
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,13 +90,13 @@ class HomeViewController : UITableViewController, TableButtonDelegate
             if(indexPath.row == 0){
                 return 45
             }else{
-                return 85
+                return 120
             }
         case 2:
             if(indexPath.row == 0){
                 return 45
             }else{
-                return 85
+                return 120
             }
         default:
             return 224.5
@@ -123,7 +122,8 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 return cell;
             }else{
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")!
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
+                cell.initData(self.upcomingEvent, self.navigationController!)
                 return cell;
             }
         case 2:
@@ -132,7 +132,8 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 return cell;
             }else{
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "myEventCell")!
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
+                cell.initData(EventLoader.myEvent, self.navigationController!)
                 return cell;
             }
         default:
