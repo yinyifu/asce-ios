@@ -30,7 +30,6 @@ class SmallEventCell : UICollectionViewCell {
         let endtime = event.endtime.split(separator: " ")[0]
         eventTime.text = "\(starttime)-\(endtime) \(startcc)"
         
-        
         eventLocation.text = event.room
         if(event.room == "See Description"){
             eventLocation.text = "See Desc"

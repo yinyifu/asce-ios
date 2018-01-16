@@ -13,6 +13,8 @@ class HomeViewController : UITableViewController, TableButtonDelegate
 {
     
     private var upcomingEvent : [ScheEvent]! = []
+    static var testingNumber = 0
+    private var myCollectionView : MyTableCell!
     func buttonClicked(at path: IndexPath) {
         let indexType = path.first!
         if(indexType == 0){
@@ -25,9 +27,6 @@ class HomeViewController : UITableViewController, TableButtonDelegate
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
-    @IBOutlet weak var upcomingEventColu: UICollectionView!
-    @IBOutlet weak var myEventColu: UICollectionView!
     
     lazy var descriptionText : String = "Get access to civil engineering’s leading experts and information through our many conferences--from the ASCE Convention to specialized technical and leadership conferences. These are the perfect platforms to exchange ideas, meet a diverse group of colleagues, participate in discussions, earn the latest innovations in your field, and earn professional development hours (PDHs), all at members-only discounts."
     override func viewDidLoad() {
@@ -57,13 +56,18 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 self.upcomingEvent.append(event)
             }
         }
-        
-        
     }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if myCollectionView != nil{
+            self.myCollectionView.beginUpdate(EventLoader.myEvent)
+        }
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
@@ -123,7 +127,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 return cell;
             }else{
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
-                cell.initData(self.upcomingEvent, self.navigationController!)
+                cell.initData(self.upcomingEvent, self)
                 return cell;
             }
         case 2:
@@ -133,7 +137,10 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 return cell;
             }else{
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
-                cell.initData(EventLoader.myEvent, self.navigationController!)
+                let ary = EventLoader.myEvent
+                HomeViewController.testingNumber = ary!.count
+                self.myCollectionView = cell
+                cell.initData(ary!, self)
                 return cell;
             }
         default:

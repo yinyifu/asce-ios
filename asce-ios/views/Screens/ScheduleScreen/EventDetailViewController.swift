@@ -8,7 +8,11 @@
 
 import UIKit
 class EventDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, TableButtonDelegate{
+    
     func buttonClicked(at path: IndexPath) {
+        guard path.first! == EventDetailViewController.speakersSectionIndex else{
+            return
+        }
         if let speakerDetail = speakers?[path.row-1]{
             let vc = EventLoader.generateSpeakerDetailViewController(speakerDetail)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -96,7 +100,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         let section = indexPath.first!;
         if(section == EventDetailViewController.headerSectionIndex){
             
-            return 170
+            return 200
         }else if(section == EventDetailViewController.speakersSectionIndex){
             if(indexPath.row == 0){
                 return 25

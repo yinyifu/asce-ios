@@ -17,7 +17,6 @@ class SpeakerViewController : UITableViewController, TableButtonDelegate
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
     struct lastnameStructure {
         var total : Int;
         var index : Int;
@@ -51,6 +50,7 @@ class SpeakerViewController : UITableViewController, TableButtonDelegate
             indextot += 1
             struc.total += 1
         }
+        self.initials[counter] = struc
         self.tableView.allowsSelection = true
     }
     override func numberOfSections(in tableView: UITableView) -> Int {

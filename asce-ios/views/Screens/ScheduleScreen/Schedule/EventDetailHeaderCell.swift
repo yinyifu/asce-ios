@@ -50,6 +50,20 @@ class EventDetailHeaderCell : UITableViewCell{
         
         self.refreshImage()
     }
+    @IBAction func addOrRemoveEvent(_ sender: Any) {
+        if(inFavorite()){
+            var index = 0
+            for element in EventLoader.myEvent{
+                if(element.date == self.thisEvent.date && element.starttime == self.thisEvent.starttime){
+                    EventLoader.myEvent.remove(at: index)
+                }
+                index += 1
+            }
+        }else{
+            EventLoader.myEvent.append(self.thisEvent)
+        }
+        self.refreshImage()
+    }
     func refreshImage(){
         if(inFavorite()){
             let origImage = UIImage(named: "DeleteMyEvent")
@@ -64,13 +78,12 @@ class EventDetailHeaderCell : UITableViewCell{
         }
     }
     func inFavorite() -> Bool {
-        return EventLoader.myEvent!.contains { element in
-            if(element.date == self.thisEvent.date && element.starttime == self.thisEvent.starttime)
-            {
-                return true;
-            }else{
-                return false
+        print(EventLoader.myEvent)
+        for element in EventLoader.myEvent{
+            if(element.date == self.thisEvent.date && element.starttime == self.thisEvent.starttime){
+                return true
             }
         }
+        return false
     }
 }
