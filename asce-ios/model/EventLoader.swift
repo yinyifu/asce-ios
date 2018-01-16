@@ -64,7 +64,6 @@ class EventLoader{
     static func generateEventDetailViewController(_ event: ScheEvent) -> EventDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let viewController = sb.instantiateViewController(withIdentifier: "EventDetailStoryBoard") as! EventDetailViewController
-        //let viewController = EventDetailViewController.init(event)
         viewController.initData(event)
         return viewController
     }
@@ -74,13 +73,14 @@ class EventLoader{
     static func generateSpeakerDetailViewController(_ speaker: Speaker) -> SpeakerDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let viewController = sb.instantiateViewController(withIdentifier: "SpeakerDetailStoryBoard") as! SpeakerDetailViewController
-        //let viewController = EventDetailViewController.init(event)
+
         viewController.initData(speaker: speaker)
         return viewController
     }
     
     
     // return all the speaker relative to an Event
+
     static func getEventSpeakers(_ event: ScheEvent)->[Speaker]?{
         let speakersexists = event.speakers!
         if speakersexists.count > 0 {

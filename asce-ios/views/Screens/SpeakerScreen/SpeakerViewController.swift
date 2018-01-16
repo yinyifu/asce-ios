@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 class SpeakerViewController : UITableViewController, TableButtonDelegate
-{
-    
+{   
     @objc func buttonClicked(at path: IndexPath) {
         let vc = EventLoader.generateSpeakerDetailViewController(self.returnSpeaker(at: path))
         self.navigationController?.pushViewController(vc, animated: true)
@@ -46,7 +45,7 @@ class SpeakerViewController : UITableViewController, TableButtonDelegate
                 struc = lastnameStructure(total: 0, index: indextot, character : speklast.first!)
                 last = speklast
                 counter += 1
-            }
+           }
             indextot += 1
             struc.total += 1
         }
