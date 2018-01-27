@@ -26,35 +26,36 @@ class EventLoader{
         for dict in horray{
             let newevent:ScheEvent = ScheEvent(name: dict["name"]!, starttime: dict["starttime"]!, endtime: dict["endtime"]!, speakers : dict["speakers"], room : dict["room"], desc: dict["desc"], mods: dict["mods"], organizations: dict["organizations"]!, date: dict["date"]!);
             newRay.append(newevent)
-            
         }
-        
         if(EventLoader.db.affectedRows != 0){
             print("query execute success");
-            
         }else{
             fatalError("query execution failed");
         }
         return newRay;
     }
-    
+    static func saveMyEvent(){
+        Storage.store(EventLoader.myEvent, to: .documents, as: "schedule.json")
+    }
+    static func loadMyEvent(){
+        EventLoader.myEvent = Storage.retrieve("schedule.json", from: .documents, as: [ScheEvent].self)
+    }
     static func getQuerySpeakers(query : String, tname : String)->Array<Speaker>{
         let horray : Array<[String : Any]> = EventLoader.db.loadDataFromDB(query: query, tname: tname)
         var newRay = Array<Speaker>()
         for dict in horray{
             if let imageData : Data = dict["profile_pic"]! as? Data{
                 let image = UIImage.init(data: imageData)!
-                let newevent:Speaker = Speaker(name: dict["name"]! as! String, title : dict["title"]! as! String, profile_pic : image);
+                let newevent:Speaker = Speaker(name: dict["name"]! as! String, title : dict["title"]! as! String, profile_pic : image)
                 newRay.append(newevent)
             }else{
                 fatalError("extract data failed")
             }
         }
         if(EventLoader.db.affectedRows != 0){
-            print("query execute success");
-            
+            print("query execute success")
         }else{
-            fatalError("query execution failed");
+            fatalError("query execution failed")
         }
         return newRay;
     }
@@ -162,44 +163,35 @@ public extension UIColor {
 public extension String {
     
     var lastPathComponent: String {
-        
         get {
             return (self as NSString).lastPathComponent
         }
     }
+    
     var pathExtension: String {
-        
         get {
-            
             return (self as NSString).pathExtension
         }
     }
+    
     var stringByDeletingLastPathComponent: String {
-        
         get {
-            
             return (self as NSString).deletingLastPathComponent
         }
     }
     var stringByDeletingPathExtension: String {
-        
         get {
-            
             return (self as NSString).deletingPathExtension
         }
     }
     var pathComponents: [String] {
-        
         get {
-            
             return (self as NSString).pathComponents
         }
     }
     
     func stringByAppendingPathComponent(path: String) -> String {
-        
         let nsSt = self as NSString
-        
         return nsSt.appendingPathComponent(path)
     }
     

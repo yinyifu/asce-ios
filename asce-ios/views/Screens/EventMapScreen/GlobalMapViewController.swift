@@ -15,7 +15,7 @@ class GlobalMapViewController: UIViewController, CLLocationManagerDelegate{
     private var heading : CLHeading?
     private var loc : CLLocation?;
     var dest : CLLocation?;
-    var hisLocation : MKMapItem?;
+    var hisLocation : MKMapItem!;
     //var locationTuples : [(textField : UITextField?, mapItem : MKMapItem?)]!
     @IBOutlet weak var mapview: MKMapView!
     @IBOutlet weak var authorizationLabel: UILabel!
@@ -71,9 +71,7 @@ class GlobalMapViewController: UIViewController, CLLocationManagerDelegate{
         CLGeocoder().reverseGeocodeLocation(locations.last!) {(placemarks:[CLPlacemark]?, error:Error?) in
             if let placemarks = placemarks {
                 let placemark = placemarks[0]
-                self.hisLocation = MKMapItem.init(placemark: MKPlacemark.init(coordinate: placemark.location!.coordinate, addressDictionary: placemark.addressDictionary as! [String : Any]))
-                
-                
+                self.hisLocation = MKMapItem.init(placemark: MKPlacemark.init(coordinate: placemark.location!.coordinate, addressDictionary: placemark.addressDictionary as? [String : Any]))
                 
             }
         };

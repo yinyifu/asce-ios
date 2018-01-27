@@ -25,11 +25,7 @@ class MyTableCell : UITableViewCell {
         self.myEventView.reloadData()
         self.myEventView.eventsToShow = eve
        
-        self.myEventView.performBatchUpdates({ () -> Void in
-            for i in 0...eve.count{
-             //   self.myEventView.insertItems(at: [IndexPath(row: i, section: 0)])
-            }
-        }, completion: nil)
+        
     }
     
 }

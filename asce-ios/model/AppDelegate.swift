@@ -17,8 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     let consumer_secret: String = "IzIH36MpXyAMLdvUEMPBkKGebelqHoSbLPrOFfTX6oupA0LK7S"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        EventLoader.init();
+        let _ = EventLoader.init();
         Twitter.sharedInstance().start(withConsumerKey:consumer_key, consumerSecret:consumer_secret)
+        
+        if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let url2 = url.appendingPathComponent("schedule.json", isDirectory: false)
+            if FileManager.default.fileExists(atPath: url2.path) {
+
+                EventLoader.loadMyEvent()
+            }
+        }
+        
+        
        return true
     }
     

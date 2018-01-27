@@ -61,6 +61,7 @@ class EventDetailHeaderCell : UITableViewCell{
             }
         }else{
             EventLoader.myEvent.append(self.thisEvent)
+            EventLoader.saveMyEvent()
         }
         self.refreshImage()
     }

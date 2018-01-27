@@ -9,6 +9,7 @@
 import UIKit
 
 class EventViewController : UITableViewController, TableButtonDelegate {
+    
     func backClicked() {
         self.navigationController?.show(self, sender: self)
     }
@@ -17,7 +18,6 @@ class EventViewController : UITableViewController, TableButtonDelegate {
         let eventViewController = EventLoader.generateEventDetailViewController(self.dataAccordingToSection[path.first!][path.row])
         self.navigationController!.pushViewController(eventViewController, animated: true)
     }
-    
     private var scheduleName:String?;
     private var selectedIndexPath : IndexPath?;
     private var _selectedSchedule: ScheEvent?;
@@ -74,20 +74,16 @@ class EventViewController : UITableViewController, TableButtonDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentCell : EventCell = tableView.cellForRow(at: indexPath)! as! EventCell
-        let date : String = currentCell.date!
-        let time = currentCell.startLabel.text!
-        let ary = EventLoader.db.loadDataFromDB(query: "SELECT * from Event WHERE date = '\(date)' and starttime = '\(time)'", tname: "Event")
-        
+        return
     }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.columnDatas[section]["0"]
     }
+    
     func closeController(){
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
-    
 }
