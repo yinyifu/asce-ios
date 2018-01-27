@@ -8,9 +8,8 @@
 
 import UIKit
 class SmallEventCell : UICollectionViewCell {
-    @IBOutlet weak var eventImage: UIImageView!
-    @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
+    @IBOutlet weak var eventTile: UILabel!
     
     @IBOutlet weak var eventLocation: UILabel!
     
@@ -20,10 +19,8 @@ class SmallEventCell : UICollectionViewCell {
     private var delegate: TableButtonDelegate!;
     private var index : IndexPath!;
     func initData(_ event : ScheEvent, _ path: IndexPath, _ delegate : TableButtonDelegate){
-        let image = UIImage.init(named: "time")
-        eventImage.image = image
         let dateForm = event.date.split(separator: "-")
-        eventDate.text = "\(dateForm[1])/\(dateForm[2])"
+        eventTile.text = event.name
         
         let starttime = event.starttime.split(separator: " ")[0]
         let startcc = event.starttime.split(separator: " ")[1]

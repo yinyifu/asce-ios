@@ -19,9 +19,11 @@ class PdfViewerController : UIViewController{
             let webview = UIWebView.init(frame: self.view.frame)
             let urlRequest = URLRequest.init(url: url)
             webview.loadRequest(urlRequest)
+            webview.scalesPageToFit = true
             self.view.addSubview(webview)
             self.tabBarItem.title = linkForPdf
             self.tabBarItem.image = UIImage.init(named: "floor2")
+            
             self.fresh = false
         }
         

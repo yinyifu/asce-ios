@@ -24,8 +24,6 @@ class MyTableCell : UITableViewCell {
     func beginUpdate(_ eve : [ScheEvent]){
         self.myEventView.reloadData()
         self.myEventView.eventsToShow = eve
-       
-        
     }
     
 }

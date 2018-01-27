@@ -12,7 +12,7 @@ import UIKit
 class HomeViewController : UITableViewController, TableButtonDelegate
 {
     
-    private var upcomingEvent : [ScheEvent]! = []
+    private var upcomingEvent : [ScheEvent] = []
     static var testingNumber = 0
     private var myCollectionView : MyTableCell!
     func buttonClicked(at path: IndexPath) {
@@ -127,7 +127,8 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 return cell;
             }else{
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
-                cell.initData(self.upcomingEvent, self)
+                let ary = self.upcomingEvent
+                cell.initData(ary, self)
                 return cell;
             }
         case 2:

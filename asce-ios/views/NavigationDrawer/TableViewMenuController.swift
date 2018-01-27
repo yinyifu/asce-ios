@@ -132,9 +132,6 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
         return 60
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 60
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let btn = UIButton(type: UIButtonType.custom)

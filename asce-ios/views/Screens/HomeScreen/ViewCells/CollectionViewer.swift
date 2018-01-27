@@ -9,12 +9,11 @@
 import UIKit
 
 class CollectionViewer: UICollectionView, UICollectionViewDataSource ,TableButtonDelegate{
-    static var coll = CollectionViewLayoutFlow()
+    
     func buttonClicked(at path: IndexPath) {
         let vc = EventLoader.generateEventDetailViewController(self.eventsToShow[path.row])
         self.monokumaController.navigationController!.pushViewController(vc, animated: true)
     }
-    
     var eventsToShow : [ScheEvent]!
     private var monokumaController : UITableViewController!;
     func initData(_ events : [ScheEvent], _ vc: UITableViewController){
@@ -23,20 +22,19 @@ class CollectionViewer: UICollectionView, UICollectionViewDataSource ,TableButto
         self.monokumaController = vc;
         if(HomeViewController.testingNumber == self.eventsToShow.count){
             print(self.eventsToShow!)
-            
         }
         if(self.eventsToShow.count == 0){
             print("000000")
         }
-        self.collectionViewLayout = CollectionViewer.coll
-        
+        self.collectionViewLayout = CollectionViewLayoutFlow()
     }
     
     override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
-        
     }
-    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return eventsToShow.count > 6 ? 6 : eventsToShow.count
     }
@@ -44,7 +42,6 @@ class CollectionViewer: UICollectionView, UICollectionViewDataSource ,TableButto
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let whichItem = indexPath.row
-        
         let cell = self.dequeueReusableCell(withReuseIdentifier: "SmallViewCell", for: indexPath) as! SmallEventCell
         cell.initData(self.eventsToShow[whichItem], indexPath, self)
         return cell
