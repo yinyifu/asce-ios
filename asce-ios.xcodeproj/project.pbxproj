@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F02B774200455B9004D0098 /* SpeakerDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */; };
 		5F13EE372004C074000B1F3E /* speakers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F13EE362004C074000B1F3E /* speakers.txt */; };
 		5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */; };
 		5F7C97E81FEC5BFA0007F8E4 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */; };
@@ -22,8 +21,14 @@
 		5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1DF1FF21ED100D638A8 /* EventMapViewController.swift */; };
 		5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB1E11FF21EF100D638A8 /* EntertainmentViewController.swift */; };
 		5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */; };
+		B9332A8A200B4A8A00D709F8 /* SpeakerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9332A89200B4A8900D709F8 /* SpeakerCell.xib */; };
+		B9332A8C200C767000D709F8 /* SmallEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332A8B200C767000D709F8 /* SmallEventCell.swift */; };
+		B9332A8E200D3E2B00D709F8 /* CollectionViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332A8D200D3E2B00D709F8 /* CollectionViewer.swift */; };
+		B9332A95200D43B000D709F8 /* MyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332A94200D43B000D709F8 /* MyTableCell.swift */; };
+		B9332A97200D47B500D709F8 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9332A96200D47B500D709F8 /* CollectionViewCell.xib */; };
+		B9332A99200D978600D709F8 /* CollectionViewLayoutFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332A98200D978600D709F8 /* CollectionViewLayoutFlow.swift */; };
 		B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9438D5620043D40002C457E /* GlobalMapViewController.swift */; };
-		B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B957CCF81FFE9C0C00FE935D /* Speaker.xib */; };
+		B94D6F44201BBAA800D90870 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D6F43201BBAA800D90870 /* Storage.swift */; };
 		B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */; };
 		B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */; };
 		B957CD052000728500FE935D /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CD042000728500FE935D /* SpeakerCell.swift */; };
@@ -90,7 +95,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewCell.swift; sourceTree = "<group>"; };
 		5F13EDF020048F46000B1F3E /* speakerPictures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = speakerPictures; path = "/Users/baichengchen/Documents/GitHub/asce-ios/speakerPictures"; sourceTree = "<absolute>"; };
 		5F13EE362004C074000B1F3E /* speakers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = speakers.txt; sourceTree = SOURCE_ROOT; };
 		5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
@@ -108,8 +112,14 @@
 		B92E29A41FF744DF00C43E7B /* DC-Theme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "DC-Theme.bundle"; sourceTree = "<group>"; };
 		B92E29A51FF744DF00C43E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92E29A71FF7450B00C43E7B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B9332A89200B4A8900D709F8 /* SpeakerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerCell.xib; sourceTree = "<group>"; };
+		B9332A8B200C767000D709F8 /* SmallEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallEventCell.swift; sourceTree = "<group>"; };
+		B9332A8D200D3E2B00D709F8 /* CollectionViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewer.swift; sourceTree = "<group>"; };
+		B9332A94200D43B000D709F8 /* MyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableCell.swift; sourceTree = "<group>"; };
+		B9332A96200D47B500D709F8 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		B9332A98200D978600D709F8 /* CollectionViewLayoutFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutFlow.swift; sourceTree = "<group>"; };
 		B9438D5620043D40002C457E /* GlobalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMapViewController.swift; sourceTree = "<group>"; };
-		B957CCF81FFE9C0C00FE935D /* Speaker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Speaker.xib; sourceTree = "<group>"; };
+		B94D6F43201BBAA800D90870 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHeaderCell.swift; sourceTree = "<group>"; };
 		B957CD042000728500FE935D /* SpeakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
@@ -174,20 +184,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F9149B920042F490076A8FE /* SpeakerDetail */ = {
-			isa = PBXGroup;
-			children = (
-				B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */,
-				5F02B773200455B9004D0098 /* SpeakerDetailViewCell.swift */,
-			);
-			path = SpeakerDetail;
-			sourceTree = "<group>";
-		};
 		5FCDB21F1FF2290000D638A8 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B9332A91200D438100D709F8 /* ViewCells */,
 				5FCDB1D41FF21C7900D638A8 /* HomeViewController.swift */,
-				B97D77AE2005225A00427071 /* HeaderImageTableCell.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -195,9 +196,11 @@
 		5FCDB2201FF2290F00D638A8 /* SpeakerScreen */ = {
 			isa = PBXGroup;
 			children = (
-				5F9149B920042F490076A8FE /* SpeakerDetail */,
+				B9332A89200B4A8900D709F8 /* SpeakerCell.xib */,
+				B957CD042000728500FE935D /* SpeakerCell.swift */,
 				5FCDB1D71FF21E4500D638A8 /* SpeakerViewController.swift */,
 				5FCDB2291FF22A3500D638A8 /* SpeakerTableViewCell.swift */,
+				B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */,
 			);
 			path = SpeakerScreen;
 			sourceTree = "<group>";
@@ -301,6 +304,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B9332A91200D438100D709F8 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B97D77AE2005225A00427071 /* HeaderImageTableCell.swift */,
+				B9332A8B200C767000D709F8 /* SmallEventCell.swift */,
+				B9332A94200D43B000D709F8 /* MyTableCell.swift */,
+				B9332A8D200D3E2B00D709F8 /* CollectionViewer.swift */,
+				B9332A96200D47B500D709F8 /* CollectionViewCell.xib */,
+				B9332A98200D978600D709F8 /* CollectionViewLayoutFlow.swift */,
+			);
+			path = ViewCells;
+			sourceTree = "<group>";
+		};
+		B958E2B8200DDF3F0065ED88 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		B9BBC60220044A0F0072B911 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,10 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				B9C29EA11FFA9C18004E914F /* EventCell.xib */,
-				B957CCF81FFE9C0C00FE935D /* Speaker.xib */,
 				B9DF2F021FF9B8C500F99037 /* EventCell.swift */,
 				B957CD021FFFCBD700FE935D /* EventDetailHeaderCell.swift */,
-				B957CD042000728500FE935D /* SpeakerCell.swift */,
 				B957CD06200078A600FE935D /* DescriptionCell.swift */,
 				B97D77AC2004ABFC00427071 /* DescriptionCell.xib */,
 			);
@@ -332,6 +353,7 @@
 				B9FA4CB11FC7000400956099 /* asce-ios */,
 				B9FA4CB01FC7000400956099 /* Products */,
 				B92E29A61FF7450B00C43E7B /* Frameworks */,
+				B958E2B8200DDF3F0065ED88 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -380,6 +402,7 @@
 				B9DF2EF71FF9A7B600F99037 /* DataClasses.swift */,
 				B9DF2EF81FF9A7B600F99037 /* EventLoader.swift */,
 				B9DF2F0A1FF9BA5F00F99037 /* Database.swift */,
+				B94D6F43201BBAA800D90870 /* Storage.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -505,14 +528,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */,
-				B957CCF91FFE9C0C00FE935D /* Speaker.xib in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
 				B9BBC60520044A1B0072B911 /* Second Level.pdf in Resources */,
 				B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */,
 				B9BBC60620044A1B0072B911 /* Mezzanine.pdf in Resources */,
+				B9332A97200D47B500D709F8 /* CollectionViewCell.xib in Resources */,
 				B97D77AB20049D0E00427071 /* YMC agenda.pdf in Resources */,
 				5F13EE372004C074000B1F3E /* speakers.txt in Resources */,
 				B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */,
+				B9332A8A200B4A8A00D709F8 /* SpeakerCell.xib in Resources */,
 				B9FA4CBD1FC7000400956099 /* Main.storyboard in Resources */,
 				5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */,
 				5F7C97E81FEC5BFA0007F8E4 /* TwitterKitResources.bundle in Resources */,
@@ -542,11 +566,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DF2F0B1FF9BA5F00F99037 /* Database.swift in Sources */,
-				5F02B774200455B9004D0098 /* SpeakerDetailViewCell.swift in Sources */,
 				B9DF2EFA1FF9A7B600F99037 /* DataClasses.swift in Sources */,
+				B9332A95200D43B000D709F8 /* MyTableCell.swift in Sources */,
 				B957CD031FFFCBD800FE935D /* EventDetailHeaderCell.swift in Sources */,
 				5FCDB1E21FF21EF100D638A8 /* EntertainmentViewController.swift in Sources */,
 				B957CD07200078A600FE935D /* DescriptionCell.swift in Sources */,
+				B9332A99200D978600D709F8 /* CollectionViewLayoutFlow.swift in Sources */,
+				B94D6F44201BBAA800D90870 /* Storage.swift in Sources */,
 				5FCDB1D81FF21E4500D638A8 /* SpeakerViewController.swift in Sources */,
 				B97D77A92004968700427071 /* PdfViewerController.swift in Sources */,
 				B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */,
@@ -558,10 +584,12 @@
 				B9DF2F071FF9B91E00F99037 /* EventViewController.swift in Sources */,
 				B96528ED20027D8A00D498F5 /* SpeakerDetailViewController.swift in Sources */,
 				5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */,
+				B9332A8C200C767000D709F8 /* SmallEventCell.swift in Sources */,
 				B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */,
 				5FCDB22A1FF22A3500D638A8 /* SpeakerTableViewCell.swift in Sources */,
 				5F7C97F21FEC66640007F8E4 /* TwitterViewController.swift in Sources */,
 				B9DF2EFB1FF9A7B600F99037 /* EventLoader.swift in Sources */,
+				B9332A8E200D3E2B00D709F8 /* CollectionViewer.swift in Sources */,
 				B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */,
 				B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */,
 				B9FA4CB81FC7000400956099 /* MasterViewController.swift in Sources */,
@@ -739,7 +767,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z8ZNSX6Y5B;
+				DEVELOPMENT_TEAM = M7XT3Z682V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -747,7 +775,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Targets/info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tutorials.asce-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.conferenceapp.asce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos11.1;
 				"SDKROOT[arch=*]" = iphoneos11.1;
@@ -762,7 +790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z8ZNSX6Y5B;
+				DEVELOPMENT_TEAM = M7XT3Z682V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -770,7 +798,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Targets/info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tutorials.asce-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.conferenceapp.asce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos11.1;
 				SWIFT_VERSION = 4.0;

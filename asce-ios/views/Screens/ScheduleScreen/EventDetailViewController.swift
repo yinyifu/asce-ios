@@ -7,14 +7,26 @@
 //
 
 import UIKit
-class EventDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
-    private var event : ScheEvent!;
-    private var speakers : [Speaker]?;
+class EventDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, TableButtonDelegate{
     
+    func buttonClicked(at path: IndexPath) {
+        guard path.first! == EventDetailViewController.speakersSectionIndex else{
+            return
+        }
+        if let speakerDetail = speakers?[path.row-1]{
+            let vc = EventLoader.generateSpeakerDetailViewController(speakerDetail)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            fatalError("No Speaker Detail Found")
+        }
+    }
     
-    static let headerSectionIndex = 0;
-    static let speakersSectionIndex = 1;
-    static let descriptionSectionIndex = 2;
+    private var event : ScheEvent!
+    private var speakers : [Speaker]?
+    
+    static let headerSectionIndex = 0
+    static let speakersSectionIndex = 1
+    static let descriptionSectionIndex = 2
     
     @IBOutlet weak var eventDetailTableView: UITableView!
     convenience init(_ event : ScheEvent){
@@ -24,19 +36,7 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     
     func initData(_ event:ScheEvent){
         self.event = event
-        let speakersexists = event.speakers!
-        if speakersexists.count > 0{
-            self.speakers = []
-            let strfg = speakersexists.split(separator: ",")
-            for ele in strfg {
-                let strfgnospace = ele.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speaker where name = '\(strfgnospace)'", tname: "Speaker")
-                self.speakers!.append(contentsOf: speaker)
-                print(speaker)
-            }
-        }else{
-            self.speakers = nil;
-        }
+        self.speakers = EventLoader.getEventSpeakers(event)
     }
     @objc
     func bookmarkJustClicked(){
@@ -44,27 +44,27 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.eventDetailTableView.delegate = self
         self.eventDetailTableView.dataSource = self
         self.eventDetailTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         // identify if the object is already bookmarked
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: self, action: #selector(bookmarkJustClicked))
+        
+        self.parent?.automaticallyAdjustsScrollViewInsets = true
+        self.automaticallyAdjustsScrollViewInsets = true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateView()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        if(scrollView.contentOffset.y < 0){
+            scrollView.contentOffset.y = 0;
+        }
     }
-    
-  
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.first!;
@@ -91,11 +91,11 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             return cell
         }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = indexPath.first!;
         if(section == EventDetailViewController.headerSectionIndex){
-            
-            return 170
+            return 200
         }else if(section == EventDetailViewController.speakersSectionIndex){
             if(indexPath.row == 0){
                 return 25
@@ -103,19 +103,22 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             return 48
         }else{
             let dcell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
-            
-            return dcell.heightForCell(withText: self.event.desc!)
+            return dcell.heightForCell(withText: self.event.desc!) + 30
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
+        self.buttonClicked(at: indexPath)
     }
+    
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         return
     }
+    
     func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
         return false
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == EventDetailViewController.headerSectionIndex){
             return 1
@@ -128,8 +131,5 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
             return 1
         }
         return 0
-    }
-    func updateView(){
-        
     }
 }

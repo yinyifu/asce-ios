@@ -9,57 +9,59 @@
 import UIKit
 
 class EventLoader{
+    
     static var eventBundle:Bundle?;
     static var favoriteEventColor:UIColor?;
-    static var schedulee:Array<Schedule>?;
-    static var schedulee2:Array<ScheEvent>?;
     static var db : Database = Database.init(withDBFileName: "ascedb.sql");
+    static var myEvent : [ScheEvent]! = []
+    
     init(){
         let colorId = "#659f65";
         EventLoader.favoriteEventColor = UIColor.color(fromHexString: colorId)
-        let events = EventLoader.getQueryEvents(query: "SELECT * from Event;", tname: "Event");
-        EventLoader.schedulee2 = events
-        EventLoader.schedulee = Array()
-        EventLoader.schedulee!.append(Schedule(id: 9, name: "testing"))
     }
+    
     static func getQueryEvents(query : String, tname : String)->Array<ScheEvent>{
         let horray :Array<[String : String]> = EventLoader.db.loadDataFromDB(query: query, tname: tname) as! Array<[String : String]>
         var newRay = Array<ScheEvent>()
         for dict in horray{
-            
             let newevent:ScheEvent = ScheEvent(name: dict["name"]!, starttime: dict["starttime"]!, endtime: dict["endtime"]!, speakers : dict["speakers"], room : dict["room"], desc: dict["desc"], mods: dict["mods"], organizations: dict["organizations"]!, date: dict["date"]!);
             newRay.append(newevent)
         }
-        
         if(EventLoader.db.affectedRows != 0){
             print("query execute success");
-            
         }else{
             fatalError("query execution failed");
         }
         return newRay;
+    }
+    static func saveMyEvent(){
+        Storage.store(EventLoader.myEvent, to: .documents, as: "schedule.json")
+    }
+    static func loadMyEvent(){
+        EventLoader.myEvent = Storage.retrieve("schedule.json", from: .documents, as: [ScheEvent].self)
     }
     static func getQuerySpeakers(query : String, tname : String)->Array<Speaker>{
         let horray : Array<[String : Any]> = EventLoader.db.loadDataFromDB(query: query, tname: tname)
         var newRay = Array<Speaker>()
         for dict in horray{
             if let imageData : Data = dict["profile_pic"]! as? Data{
-                print(imageData)
                 let image = UIImage.init(data: imageData)!
-                let newevent:Speaker = Speaker(name: dict["name"]! as! String, title : dict["title"]! as! String, profile_pic : image);
+                let newevent:Speaker = Speaker(name: dict["name"]! as! String, title : dict["title"]! as! String, profile_pic : image)
                 newRay.append(newevent)
             }else{
                 fatalError("extract data failed")
             }
         }
         if(EventLoader.db.affectedRows != 0){
-            print("query execute success");
-            
+            print("query execute success")
         }else{
-            fatalError("query execution failed");
+            fatalError("query execution failed")
         }
         return newRay;
     }
+    
+    // generate a EventDetailViewController to a certain speaker
+    
     static func generateEventDetailViewController(_ event: ScheEvent) -> EventDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let viewController = sb.instantiateViewController(withIdentifier: "EventDetailStoryBoard") as! EventDetailViewController
@@ -67,19 +69,38 @@ class EventLoader{
         return viewController
     }
     
+    // generate a SpeakerDetailViewController to a certain speaker
+    
     static func generateSpeakerDetailViewController(_ speaker: Speaker) -> SpeakerDetailViewController{
         let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let viewController = sb.instantiateViewController(withIdentifier: "SpeakerDetailStoryBoard") as! SpeakerDetailViewController
-        viewController.loadProfile(speakerProfile: speaker)
+
+        viewController.initData(speaker: speaker)
         return viewController
     }
     
+    
+    // return all the speaker relative to an Event
+
     static func getEventSpeakers(_ event: ScheEvent)->[Speaker]?{
+        let speakersexists = event.speakers!
+        if speakersexists.count > 0 {
+            var speakers : [Speaker] = []
+            let strfg = speakersexists.split(separator: ",")
+            for ele in strfg {
+                let strfgnospace = ele.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speaker where name = '\(strfgnospace)'", tname: "Speaker")
+                speakers.append(contentsOf: speaker)
+            }
+            return speakers
+        }
         return nil
     }
+    
     static func getSpeakerEvents(_ speaker: Speaker)->[ScheEvent]?{
         return nil
     }
+    
 }
 
 
@@ -137,47 +158,40 @@ public extension UIColor {
         return yiq < 192
     }
 }
+
+
 public extension String {
     
     var lastPathComponent: String {
-        
         get {
             return (self as NSString).lastPathComponent
         }
     }
+    
     var pathExtension: String {
-        
         get {
-            
             return (self as NSString).pathExtension
         }
     }
+    
     var stringByDeletingLastPathComponent: String {
-        
         get {
-            
             return (self as NSString).deletingLastPathComponent
         }
     }
     var stringByDeletingPathExtension: String {
-        
         get {
-            
             return (self as NSString).deletingPathExtension
         }
     }
     var pathComponents: [String] {
-        
         get {
-            
             return (self as NSString).pathComponents
         }
     }
     
     func stringByAppendingPathComponent(path: String) -> String {
-        
         let nsSt = self as NSString
-        
         return nsSt.appendingPathComponent(path)
     }
     
@@ -186,5 +200,17 @@ public extension String {
         let nsSt = self as NSString
         
         return nsSt.appendingPathExtension(ext)
+    }
+    
+    subscript (bounds: CountableClosedRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[start...end])
+    }
+    
+    subscript (bounds: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[start..<end])
     }
 }
