@@ -585,16 +585,16 @@
         <scene sceneID="eGv-5z-Ufr">
             <objects>
                 <tableViewController storyboardIdentifier="SponsorStoryBoard" id="Y6q-X2-ovC" customClass="SponsorViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="VWD-KZ-xel">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" estimatedRowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" id="VWD-KZ-xel">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SponsorTableViewCell" rowHeight="200" id="id9-vo-83D" customClass="SponsorTableViewCell" customModule="asce_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SponsorTableViewCell" rowHeight="215" id="id9-vo-83D" customClass="SponsorTableViewCell" customModule="asce_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="215"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="id9-vo-83D" id="Zgg-7M-s6s">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="214.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1Y-af-6mZ">
@@ -952,6 +952,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conference" translatesAutoresizingMaskIntoConstraints="NO" id="o8H-rE-LSC">
                                             <rect key="frame" x="16" y="11" width="343" height="178"/>
                                         </imageView>
@@ -974,6 +975,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </label>
+
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="5zI-0V-tq0" firstAttribute="leading" secondItem="DpA-Ww-12W" secondAttribute="leadingMargin" constant="12" id="0ZX-B9-RJc"/>
@@ -1026,7 +1028,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5C-H9-afz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+
             <point key="canvasLocation" x="4502" y="-2337"/>
+
         </scene>
         <!--Speaker View Controller-->
         <scene sceneID="ciq-yC-k6d">
