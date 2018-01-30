@@ -15,6 +15,16 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     private var upcomingEvent : [ScheEvent] = []
     static var testingNumber = 0
     private var myCollectionView : MyTableCell!
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        print(identifier)
+        if(identifier == "pdfSequel"){
+            
+        }else{
+            print("c")
+        }
+        
+    }
+    
     func buttonClicked(at path: IndexPath) {
         let indexType = path.first!
         if(indexType == 0){
@@ -28,7 +38,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
         }
     }
     
-    lazy var descriptionText : String = "Get access to civil engineering’s leading experts and information through our many conferences--from the ASCE Convention to specialized technical and leadership conferences. These are the perfect platforms to exchange ideas, meet a diverse group of colleagues, participate in discussions, earn the latest innovations in your field, and earn professional development hours (PDHs), all at members-only discounts."
+    lazy var descriptionText : String = "Welcome to Buffalo! \r\n\tOn behalf of the 2018 Eastern Region Younger Member Council (ERYMC) Planning Committee and ASCE Buffalo Section, welcome to the Queen City, the “City of Good Neighbors” and more notably “the City of Light”. The numerous names come from our bountiful history, architecture, and proud community; which we encourage you explore over the next few days."
     override func viewDidLoad() {
         super.viewDidLoad()
         let current = Date()
@@ -71,7 +81,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
-                return 2
+                return 3
             case 1:
                 return 2
             case 2:
@@ -86,9 +96,11 @@ class HomeViewController : UITableViewController, TableButtonDelegate
         case 0:
             if(indexPath.row == 0){
                 return 150
-            }else{
+            }else if(indexPath.row == 1){
                 let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
                 return cell.heightForCell(withText: self.descriptionText)
+            }else{
+                return 50
             }
         case 1:
             if(indexPath.row == 0){
@@ -113,13 +125,19 @@ class HomeViewController : UITableViewController, TableButtonDelegate
             if(indexPath.row == 0){
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "homeImage")!
                 return cell;
-            }else{
+            }else if(indexPath.row == 1){
                 let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
                 cell.initData(self.descriptionText)
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 cell.isUserInteractionEnabled = false
                 return cell;
+            }else{
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "redmoreCell")! as! ReadMoreCell
+                cell.initData(self.navigationController!)
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                return cell;
             }
+            
         case 1:
             if(indexPath.row == 0){
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventName")!
@@ -127,6 +145,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 return cell;
             }else{
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
                 let ary = self.upcomingEvent
                 cell.initData(ary, self)
                 return cell;
@@ -138,6 +157,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 return cell;
             }else{
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
                 let ary = EventLoader.myEvent
                 HomeViewController.testingNumber = ary!.count
                 self.myCollectionView = cell
@@ -146,7 +166,9 @@ class HomeViewController : UITableViewController, TableButtonDelegate
             }
         default:
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "contactInfoCell")!
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell;
         }
     }
+   
 }

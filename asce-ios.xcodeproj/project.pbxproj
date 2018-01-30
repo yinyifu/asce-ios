@@ -27,6 +27,9 @@
 		B9332A95200D43B000D709F8 /* MyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332A94200D43B000D709F8 /* MyTableCell.swift */; };
 		B9332A97200D47B500D709F8 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9332A96200D47B500D709F8 /* CollectionViewCell.xib */; };
 		B9332A99200D978600D709F8 /* CollectionViewLayoutFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9332A98200D978600D709F8 /* CollectionViewLayoutFlow.swift */; };
+		B93EB3A32020FA040023AB66 /* Rail.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B93EB3A22020FA040023AB66 /* Rail.pdf */; };
+		B93EB3A52020FA1B0023AB66 /* air.png in Resources */ = {isa = PBXBuildFile; fileRef = B93EB3A42020FA1A0023AB66 /* air.png */; };
+		B93EB3A8202105EE0023AB66 /* ReadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB3A7202105EE0023AB66 /* ReadMore.swift */; };
 		B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9438D5620043D40002C457E /* GlobalMapViewController.swift */; };
 		B94D6F44201BBAA800D90870 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D6F43201BBAA800D90870 /* Storage.swift */; };
 		B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */; };
@@ -118,6 +121,10 @@
 		B9332A94200D43B000D709F8 /* MyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableCell.swift; sourceTree = "<group>"; };
 		B9332A96200D47B500D709F8 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		B9332A98200D978600D709F8 /* CollectionViewLayoutFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutFlow.swift; sourceTree = "<group>"; };
+		B93EB3A22020FA040023AB66 /* Rail.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Rail.pdf; sourceTree = "<group>"; };
+		B93EB3A42020FA1A0023AB66 /* air.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = air.png; sourceTree = "<group>"; };
+		B93EB3A62020FFBA0023AB66 /* WL draft.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WL draft.docx"; sourceTree = "<group>"; };
+		B93EB3A7202105EE0023AB66 /* ReadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMore.swift; sourceTree = "<group>"; };
 		B9438D5620043D40002C457E /* GlobalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMapViewController.swift; sourceTree = "<group>"; };
 		B94D6F43201BBAA800D90870 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +320,7 @@
 				B9332A8D200D3E2B00D709F8 /* CollectionViewer.swift */,
 				B9332A96200D47B500D709F8 /* CollectionViewCell.xib */,
 				B9332A98200D978600D709F8 /* CollectionViewLayoutFlow.swift */,
+				B93EB3A7202105EE0023AB66 /* ReadMore.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -328,6 +336,9 @@
 			isa = PBXGroup;
 			children = (
 				B97D77AA20049D0E00427071 /* YMC agenda.pdf */,
+				B93EB3A22020FA040023AB66 /* Rail.pdf */,
+				B93EB3A62020FFBA0023AB66 /* WL draft.docx */,
+				B93EB3A42020FA1A0023AB66 /* air.png */,
 				B9BBC60420044A1B0072B911 /* Mezzanine.pdf */,
 				B9BBC60320044A1B0072B911 /* Second Level.pdf */,
 			);
@@ -527,11 +538,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93EB3A32020FA040023AB66 /* Rail.pdf in Resources */,
 				B9FA4CC21FC7000400956099 /* LaunchScreen.storyboard in Resources */,
 				B9FA4CBF1FC7000400956099 /* Assets.xcassets in Resources */,
 				B9BBC60520044A1B0072B911 /* Second Level.pdf in Resources */,
 				B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */,
 				B9BBC60620044A1B0072B911 /* Mezzanine.pdf in Resources */,
+				B93EB3A52020FA1B0023AB66 /* air.png in Resources */,
 				B9332A97200D47B500D709F8 /* CollectionViewCell.xib in Resources */,
 				B97D77AB20049D0E00427071 /* YMC agenda.pdf in Resources */,
 				5F13EE372004C074000B1F3E /* speakers.txt in Resources */,
@@ -582,6 +595,7 @@
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
 				B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */,
 				B9DF2F071FF9B91E00F99037 /* EventViewController.swift in Sources */,
+				B93EB3A8202105EE0023AB66 /* ReadMore.swift in Sources */,
 				B96528ED20027D8A00D498F5 /* SpeakerDetailViewController.swift in Sources */,
 				5FCDB1E01FF21ED100D638A8 /* EventMapViewController.swift in Sources */,
 				B9332A8C200C767000D709F8 /* SmallEventCell.swift in Sources */,

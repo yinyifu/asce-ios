@@ -17,9 +17,13 @@ class EventMapViewController : UITabBarController
         let map = self.viewControllers![0] as! GlobalMapViewController
         let mezz = self.viewControllers![1] as! PdfViewerController
         let second = self.viewControllers![2] as! PdfViewerController
+        let air = self.viewControllers![3] as! PdfViewerController
+        let train = self.viewControllers![4] as! PdfViewerController
         map.initData(CLLocation(latitude: 42.8879852, longitude: -78.8764571))
         mezz.initData(linkForPdf: "Mezzanine")
         second.initData(linkForPdf: "Second Level")
+        air.initData(linkForPdf: "air")
+        train.initData(linkForPdf: "Rail")
         
         
     }
