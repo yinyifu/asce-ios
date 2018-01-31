@@ -11,9 +11,11 @@ import UIKit
 
 class SponsorViewController : UITableViewController
 {
-    var titleN = ["Golden Sponsors","Silver Sponsors","Bronze Sponsors","ASCE"]
-    var sponsorN = [["CHA","CPL","PARSONS"],["ASCEREGION1","FA","TC","USI"],["B_L","EJP","SEAS"],["2LINES","20120830","20130802","20131223","20161104"]]
     
+    var levels = ["Gold Sponsor","Silver Sponsor","Bronze Sponsor"]
+    var sponsorN = [["CPL","PARSONS"],["ASCEREGION1","FA","TC","USI"],["B_L","EJP","SEAS"]]
+    
+    var sponsorFullN = [["Clark Patterson Lee","Parsons Corporation"],["ASCE Region 1","Foit-Albert Associates","TenCate Geosynthetics","Watts Architecture and Engineering","United Survey Inc."],["Barton & Loguidice","Everett J. Prescott Inc.","UB School of Engineering and Applied Sciences"]]
     
     override func viewDidLoad()
     {
@@ -29,11 +31,13 @@ class SponsorViewController : UITableViewController
         return sponsorN[section].count
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titleN[section]
+        return "\(levels[section])s"
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SponsorTableViewCell", for: indexPath) as! SponsorTableViewCell
         cell.sponsorImage?.image = UIImage(named:sponsorN[indexPath.section][indexPath.row])
+        cell.sponsorTitleLabel.text = sponsorFullN[indexPath.section][indexPath.row]
+        cell.sponsorLevelLabel.text = (levels[indexPath.section])
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

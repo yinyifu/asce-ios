@@ -20,6 +20,7 @@ class MainViewVontroller : BaseViewController{
         addChildView(storyBoardID: "EntertainmentStoryBoard", titleOfChildren: "Entertainments", iconName: "dinner")
         addChildView(storyBoardID: "EmergencyStoryBoard", titleOfChildren: "Emergency Info", iconName: "door")
         addChildView(storyBoardID: "TwitterStoryBoard", titleOfChildren: "Twitter", iconName: "bird")
+        addChildView(storyBoardID: "GroupMeStoryBoard", titleOfChildren: "GroupMe", iconName: "groupme")
         
         self.parent?.automaticallyAdjustsScrollViewInsets = false
         self.automaticallyAdjustsScrollViewInsets = false
