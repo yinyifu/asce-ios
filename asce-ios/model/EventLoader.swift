@@ -82,10 +82,10 @@ class EventLoader{
     
     // return all the speaker relative to an Event
 
-    static func getEventSpeakers(_ event: ScheEvent)->[Speaker]?{
+    static func getEventSpeakers(_ event: ScheEvent)->[Speaker]{
         let speakersexists = event.speakers!
+        var speakers : [Speaker] = []
         if speakersexists.count > 0 {
-            var speakers : [Speaker] = []
             let strfg = speakersexists.split(separator: ",")
             for ele in strfg {
                 let strfgnospace = ele.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
@@ -94,9 +94,23 @@ class EventLoader{
             }
             return speakers
         }
-        return nil
+        return speakers
     }
     
+    static func getEventModerator(_ event: ScheEvent)->[Speaker]{
+        let speakersexists = event.mods!
+        var speakers : [Speaker] = []
+        if speakersexists.count > 0 {
+            let strfg = speakersexists.split(separator: ",")
+            for ele in strfg {
+                let strfgnospace = ele.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                let speaker = EventLoader.getQuerySpeakers(query: "SELECT * from Speaker where name = '\(strfgnospace)'", tname: "Speaker")
+                speakers.append(contentsOf: speaker)
+            }
+            return speakers
+        }
+        return speakers
+    }
     static func getSpeakerEvents(_ speaker: Speaker)->[ScheEvent]?{
         return nil
     }

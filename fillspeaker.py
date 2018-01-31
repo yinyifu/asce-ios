@@ -9,11 +9,12 @@ with open('speakers.txt', 'r') as infile:
 	name = infile.readline().strip()
 	title =	infile.readline().strip()
 	picture_name = infile.readline().strip()
-	desc = infile.readline().strip().replace("\\n", "\n")
+	desc = infile.readline().replace("\\n", "\n")
 	pic_loc = 'speakerPictures/'+picture_name
 	with open(pic_loc, 'rb') as f:
 		ablob = f.read()
 	while(infile.readline().strip() == "------"):
+		print(desc)
 		c.execute("INSERT INTO Speaker (name, title, profile_pic, bio) VALUES (?, ?, ?, ?)" , (name, title, ablob, desc))
 		
 		name = infile.readline().strip()
@@ -21,7 +22,7 @@ with open('speakers.txt', 'r') as infile:
 			break
 		title =	infile.readline().strip()
 		picture_name = infile.readline().strip()
-		desc = infile.readline().strip().replace("\\n", "\n")
+		desc = infile.readline().replace("\\n", "\n")
 		pic_loc = 'speakerPictures/'+picture_name
 		with open(pic_loc, 'rb') as f:
 			ablob = f.read()

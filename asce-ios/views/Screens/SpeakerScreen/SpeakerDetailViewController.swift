@@ -13,7 +13,6 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         let targetEvent = self.speakerEvents[path.row-1]
         let vc = EventLoader.generateEventDetailViewController(targetEvent)
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     
@@ -38,12 +37,14 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         switch section {
         case SpeakerDetailViewController.header:
             return 1;
-        default:
+        case SpeakerDetailViewController.events:
             if(self.speakerEvents.count == 0){
                 return 0
             }else{
                 return self.speakerEvents.count + 1
             }
+        default:
+            return 1
         }
     }
     
@@ -91,7 +92,7 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
             }
         default:
             let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
-            return cell.heightForCell(withText: self.theSpeaker.bio)
+            return cell.heightForCell(withText: self.theSpeaker.bio)+30
         }
     }
     

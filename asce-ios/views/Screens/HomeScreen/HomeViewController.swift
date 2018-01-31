@@ -93,13 +93,13 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 return 0
             }
             if(indexPath.row == 0){
-                return 45
+                return 35
             }else{
                 return 120
             }
         case 2:
             if(indexPath.row == 0){
-                return 45
+                return 35
             }else{
                 return 120
             }
