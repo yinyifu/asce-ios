@@ -19,19 +19,21 @@ class SmallEventCell : UICollectionViewCell {
     private var delegate: TableButtonDelegate!;
     private var index : IndexPath!;
     func initData(_ event : ScheEvent, _ path: IndexPath, _ delegate : TableButtonDelegate){
-        let dateForm = event.date.split(separator: "-")
+        //let dateForm = event.date.split(separator: "-")
         eventTile.text = event.name
-        
-        let starttime = event.starttime.split(separator: " ")[0]
-        let startcc = event.starttime.split(separator: " ")[1]
-        let endtime = event.endtime.split(separator: " ")[0]
-        eventTime.text = "\(starttime)-\(endtime) \(startcc)"
-        
-        eventLocation.text = event.room
-        if(event.room == "See Description"){
-            eventLocation.text = "See Desc"
-        }
-        
+        /*
+            let starttime = event.starttime.split(separator: " ")[0]
+            let startcc = event.starttime.split(separator: " ")[1]
+            let endtime = event.endtime.split(separator: " ")[0]
+            eventTime.text = "\(starttime)-\(endtime) \(startcc)"
+         
+            eventLocation.text = event.room
+            if(event.room == "See Description"){
+                eventLocation.text = "See Desc"
+            }
+        */
+        self.eventTile.layer.cornerRadius = 5
+        self.eventTile.clipsToBounds = true
         self.index = path
         self.delegate = delegate
     

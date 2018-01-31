@@ -11,13 +11,16 @@ import UIKit
 
 class EmergencyCell : UITableViewCell{
     
+    @IBOutlet weak var place: UILabel!
+    @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var location: UILabel!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var phoen: UILabel!
     
     func initData(_ location:String, _ name: String, _ phone: String){
         self.location.text = location
-        self.name.text = name
-        self.phoen.text = phone
+        self.place.text = name
+        self.phone.text = phone
+    }
+    func getHeight()->CGFloat{
+        return self.place.attributedText!.size().height + self.phone.attributedText!.size().height + location.attributedText!.size().height + 15.0
     }
 }
