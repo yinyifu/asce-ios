@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F13EE372004C074000B1F3E /* speakers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F13EE362004C074000B1F3E /* speakers.txt */; };
-		5F5DE5BA202166BE002AFEB0 /* GroupMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DE5B9202166BE002AFEB0 /* GroupMeViewController.swift */; };
+		5F5DE5BC20217360002AFEB0 /* GroupMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DE5BB20217360002AFEB0 /* GroupMeViewController.swift */; };
 		5F7C97E71FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */; };
 		5F7C97E81FEC5BFA0007F8E4 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */; };
 		5F7C97E91FEC5BFA0007F8E4 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7C97E51FEC5BFA0007F8E4 /* TwitterCore.framework */; };
@@ -101,7 +101,7 @@
 /* Begin PBXFileReference section */
 		5F13EDF020048F46000B1F3E /* speakerPictures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = speakerPictures; path = "/Users/baichengchen/Documents/GitHub/asce-ios/speakerPictures"; sourceTree = "<absolute>"; };
 		5F13EE362004C074000B1F3E /* speakers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = speakers.txt; sourceTree = SOURCE_ROOT; };
-		5F5DE5B9202166BE002AFEB0 /* GroupMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMeViewController.swift; sourceTree = "<group>"; };
+		5F5DE5BB20217360002AFEB0 /* GroupMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMeViewController.swift; sourceTree = "<group>"; };
 		5F7C97E31FEC5BFA0007F8E4 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
 		5F7C97E41FEC5BFA0007F8E4 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		5F7C97E51FEC5BFA0007F8E4 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		5F5DE5B8202166A5002AFEB0 /* GroupMeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				5F5DE5B9202166BE002AFEB0 /* GroupMeViewController.swift */,
+				5F5DE5BB20217360002AFEB0 /* GroupMeViewController.swift */,
 			);
 			path = GroupMeScreen;
 			sourceTree = "<group>";
@@ -625,7 +625,7 @@
 				B9FA4CBA1FC7000400956099 /* DetailViewController.swift in Sources */,
 				B9C29EAD1FFAA337004E914F /* SponsorTableViewCell.swift in Sources */,
 				5FCDB1DE1FF21EBF00D638A8 /* ProgramViewController.swift in Sources */,
-				5F5DE5BA202166BE002AFEB0 /* GroupMeViewController.swift in Sources */,
+				5F5DE5BC20217360002AFEB0 /* GroupMeViewController.swift in Sources */,
 				5FCDB1D51FF21C7900D638A8 /* HomeViewController.swift in Sources */,
 				B957CD052000728500FE935D /* SpeakerCell.swift in Sources */,
 			);
