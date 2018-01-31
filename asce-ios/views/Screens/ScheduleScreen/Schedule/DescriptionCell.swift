@@ -31,7 +31,7 @@ class DescriptionCell : UITableViewCell {
     }
     func initData(_ desc:String){
         //self.desc = desc
-        descriptionView.textColor = UIColor.color(fromHexString: "#707070")
+        descriptionView.textColor = UIColor.color(fromHexString: "#404040")
         descriptionView.text = desc
     }
 }

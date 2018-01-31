@@ -36,7 +36,6 @@ class DetailViewController: UIViewController {
 
     var detailItem: Event? {
         didSet {
-            // Update the view.
             configureView()
         }
     }

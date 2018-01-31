@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let url2 = url.appendingPathComponent("schedule.json", isDirectory: false)
             if FileManager.default.fileExists(atPath: url2.path) {
-
                 EventLoader.loadMyEvent()
             }
         }

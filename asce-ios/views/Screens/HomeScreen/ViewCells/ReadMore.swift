@@ -16,14 +16,11 @@ class ReadMoreCell : UITableViewCell {
         sakuzyo.pushViewController(pdfWow, animated: true)
     }
     func initData(_ handler: UINavigationController){
-     sakuzyo = handler
+        sakuzyo = handler
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-    func beginUpdate(_ eve : [ScheEvent]){
-   
     }
     
 }

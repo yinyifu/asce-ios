@@ -13,7 +13,6 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         let targetEvent = self.speakerEvents[path.row-1]
         let vc = EventLoader.generateEventDetailViewController(targetEvent)
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     
@@ -21,7 +20,7 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
     private var theSpeaker : Speaker!
     
     static private let header = 0;
-    static private let events = 0;
+    static private let events = 1;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +37,19 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         switch section {
         case SpeakerDetailViewController.header:
             return 1;
-        default:
+        case SpeakerDetailViewController.events:
             if(self.speakerEvents.count == 0){
                 return 0
             }else{
                 return self.speakerEvents.count + 1
             }
+        default:
+            return 1
         }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,15 +58,24 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         case SpeakerDetailViewController.header:
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "speakerHeader", for: indexPath) as! SpeakerTableViewCell;
             cell.initData(self.theSpeaker)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell;
-        default:
+        case SpeakerDetailViewController.events:
             if(indexPath.row == 0){
-                return self.tableView.dequeueReusableCell(withIdentifier: "speakerEventName", for: indexPath)
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "speakerEventName", for: indexPath)
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                return cell
             }else{
                 let cell = Bundle.main.loadNibNamed("EventCell", owner: EventCell.self, options: nil)![0] as! EventCell
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
                 cell.initData(self.speakerEvents[indexPath.row-1], indexPath, self)
                 return cell
             }
+        default:
+            let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.initData(self.theSpeaker.bio)
+            return cell
         }
     }
     
@@ -74,12 +84,15 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         switch section {
         case SpeakerDetailViewController.header:
             return 200;
-        default:
+        case SpeakerDetailViewController.events:
             if(indexPath.row == 0){
                 return 25
             }else{
                 return 100
             }
+        default:
+            let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
+            return cell.heightForCell(withText: self.theSpeaker.bio)+30
         }
     }
     

@@ -14,10 +14,11 @@ class MainViewVontroller : BaseViewController{
         addChildView(storyBoardID: "HomeStoryBoard", titleOfChildren: "Home", iconName: "home")
         addChildView(storyBoardID: "ScheduleStoryBoard", titleOfChildren: "Schedule", iconName: "time")
         addChildView(storyBoardID: "SpeakerStoryBoard", titleOfChildren: "Speakers", iconName: "msg")
-        addChildView(storyBoardID: "SponsorStoryBoard", titleOfChildren: "Sponsers", iconName: "bag")
+        addChildView(storyBoardID: "SponsorStoryBoard", titleOfChildren: "Sponsors", iconName: "bag")
         addChildView(storyBoardID: "ProgramStoryBoard", titleOfChildren: "Program", iconName: "book")
-        addChildView(storyBoardID: "EventMapStoryBoard", titleOfChildren: "Event Map", iconName: "door")
+        addChildView(storyBoardID: "EventMapStoryBoard", titleOfChildren: "Maps", iconName: "door")
         addChildView(storyBoardID: "EntertainmentStoryBoard", titleOfChildren: "Entertainments", iconName: "dinner")
+        addChildView(storyBoardID: "EmergencyStoryBoard", titleOfChildren: "Emergency Info", iconName: "door")
         addChildView(storyBoardID: "TwitterStoryBoard", titleOfChildren: "Twitter", iconName: "bird")
         addChildView(storyBoardID: "GroupMeStoryBoard", titleOfChildren: "GroupMe", iconName: "groupme")
         

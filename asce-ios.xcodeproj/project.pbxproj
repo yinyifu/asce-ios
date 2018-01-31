@@ -31,6 +31,9 @@
 		B93EB3A32020FA040023AB66 /* Rail.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B93EB3A22020FA040023AB66 /* Rail.pdf */; };
 		B93EB3A52020FA1B0023AB66 /* air.png in Resources */ = {isa = PBXBuildFile; fileRef = B93EB3A42020FA1A0023AB66 /* air.png */; };
 		B93EB3A8202105EE0023AB66 /* ReadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB3A7202105EE0023AB66 /* ReadMore.swift */; };
+		B93EB3AA2021093B0023AB66 /* WL draft.docx in Resources */ = {isa = PBXBuildFile; fileRef = B93EB3A92021093B0023AB66 /* WL draft.docx */; };
+		B93EB3B020216AB60023AB66 /* EmergencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB3AF20216AB60023AB66 /* EmergencyCell.swift */; };
+		B93EB3B220216AC50023AB66 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EB3B120216AC50023AB66 /* EmergencyViewController.swift */; };
 		B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9438D5620043D40002C457E /* GlobalMapViewController.swift */; };
 		B94D6F44201BBAA800D90870 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D6F43201BBAA800D90870 /* Storage.swift */; };
 		B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */; };
@@ -40,7 +43,6 @@
 		B96528ED20027D8A00D498F5 /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */; };
 		B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */; };
 		B97D77A92004968700427071 /* PdfViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97D77A82004968700427071 /* PdfViewerController.swift */; };
-		B97D77AB20049D0E00427071 /* YMC agenda.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B97D77AA20049D0E00427071 /* YMC agenda.pdf */; };
 		B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97D77AC2004ABFC00427071 /* DescriptionCell.xib */; };
 		B97D77AF2005225A00427071 /* HeaderImageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97D77AE2005225A00427071 /* HeaderImageTableCell.swift */; };
 		B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6CE891FC710F300435F86 /* MainViewController.swift */; };
@@ -125,8 +127,10 @@
 		B9332A98200D978600D709F8 /* CollectionViewLayoutFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutFlow.swift; sourceTree = "<group>"; };
 		B93EB3A22020FA040023AB66 /* Rail.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Rail.pdf; sourceTree = "<group>"; };
 		B93EB3A42020FA1A0023AB66 /* air.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = air.png; sourceTree = "<group>"; };
-		B93EB3A62020FFBA0023AB66 /* WL draft.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WL draft.docx"; sourceTree = "<group>"; };
 		B93EB3A7202105EE0023AB66 /* ReadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMore.swift; sourceTree = "<group>"; };
+		B93EB3A92021093B0023AB66 /* WL draft.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WL draft.docx"; sourceTree = "<group>"; };
+		B93EB3AF20216AB60023AB66 /* EmergencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCell.swift; sourceTree = "<group>"; };
+		B93EB3B120216AC50023AB66 /* EmergencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
 		B9438D5620043D40002C457E /* GlobalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMapViewController.swift; sourceTree = "<group>"; };
 		B94D6F43201BBAA800D90870 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +140,6 @@
 		B96528EC20027D8A00D498F5 /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		B97AE5CB1FF9BF21008D18EA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B97D77A82004968700427071 /* PdfViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewerController.swift; sourceTree = "<group>"; };
-		B97D77AA20049D0E00427071 /* YMC agenda.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "YMC agenda.pdf"; sourceTree = "<group>"; };
 		B97D77AC2004ABFC00427071 /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
 		B97D77AE2005225A00427071 /* HeaderImageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderImageTableCell.swift; sourceTree = "<group>"; };
 		B9B6CE891FC710F300435F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -278,7 +281,7 @@
 		5FCDB2281FF229DD00D638A8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				5F5DE5B8202166A5002AFEB0 /* GroupMeScreen */,
+				B93EB3AE20216AA30023AB66 /* EmergencyScreen */,
 				5FCDB2271FF2296E00D638A8 /* TwitterScreen */,
 				5FCDB2251FF2295800D638A8 /* EntertainmentScreen */,
 				5FCDB2241FF2294E00D638A8 /* EventMapScreen */,
@@ -336,6 +339,15 @@
 			path = ViewCells;
 			sourceTree = "<group>";
 		};
+		B93EB3AE20216AA30023AB66 /* EmergencyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B93EB3AF20216AB60023AB66 /* EmergencyCell.swift */,
+				B93EB3B120216AC50023AB66 /* EmergencyViewController.swift */,
+			);
+			path = EmergencyScreen;
+			sourceTree = "<group>";
+		};
 		B958E2B8200DDF3F0065ED88 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,10 +358,9 @@
 		B9BBC60220044A0F0072B911 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
-				B97D77AA20049D0E00427071 /* YMC agenda.pdf */,
 				B93EB3A22020FA040023AB66 /* Rail.pdf */,
-				B93EB3A62020FFBA0023AB66 /* WL draft.docx */,
 				B93EB3A42020FA1A0023AB66 /* air.png */,
+				B93EB3A92021093B0023AB66 /* WL draft.docx */,
 				B9BBC60420044A1B0072B911 /* Mezzanine.pdf */,
 				B9BBC60320044A1B0072B911 /* Second Level.pdf */,
 			);
@@ -555,9 +566,9 @@
 				B9BBC60520044A1B0072B911 /* Second Level.pdf in Resources */,
 				B97D77AD2004ABFC00427071 /* DescriptionCell.xib in Resources */,
 				B9BBC60620044A1B0072B911 /* Mezzanine.pdf in Resources */,
+				B93EB3AA2021093B0023AB66 /* WL draft.docx in Resources */,
 				B93EB3A52020FA1B0023AB66 /* air.png in Resources */,
 				B9332A97200D47B500D709F8 /* CollectionViewCell.xib in Resources */,
-				B97D77AB20049D0E00427071 /* YMC agenda.pdf in Resources */,
 				5F13EE372004C074000B1F3E /* speakers.txt in Resources */,
 				B9C29EA01FFA9394004E914F /* ascedb.sql in Resources */,
 				B9332A8A200B4A8A00D709F8 /* SpeakerCell.xib in Resources */,
@@ -600,8 +611,10 @@
 				5FCDB1D81FF21E4500D638A8 /* SpeakerViewController.swift in Sources */,
 				B97D77A92004968700427071 /* PdfViewerController.swift in Sources */,
 				B97AE5CC1FF9BF21008D18EA /* BaseViewController.swift in Sources */,
+				B93EB3B020216AB60023AB66 /* EmergencyCell.swift in Sources */,
 				B9FA4CB31FC7000400956099 /* AppDelegate.swift in Sources */,
 				B97D77AF2005225A00427071 /* HeaderImageTableCell.swift in Sources */,
+				B93EB3B220216AC50023AB66 /* EmergencyViewController.swift in Sources */,
 				B9DF2EFE1FF9B81200F99037 /* Constants.swift in Sources */,
 				B9B6CE8A1FC710F300435F86 /* MainViewController.swift in Sources */,
 				B9FA4CB61FC7000400956099 /* asce_ios.xcdatamodeld in Sources */,
