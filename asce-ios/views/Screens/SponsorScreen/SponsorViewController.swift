@@ -13,7 +13,7 @@ class SponsorViewController : UITableViewController
 {
     
     var levels = ["Gold Sponsor","Silver Sponsor","Bronze Sponsor"]
-    var sponsorN = [["CPL","PARSONS"],["ASCEREGION1","FA","TC","USI"],["B_L","EJP","SEAS"]]
+    var sponsorN = [["CPL","PARSONS"],["ASCEREGION1","FA","TC","WATTS","USI"],["B_L","EJP","SEAS"]]
     
     var sponsorFullN = [["Clark Patterson Lee","Parsons Corporation"],["ASCE Region 1","Foit-Albert Associates","TenCate Geosynthetics","Watts Architecture and Engineering","United Survey Inc."],["Barton & Loguidice","Everett J. Prescott Inc.","UB School of Engineering and Applied Sciences"]]
     
