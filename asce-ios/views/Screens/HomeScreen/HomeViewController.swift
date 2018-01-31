@@ -15,15 +15,6 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     private var upcomingEvent : [ScheEvent] = []
     static var testingNumber = 0
     private var myCollectionView : MyTableCell!
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        print(identifier)
-        if(identifier == "pdfSequel"){
-            
-        }else{
-            print("c")
-        }
-        
-    }
     
     func buttonClicked(at path: IndexPath) {
         let indexType = path.first!
@@ -41,6 +32,11 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     lazy var descriptionText : String = "Welcome to Buffalo! \r\n\tOn behalf of the 2018 Eastern Region Younger Member Council (ERYMC) Planning Committee and ASCE Buffalo Section, welcome to the Queen City, the “City of Good Neighbors” and more notably “the City of Light”. The numerous names come from our bountiful history, architecture, and proud community; which we encourage you explore over the next few days."
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUpcomingEvent()
+    }
+    func getUpcomingEvent(){
+        //let dateFormatter = DateFormatter.init()
+        //dateFormatter.dateFormat = "yyyy-M-d"
         let current = Date()
         let events = EventLoader.getQueryEvents(query: "SELECT * FROM Event", tname: "Event")
         for event in events{
@@ -50,11 +46,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
             let dateString = "\(date) \(hour1)"
             let dateFormatter = DateFormatter()
             
-            // Not flexible here
-            // if double digit date error debug here
-            
             dateFormatter.dateFormat = "yyyy-M-d-cccc H:mm"
-            
             /* date_format_you_want_in_string from
              * http://userguide.icu-project.org/formatparse/datetime
              */
@@ -68,7 +60,6 @@ class HomeViewController : UITableViewController, TableButtonDelegate
         }
     }
     
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -81,28 +72,26 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
-                return 3
+                return 1
             case 1:
                 return 2
             case 2:
                 return 2
             default:
-                return 1
+                return 3
         }
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = indexPath.first!
         switch section {
         case 0:
-            if(indexPath.row == 0){
-                return 150
-            }else if(indexPath.row == 1){
-                let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
-                return cell.heightForCell(withText: self.descriptionText)
-            }else{
-                return 50
-            }
+            
+            return 150
+            
         case 1:
+            if(self.upcomingEvent.count == 0){
+                return 0
+            }
             if(indexPath.row == 0){
                 return 45
             }else{
@@ -115,28 +104,24 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 return 120
             }
         default:
-            return 224.5
+            if(indexPath.row == 0){
+                let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
+                return cell.heightForCell(withText: self.descriptionText)
+            }else if(indexPath.row == 1){
+                return 50
+            }else{
+                return 224.5
+            }
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.first!
         switch section {
         case 0:
-            if(indexPath.row == 0){
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "homeImage")!
-                return cell;
-            }else if(indexPath.row == 1){
-                let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
-                cell.initData(self.descriptionText)
-                cell.selectionStyle = UITableViewCellSelectionStyle.none
-                cell.isUserInteractionEnabled = false
-                return cell;
-            }else{
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "redmoreCell")! as! ReadMoreCell
-                cell.initData(self.navigationController!)
-                cell.selectionStyle = UITableViewCellSelectionStyle.none
-                return cell;
-            }
+           
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "homeImage")!
+            return cell;
+            
             
         case 1:
             if(indexPath.row == 0){
@@ -165,9 +150,22 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 return cell;
             }
         default:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "contactInfoCell")!
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
-            return cell;
+            if(indexPath.row == 0){
+                let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
+                cell.initData(self.descriptionText)
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                cell.isUserInteractionEnabled = false
+                return cell;
+            }else if(indexPath.row == 1){
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "redmoreCell")! as! ReadMoreCell
+                cell.initData(self.navigationController!)
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                return cell;
+            }else{
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "contactInfoCell")!
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                return cell;
+            }
         }
     }
    

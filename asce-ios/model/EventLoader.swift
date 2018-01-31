@@ -46,7 +46,7 @@ class EventLoader{
         for dict in horray{
             if let imageData : Data = dict["profile_pic"]! as? Data{
                 let image = UIImage.init(data: imageData)!
-                let newevent:Speaker = Speaker(name: dict["name"]! as! String, title : dict["title"]! as! String, profile_pic : image)
+                let newevent:Speaker = Speaker(name: dict["name"]! as! String, title : dict["title"]! as! String, profile_pic : image, bio: dict["bio"] as! String)
                 newRay.append(newevent)
             }else{
                 fatalError("extract data failed")

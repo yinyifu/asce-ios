@@ -39,7 +39,7 @@ class EventDetailHeaderCell : UITableViewCell{
         let end_time = event.endtime
         let place = event.room
         
-        let date_time = "\(date) \(start_time) - \(end_time)"
+        let date_time = "\(date) \n\(start_time) - \(end_time)"
         
         if place! == ""{
             self.locLabel.text = date_time

@@ -221,7 +221,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRe-YB-RKV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <state key="normal" title="Read More"/>
+                                            <state key="normal" title="Read Full Letter"/>
                                             <connections>
                                                 <action selector="letterButton:" destination="oH2-xB-c3b" eventType="touchUpInside" id="BhO-25-an9"/>
                                             </connections>
@@ -770,10 +770,10 @@
                                                                         <action selector="addOrRemoveEvent:" destination="Icr-D1-eGk" eventType="touchUpInside" id="QMI-JX-lMe"/>
                                                                     </connections>
                                                                 </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="date and locationnnnnnnnnnnnnn asdsdsds" textAlignment="natural" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s7-wi-3dg">
-                                                                    <rect key="frame" x="15" y="92" width="314" height="37"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="date and locationnnnnnnnnnnnnn asdsdsds" textAlignment="natural" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8s7-wi-3dg">
+                                                                    <rect key="frame" x="15" y="92" width="314" height="55"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="37" id="ygK-V6-bxJ"/>
+                                                                        <constraint firstAttribute="height" constant="55" id="ygK-V6-bxJ"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -971,7 +971,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1c-xr-R2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3222" y="-2337"/>
+            <point key="canvasLocation" x="3221.5999999999999" y="-2337.481259370315"/>
         </scene>
         <!--Speaker Detail View Controller-->
         <scene sceneID="jDG-e4-a2C">
@@ -997,8 +997,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conference" translatesAutoresizingMaskIntoConstraints="NO" id="o8H-rE-LSC">
+                                        <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conference" translatesAutoresizingMaskIntoConstraints="NO" id="o8H-rE-LSC">
                                             <rect key="frame" x="16" y="11" width="343" height="178"/>
+                                            <color key="backgroundColor" red="0.70941952720207246" green="0.20694162019774115" blue="0.30171992310648438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="tintColor" red="0.3138382811" green="0.50649586359999998" blue="0.70941952720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </imageView>
                                         <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-TB-VVd">
                                             <rect key="frame" x="150" y="44" width="75" height="75"/>
@@ -1010,13 +1012,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zI-0V-tq0">
                                             <rect key="frame" x="28" y="127" width="319" height="31.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" red="0.1662930205" green="0.4402962359" blue="0.75414912560000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="highlightedColor" red="0.16217536988288608" green="0.40063110969415688" blue="0.66193733808290156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmB-wT-SEQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lmB-wT-SEQ">
                                             <rect key="frame" x="28" y="163.5" width="319" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" red="0.1662930205" green="0.4402962359" blue="0.75414912560000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </label>
                                     </subviews>

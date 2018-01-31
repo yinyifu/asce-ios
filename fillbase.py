@@ -1,6 +1,7 @@
 import sqlite3
 conn = sqlite3.connect('ascedb.sql')
 c = conn.cursor()
+conn.text_factory = str
 c.execute("DELETE from Event")
 	
 with open('database.txt', 'r') as infile:
@@ -10,7 +11,7 @@ with open('database.txt', 'r') as infile:
 	speaker =  infile.readline().strip()
 	room =  infile.readline().strip()
 	name =  infile.readline().strip()
-	desc =  infile.readline().strip()
+	desc =  infile.readline().strip().replace("\\n", "\n").replace("\\t", "")
 	mod =  infile.readline().strip()
 	organ =  infile.readline().strip()
 	splet = set()
@@ -21,7 +22,8 @@ with open('database.txt', 'r') as infile:
 		arymd = mod.split(",")
 		for item in arymd:
 			splet.add(item.strip())
-		c.execute("INSERT INTO Event (date, starttime, endtime, speakers, room, name, desc, mods, organizations) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (datefield, stime, etime, speaker, room, name, desc, mod, organ))
+
+		c.execute("INSERT INTO Event(date, starttime, endtime, speakers, room, name, desc, mods, organizations) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", (datefield, stime, etime, speaker, room, name, desc, mod, organ))
 		
 		datefield = infile.readline().strip()
 		stime =	infile.readline().strip()
@@ -29,10 +31,10 @@ with open('database.txt', 'r') as infile:
 		speaker =  infile.readline().strip()
 		room =  infile.readline().strip()
 		name =  infile.readline().strip()
-		desc =  infile.readline().strip()
+		desc =  infile.readline().strip().replace("\\n", "\n").replace("\\t", "")
 		mod =  infile.readline().strip()
 		organ =  infile.readline().strip()
-	print(splet)	
+		print(splet)	
 
 	conn.commit()
 conn.close()

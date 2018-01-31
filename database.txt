@@ -54,7 +54,7 @@ ERYMC/WSCL
 Tony Cioffi, John Casana, Chuck Black, Peter Moore
 See Description
 Region Breakout Session
-Join others from your Region and learn new names and faces; acquire new skills with a fun filled icebreaker. Region Leaders meet with their respective Section/Branch Leaders, Younger Member Leaders.        Tony Cioffi, P.E., M.ASCE, Region 1 Director (Room)           John Casana, P.E., D.WRE, LEED AP, F.ASCE, Region 2 Director (Room)        Chuck Black, P.E., M.ASCE, Region 4 Director (Room)        Peter Moore, P.E., F.ASCE, Region 5 Director (Room)
+Join others from your Region and learn new names and faces; acquire new skills with a fun filled icebreaker. Region Leaders meet with their respective Section/Branch Leaders, Younger Member Leaders.\n\n\tTony Cioffi, P.E., M.ASCE, Region 1 Director (Regency Ballroom)\n\tJohn Casana, P.E., D.WRE, LEED AP, F.ASCE, Region 2 Director (Grand E-F-G)\n\tChuck Black, P.E., M.ASCE, Region 4 Director (Grand A)\n\tPeter Moore, P.E., F.ASCE, Region 5 Director (Delaware)
 
 WSBL/ERYMC/WSCL
 ------
@@ -131,9 +131,9 @@ WSBL/ERYMC
 2018-2-9-Friday
 4:15 PM
 5:15 PM
-Charlie Mumford
+Steven P. Ranalli
 Room
-How to execute a successful ASCE K-12 Outreach Event from start to finish
+Growing a Region: The Future of Buffalo's Waterfront
 
 Francis Mahaney
 ERYMC
@@ -142,9 +142,9 @@ ERYMC
 6:00 PM
 7:00 PM
 
-Pearl Street Grill
+Pearl Street Grill / Canalside
 Joint Social
-Ticketed event. Appetizers and drink tickets provided. Location accessible by public transit and/or walking.
+Ticketed event. Appetizers and drink tickets provided. Location accessible by public transit and/or walking. Event details: \n6:00-8:00	Social @ Pearl Street Grill\n7:00-10:00	Ice Skating @ Canalside\n9:00-10:00	Curling @ Canalside
 
 WSBL/ERYMC/WSCL
 ------
@@ -247,4 +247,14 @@ Adjourn
 
 
 WSBL
+------
+2018-2-10-Saturday
+5:00 PM
+N/A
+
+Greatbatch Pavilion, 143 Jewett Parkway, Buffalo, NY
+Awards Dinner
+Ticketed event. Dress code is business casual. Bus pickup will be on West Huron St, directly outside the hotel entrance. Buses will begin boarding at 4:30 PM.
+
+WSBL/ERYMC
 ------
