@@ -586,6 +586,24 @@
             </objects>
             <point key="canvasLocation" x="5134" y="-1677"/>
         </scene>
+        <!--Group Me View Controller-->
+        <scene sceneID="PTr-lO-dFh">
+            <objects>
+                <viewController storyboardIdentifier="GroupMeStoryBoard" id="FmG-qJ-mho" customClass="GroupMeViewController" customModule="asce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xAx-bb-Y2H"/>
+                        <viewControllerLayoutGuide type="bottom" id="REK-bW-gHE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z3D-yq-Tir">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMy-DE-Q9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5766" y="-1676"/>
+        </scene>
         <!--Event Map View Controller-->
         <scene sceneID="Wom-4Q-Eto">
             <objects>
