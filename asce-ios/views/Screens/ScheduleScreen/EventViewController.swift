@@ -9,11 +9,7 @@
 import UIKit
 
 class EventViewController : UITableViewController, TableButtonDelegate {
-    
-    func backClicked() {
-        self.navigationController?.show(self, sender: self)
-    }
-    
+
     func buttonClicked(at path: IndexPath) {
         let eventViewController = EventLoader.generateEventDetailViewController(self.dataAccordingToSection[path.first!][path.row])
         self.navigationController!.pushViewController(eventViewController, animated: true)
@@ -34,8 +30,6 @@ class EventViewController : UITableViewController, TableButtonDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.registerCells()
     }
     func registerCells(){
         let classname :String = NSStringFromClass(EventCell.self)
@@ -72,10 +66,6 @@ class EventViewController : UITableViewController, TableButtonDelegate {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

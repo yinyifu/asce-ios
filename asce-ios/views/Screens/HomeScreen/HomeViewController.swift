@@ -15,6 +15,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     private var upcomingEvent : [ScheEvent] = []
     static var testingNumber = 0
     private var myCollectionView : MyTableCell!
+    private var upcomingCollectionView : MyTableCell!
     
     func buttonClicked(at path: IndexPath) {
         let indexType = path.first!
@@ -33,23 +34,20 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     lazy var descriptionText : String = "Welcome to Buffalo! \r\n\tOn behalf of the 2018 Eastern Region Younger Member Council (ERYMC) Planning Committee and ASCE Buffalo Section, welcome to the Queen City, the “City of Good Neighbors” and more notably “the City of Light”. The numerous names come from our bountiful history, architecture, and proud community; which we encourage you explore over the next few days."
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUpcomingEvent()
+        
         
     }
     
     func getUpcomingEvent(){
-        //let dateFormatter = DateFormatter.init()
-        //dateFormatter.dateFormat = "yyyy-M-d"
-        let current = Date()
+        let current = Date.init()
         let events = EventLoader.getQueryEvents(query: "SELECT * FROM Event", tname: "Event")
         for event in events{
             let date = event.date
             let hour = event.starttime
-            let hour1 = hour.split(separator: " ")[0]
-            let dateString = "\(date) \(hour1)"
+            let dateString = "\(date) \(hour)"
             let dateFormatter = DateFormatter()
             
-            dateFormatter.dateFormat = "yyyy-M-d-cccc H:mm"
+            dateFormatter.dateFormat = "yyyy-M-d-cccc h:mm a"
             /* date_format_you_want_in_string from
              * http://userguide.icu-project.org/formatparse/datetime
              */
@@ -59,6 +57,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
             }
             if(dateEvent > current){
                 self.upcomingEvent.append(event)
+                
             }
         }
     }
@@ -66,10 +65,17 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if myCollectionView != nil{
-            self.myCollectionView.beginUpdate(EventLoader.myEvent)
+        DispatchQueue.main.async {
+            if self.myCollectionView != nil{
+                self.myCollectionView.beginUpdate(EventLoader.myEvent)
+            }
+            if self.upcomingCollectionView != nil{
+                self.getUpcomingEvent()
+                self.upcomingCollectionView.beginUpdate(self.upcomingEvent)
+            }
         }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -121,11 +127,8 @@ class HomeViewController : UITableViewController, TableButtonDelegate
         let section = indexPath.first!
         switch section {
         case 0:
-           
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "homeImage")!
             return cell;
-            
-            
         case 1:
             if(indexPath.row == 0){
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventName")!
@@ -135,6 +138,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 let ary = self.upcomingEvent
+                self.upcomingCollectionView = cell
                 cell.initData(ary, self)
                 return cell;
             }

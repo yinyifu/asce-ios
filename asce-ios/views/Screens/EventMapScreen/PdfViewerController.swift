@@ -52,4 +52,7 @@ class PdfViewerController : UIViewController{
             self.fresh = false
         }
     }
+    func setIfTabImage(Uge : UIImage){
+        self.tabBarItem.image = Uge
+    }
 }

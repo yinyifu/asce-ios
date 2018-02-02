@@ -10,13 +10,20 @@ import UIKit
 class EventDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, TableButtonDelegate{
     
     func buttonClicked(at path: IndexPath) {
-        guard path.first! == EventDetailViewController.speakersSectionIndex else{
+        guard path.first! == EventDetailViewController.speakersSectionIndex || path.first! == EventDetailViewController.moderatorSectionIndex else{
             return
         }
-        let speakerDetail = speakers[path.row-1]
-        let vc = EventLoader.generateSpeakerDetailViewController(speakerDetail)
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        if(path.first! == EventDetailViewController.speakersSectionIndex){
+            let speakerDetail = speakers[path.row-1]
+            let vc = EventLoader.generateSpeakerDetailViewController(speakerDetail)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if(path.first! == EventDetailViewController.moderatorSectionIndex){
+            
+            let speakerDetail = moderators[path.row-1]
+            let vc = EventLoader.generateSpeakerDetailViewController(speakerDetail)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private var event : ScheEvent!
@@ -44,10 +51,6 @@ class EventDetailViewController : UIViewController, UITableViewDelegate, UITable
         self.eventDetailTableView.delegate = self
         self.eventDetailTableView.dataSource = self
         self.eventDetailTableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        
-        
-        self.parent?.automaticallyAdjustsScrollViewInsets = true
-        self.automaticallyAdjustsScrollViewInsets = true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

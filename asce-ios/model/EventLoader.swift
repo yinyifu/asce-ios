@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class EventLoader{
     
@@ -20,6 +21,36 @@ class EventLoader{
         EventLoader.favoriteEventColor = UIColor.color(fromHexString: colorId)
     }
     
+    static func openMapForPlace(coordinates : CLLocationCoordinate2D, name : String) {
+        
+        let regionDistance:CLLocationDistance = 1000
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = name
+        mapItem.openInMaps(launchOptions: options)
+        
+    }
+    
+    static func callNumber(number: String){
+        if let url = URL(string: "telprompt:\(number)") {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    static func mailTo(address : String){
+        /* create mail subject */
+        /* define allowed character set */
+        /* create the URL */
+        let url = URL.init(string: "mailto:?to=\(address)")
+        /* load the URL */
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
     static func getQueryEvents(query : String, tname : String)->Array<ScheEvent>{
         let horray :Array<[String : String]> = EventLoader.db.loadDataFromDB(query: query, tname: tname) as! Array<[String : String]>
         var newRay = Array<ScheEvent>()

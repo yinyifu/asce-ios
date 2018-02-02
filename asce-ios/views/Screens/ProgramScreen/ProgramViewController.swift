@@ -13,7 +13,7 @@ class ProgramViewController : PdfViewerController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initData(linkForPdf: "WC Agenda")
+        self.initData(linkForPdf: "Program")
         
     }
 }
