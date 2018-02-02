@@ -12,6 +12,7 @@ class PdfViewerController : UIViewController{
     @IBInspectable var pdfAy : String?;
     @IBInspectable var ext = "pdf"
     private var fresh : Bool = true;
+    var webview : UIWebView!;
     override func viewDidLoad() {
         
     }
@@ -19,7 +20,7 @@ class PdfViewerController : UIViewController{
     func initData(linkForPdf : String) {
         pdfAy = linkForPdf
         if let url = Bundle.main.url(forResource: linkForPdf, withExtension: "pdf"){
-            let webview = UIWebView.init(frame: self.view.frame)
+            webview = UIWebView.init(frame: self.view.frame)
             let urlRequest = URLRequest.init(url: url)
             webview.loadRequest(urlRequest)
             webview.scalesPageToFit = true
@@ -29,7 +30,7 @@ class PdfViewerController : UIViewController{
             
             self.fresh = false
         }else if let url = Bundle.main.url(forResource: linkForPdf, withExtension: "png"){
-            let webview = UIWebView.init(frame: self.view.frame)
+             webview = UIWebView.init(frame: self.view.frame)
             let urlRequest = URLRequest.init(url: url)
             webview.loadRequest(urlRequest)
             webview.scalesPageToFit = true
@@ -40,7 +41,7 @@ class PdfViewerController : UIViewController{
             self.fresh = false
             
         }else if let url = Bundle.main.url(forResource: linkForPdf, withExtension: "docx"){
-            let webview = UIWebView.init(frame: self.view.frame)
+             webview = UIWebView.init(frame: self.view.frame)
             let urlRequest = URLRequest.init(url: url)
             webview.loadRequest(urlRequest)
             webview.scalesPageToFit = true
@@ -49,8 +50,6 @@ class PdfViewerController : UIViewController{
             self.tabBarItem.image = UIImage.init(named: "floor2")
             
             self.fresh = false
-            
         }
-        
     }
 }

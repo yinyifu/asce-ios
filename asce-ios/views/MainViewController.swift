@@ -6,7 +6,7 @@
 //  Copyright © 2017 tutorials. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MainViewVontroller : BaseViewController{
     override func viewDidLoad() {
@@ -18,12 +18,10 @@ class MainViewVontroller : BaseViewController{
         addChildView(storyBoardID: "ProgramStoryBoard", titleOfChildren: "Program", iconName: "book")
         addChildView(storyBoardID: "EventMapStoryBoard", titleOfChildren: "Maps", iconName: "door")
         addChildView(storyBoardID: "EntertainmentStoryBoard", titleOfChildren: "Entertainments", iconName: "dinner")
-        addChildView(storyBoardID: "EmergencyStoryBoard", titleOfChildren: "Emergency Info", iconName: "door")
+        addChildView(storyBoardID: "EmergencyStoryBoard", titleOfChildren: "Emergency Info", iconName: "run")
         addChildView(storyBoardID: "TwitterStoryBoard", titleOfChildren: "Twitter", iconName: "bird")
         addChildView(storyBoardID: "GroupMeStoryBoard", titleOfChildren: "GroupMe", iconName: "groupme")
         
-        self.parent?.automaticallyAdjustsScrollViewInsets = false
-        self.automaticallyAdjustsScrollViewInsets = false
-       showFirstChild()
+        showFirstChild()
     }
 }

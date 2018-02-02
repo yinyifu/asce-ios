@@ -12,7 +12,7 @@ class ReadMoreCell : UITableViewCell {
     private var sakuzyo : UINavigationController!;
     @IBAction func letterButton(_ sender: Any) {
         let pdfWow = PdfViewerController();
-        pdfWow.initData(linkForPdf: "WL draft")
+        pdfWow.initData(linkForPdf: "WL DRAFT")
         sakuzyo.pushViewController(pdfWow, animated: true)
     }
     func initData(_ handler: UINavigationController){

@@ -74,8 +74,6 @@ class EmergencyViewController : UITableViewController{
                     if let url = URL(string: "telprompt:\(phoneNumber)") {
                         if UIApplication.shared.canOpenURL(url) {
                             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                        }else{
-                            print("shit")
                         }
                     }
                 }
@@ -84,6 +82,11 @@ class EmergencyViewController : UITableViewController{
                     self.dismiss(animated: true, completion: nil)
                 }
                 alert.addAction(action2)
+                alert.modalPresentationStyle = UIModalPresentationStyle.popover
+                if let popov = alert.popoverPresentationController{
+                    popov.sourceView = UIButton()
+                    popov.sourceRect = UIButton().bounds
+                }
                 self.present(alert, animated: true, completion: nil)
             }
         }

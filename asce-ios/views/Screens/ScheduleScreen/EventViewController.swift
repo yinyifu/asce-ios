@@ -18,6 +18,7 @@ class EventViewController : UITableViewController, TableButtonDelegate {
         let eventViewController = EventLoader.generateEventDetailViewController(self.dataAccordingToSection[path.first!][path.row])
         self.navigationController!.pushViewController(eventViewController, animated: true)
     }
+    
     private var scheduleName:String?;
     private var selectedIndexPath : IndexPath?;
     private var _selectedSchedule: ScheEvent?;

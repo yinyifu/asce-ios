@@ -15,5 +15,5 @@ class SponsorTableViewCell : UITableViewCell{
     
     @IBOutlet weak var sponsorTitleLabel: UILabel!
     
-    @IBOutlet weak var sponsorLevelLabel: UILabel!
+   // @IBOutlet weak var sponsorLevelLabel: UILabel!
 }

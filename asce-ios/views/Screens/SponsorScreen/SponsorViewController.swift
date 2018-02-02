@@ -37,7 +37,7 @@ class SponsorViewController : UITableViewController
         let cell = tableView.dequeueReusableCell(withIdentifier: "SponsorTableViewCell", for: indexPath) as! SponsorTableViewCell
         cell.sponsorImage?.image = UIImage(named:sponsorN[indexPath.section][indexPath.row])
         cell.sponsorTitleLabel.text = sponsorFullN[indexPath.section][indexPath.row]
-        cell.sponsorLevelLabel.text = (levels[indexPath.section])
+       // cell.sponsorLevelLabel.text = (levels[indexPath.section])
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

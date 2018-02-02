@@ -23,9 +23,6 @@ class CollectionViewer: UICollectionView, UICollectionViewDataSource ,TableButto
         if(HomeViewController.testingNumber == self.eventsToShow.count){
             print(self.eventsToShow!)
         }
-        if(self.eventsToShow.count == 0){
-            print("000000")
-        }
         self.collectionViewLayout = CollectionViewLayoutFlow()
     }
     
