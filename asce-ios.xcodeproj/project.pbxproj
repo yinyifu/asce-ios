@@ -39,11 +39,9 @@
 		B9438D5720043D40002C457E /* GlobalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9438D5620043D40002C457E /* GlobalMapViewController.swift */; };
 		B94D6F44201BBAA800D90870 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D6F43201BBAA800D90870 /* Storage.swift */; };
 		B953D31E20237EB0008FEBDC /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953D31D20237EB0008FEBDC /* ChildViewController.swift */; };
-		B953D32020238897008FEBDC /* WL DRAFT.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B953D31F20238897008FEBDC /* WL DRAFT.pdf */; };
 		B953D3222023A13E008FEBDC /* SponsorViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953D3212023A13E008FEBDC /* SponsorViewController2.swift */; };
 		B953D3262023A1D1008FEBDC /* Sponsors.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B953D3252023A1D1008FEBDC /* Sponsors.pdf */; };
 		B953D3282023B928008FEBDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9FA4CBE1FC7000400956099 /* Assets.xcassets */; };
-		B953D32A20242076008FEBDC /* Program.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B953D32920242076008FEBDC /* Program.pdf */; };
 		B953D32C202420A8008FEBDC /* Rail Maps.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B953D32B202420A8008FEBDC /* Rail Maps.pdf */; };
 		B953D3342024231C008FEBDC /* Second Level.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B953D3332024231C008FEBDC /* Second Level.pdf */; };
 		B957CCFB1FFEBF9A00FE935D /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */; };
@@ -66,6 +64,8 @@
 		B9FA4CEA1FC7056700956099 /* TableViewMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE51FC7056600956099 /* TableViewMenuController.swift */; };
 		B9FA4CEB1FC7056700956099 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE61FC7056700956099 /* ZFRippleButton.swift */; };
 		B9FA4CED1FC7056700956099 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA4CE81FC7056700956099 /* MenuTableViewCell.swift */; };
+		B9FAF1092024F216000E0E1A /* WL DRAFT.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B9FAF1082024F216000E0E1A /* WL DRAFT.pdf */; };
+		B9FAF10B2024F239000E0E1A /* Program.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B9FAF10A2024F238000E0E1A /* Program.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,10 +130,8 @@
 		B9438D5620043D40002C457E /* GlobalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMapViewController.swift; sourceTree = "<group>"; };
 		B94D6F43201BBAA800D90870 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B953D31D20237EB0008FEBDC /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
-		B953D31F20238897008FEBDC /* WL DRAFT.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "WL DRAFT.pdf"; path = "../../../../Video2/WL DRAFT.pdf"; sourceTree = "<group>"; };
 		B953D3212023A13E008FEBDC /* SponsorViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorViewController2.swift; sourceTree = "<group>"; };
 		B953D3252023A1D1008FEBDC /* Sponsors.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Sponsors.pdf; sourceTree = "<group>"; };
-		B953D32920242076008FEBDC /* Program.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Program.pdf; sourceTree = "<group>"; };
 		B953D32B202420A8008FEBDC /* Rail Maps.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Rail Maps.pdf"; sourceTree = "<group>"; };
 		B953D3332024231C008FEBDC /* Second Level.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Second Level.pdf"; sourceTree = "<group>"; };
 		B957CCFA1FFEBF9A00FE935D /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +164,8 @@
 		B9FA4CE51FC7056600956099 /* TableViewMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewMenuController.swift; sourceTree = "<group>"; };
 		B9FA4CE61FC7056700956099 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		B9FA4CE81FC7056700956099 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		B9FAF1082024F216000E0E1A /* WL DRAFT.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "WL DRAFT.pdf"; sourceTree = "<group>"; };
+		B9FAF10A2024F238000E0E1A /* Program.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Program.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,10 +352,10 @@
 			isa = PBXGroup;
 			children = (
 				B93EB3A42020FA1A0023AB66 /* Airport.png */,
-				B953D31F20238897008FEBDC /* WL DRAFT.pdf */,
-				B953D32920242076008FEBDC /* Program.pdf */,
 				B953D32B202420A8008FEBDC /* Rail Maps.pdf */,
 				B9BBC60420044A1B0072B911 /* Mezzanine.pdf */,
+				B9FAF10A2024F238000E0E1A /* Program.pdf */,
+				B9FAF1082024F216000E0E1A /* WL DRAFT.pdf */,
 				B953D3332024231C008FEBDC /* Second Level.pdf */,
 				B953D3252023A1D1008FEBDC /* Sponsors.pdf */,
 			);
@@ -557,13 +557,13 @@
 				B953D3342024231C008FEBDC /* Second Level.pdf in Resources */,
 				B93EB3C4202261E10023AB66 /* TwitterKitResources.bundle in Resources */,
 				B93EB3C5202261E10023AB66 /* TwitterShareExtensionUIResources.bundle in Resources */,
-				B953D32A20242076008FEBDC /* Program.pdf in Resources */,
+				B9FAF1092024F216000E0E1A /* WL DRAFT.pdf in Resources */,
 				B93EB3C020225ECA0023AB66 /* EventCell.xib in Resources */,
 				B93EB3C120225ECA0023AB66 /* DescriptionCell.xib in Resources */,
 				B93EB3C220225ECA0023AB66 /* SpeakerCell.xib in Resources */,
 				B93EB3C320225ECA0023AB66 /* CollectionViewCell.xib in Resources */,
-				B953D32020238897008FEBDC /* WL DRAFT.pdf in Resources */,
 				B93EB3BC20225EB70023AB66 /* Airport.png in Resources */,
+				B9FAF10B2024F239000E0E1A /* Program.pdf in Resources */,
 				B93EB3BE20225EB70023AB66 /* Mezzanine.pdf in Resources */,
 				B953D32C202420A8008FEBDC /* Rail Maps.pdf in Resources */,
 				B953D3262023A1D1008FEBDC /* Sponsors.pdf in Resources */,

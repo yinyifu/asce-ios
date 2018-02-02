@@ -34,8 +34,7 @@ class HomeViewController : UITableViewController, TableButtonDelegate
     lazy var descriptionText : String = "Welcome to Buffalo! \r\n\tOn behalf of the 2018 Eastern Region Younger Member Council (ERYMC) Planning Committee and ASCE Buffalo Section, welcome to the Queen City, the “City of Good Neighbors” and more notably “the City of Light”. The numerous names come from our bountiful history, architecture, and proud community; which we encourage you explore over the next few days."
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        self.getUpcomingEvent()
     }
     
     func getUpcomingEvent(){

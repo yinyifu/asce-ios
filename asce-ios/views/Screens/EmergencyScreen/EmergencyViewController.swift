@@ -56,7 +56,7 @@ class EmergencyViewController : UITableViewController{
         return 8
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return 1
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = indexPath.first!
@@ -76,6 +76,9 @@ class EmergencyViewController : UITableViewController{
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = indexPath.first!
+        guard section != 0 else {
+            return
+        }
         self.tableView.deselectRow(at: indexPath, animated: false)
         
         let aa = self.places[section-1]
