@@ -21,6 +21,6 @@ class EmergencyCell : UITableViewCell{
         self.phone.text = phone
     }
     func getHeight()->CGFloat{
-        return self.place.attributedText!.size().height + self.phone.attributedText!.size().height + location.attributedText!.size().height + 15.0
+        return 130
     }
 }

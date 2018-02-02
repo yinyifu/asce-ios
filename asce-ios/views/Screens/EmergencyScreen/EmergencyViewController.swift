@@ -49,14 +49,14 @@ class EmergencyViewController : UITableViewController{
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = UIColor.clear
+        view.backgroundColor = UIColor.init(red: 220/255.0, green: 220/255.0, blue: 220/255.0, alpha: 1)
         return view
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 8
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 10
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = indexPath.first!
@@ -87,21 +87,18 @@ class EmergencyViewController : UITableViewController{
             }
             alert.addAction(action1)
         }
-        var c = 0
         for loc in gps[section-1]{
-            let name = self.places[c]
+            let name = self.places[section-1]
             let action1 = UIAlertAction.init(title: "Show \(name) on Map", style: UIAlertActionStyle.default){ (action : UIAlertAction!) in
                 EventLoader.openMapForPlace(coordinates: loc, name: name)
             }
             alert.addAction(action1)
-            c = c + 1
         }
         for mail in email[section-1]{
             let action1 = UIAlertAction.init(title: "Email \(mail)", style: UIAlertActionStyle.default){ (action : UIAlertAction!) in
                 EventLoader.mailTo(address: mail)
             }
             alert.addAction(action1)
-            c = c + 1
         }
         
         let action2 = UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.cancel){ (action : UIAlertAction!) in
