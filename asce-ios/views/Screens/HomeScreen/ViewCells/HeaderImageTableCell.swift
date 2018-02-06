@@ -11,7 +11,7 @@ import UIKit
 class HeaderImageTableCell : UITableViewCell{
     @IBOutlet weak var contentImage: UIImageView!
     
-    let images : Array<String>! = ["conference", "header2", "header3"]
+    let images : Array<String>! = ["Hyatt", "Niagara", "Pearl", "Canalside", "Darwin"]
     var current : Int? = nil;
     override func awakeFromNib() {
         super.awakeFromNib()
