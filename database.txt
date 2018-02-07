@@ -33,7 +33,7 @@ WSBL/ERYMC
 9:30 AM
 
 Pre-function Area
-Break
+Networking Break
 
 
 WSBL/ERYMC/WSCL
@@ -41,8 +41,8 @@ WSBL/ERYMC/WSCL
 2018-2-9-Friday
 9:30 AM
 10:30 AM
-Jesse Gormley
-Room
+Jesse Gormley, Jaffer Almosawy
+Grand A, E, F, G
 Flipping the Script on Networking
 
 
@@ -75,7 +75,7 @@ Robin Kemper
 Grand B-G
 Society Speaker
 
-
+Ted Green
 WSBL/ERYMC/WSCL
 ------
 2018-2-9-Friday
@@ -90,7 +90,7 @@ ERYMC
 ------
 2018-2-9-Friday
 2:30 PM
-2:35 PM
+2:45 PM
 
 TBD
 ERYMC Group Photo
@@ -140,11 +140,11 @@ ERYMC
 ------
 2018-2-9-Friday
 6:00 PM
-7:00 PM
+10:00 PM
 
 Pearl Street Grill / Canalside
 Joint Social
-Ticketed event. Appetizers and drink tickets provided. Location accessible by public transit and/or walking. Event details: \n6:00-8:00	Social @ Pearl Street Grill\n7:00-10:00	Ice Skating @ Canalside\n9:00-10:00	Curling @ Canalside
+Ticketed event. Appetizers and drink tickets provided. Location accessible by public transit and/or walking. Event details: \n\n6:00-8:00	Social @ Pearl Street Grill\n7:00-10:00	Ice Skating @ Canalside\n9:00-10:00	Curling @ Canalside
 
 WSBL/ERYMC/WSCL
 ------
@@ -155,7 +155,7 @@ WSBL/ERYMC/WSCL
 Grand B-G
 Networking Breakfast
 Meet new friends and learn their stories; swap business cards; learn what classes students enjoy and why they want to be Civil Engineers
-
+Peter Moore
 WSBL/ERYMC/WSCL
 ------
 2018-2-10-Saturday
@@ -165,7 +165,7 @@ WSBL/ERYMC/WSCL
 Grand B-G
 Coffee with the 2019 President-Elect Nominees
 
-
+Casey Dinges
 WSBL/ERYMC/WSCL
 ------
 2018-2-10-Saturday
@@ -176,7 +176,7 @@ Grand B-G
 Managing the Disruption of the Civil Engineering Profession
 
 Chuck Black
-ERYMC
+WSBL/ERYMC/WSCL
 ------
 2018-2-10-Saturday
 9:20 AM
@@ -215,7 +215,7 @@ ERYMC
 Grand B-G
 Leadership Lunch
 Enjoy lunch with new friends and discuss the events of the weekend; share new ideas and actions you learned from the weekend sessions
-
+Craig Ruyle
 WSBL/ERYMC/WSCL
 ------
 2018-2-10-Saturday
@@ -223,7 +223,7 @@ WSBL/ERYMC/WSCL
 1:25 PM
 Nicholas M. DeNichilo
 Grand B-G
-ASCE Industry Leaders Council Keynote: “XXXXX”
+ASCE Industry Leaders Council Keynote: “What Makes a Leader”
 Learn from those who have made leading others a career goal and found success
 Don Wittmer
 WSBL/ERYMC/WSCL
@@ -231,9 +231,9 @@ WSBL/ERYMC/WSCL
 2018-2-10-Saturday
 1:30 PM
 2:30 PM
-Kelly Dooley, Bethany Mazur, Jason Lang
+David Peterson, Bethany Mazur, Jason Lang, Dr. Jack McGrath
 Grand B-G
-Should we Raise the Bar? - Insights from other Industries
+Should we Raise the Bar - Insights from other Industries
 
 Jason Havens, Francis Mahaney
 ERYMC

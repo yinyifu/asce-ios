@@ -83,7 +83,7 @@ class SpeakerDetailViewController : UITableViewController, TableButtonDelegate {
         let section = indexPath.first!;
         switch section {
         case SpeakerDetailViewController.header:
-            return 200;
+            return 240;
         case SpeakerDetailViewController.events:
             if(indexPath.row == 0){
                 return 25
