@@ -26,7 +26,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         //Create containerView that contain child view
         createContainerView()
         //Show the SlideMenu and it's button
-       
         self.addSlideMenuButton()
     }
     
@@ -121,36 +120,34 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         
         //Add new view
         addChildViewController(subViewNew)
-        subViewNew.view.frame = (self.parent?.view.frame)!
+        subViewNew.view.bounds = (self.parent?.view.frame)!
         view.addSubview(subViewNew.view)
         subViewNew.didMove(toParentViewController: self)
         
         //Remove old view
         if self.childViewControllers.count > 1 {
-            
             //Remove old view
             let oldViewController: UIViewController = self.childViewControllers.first!
             oldViewController.willMove(toParentViewController: nil)
             oldViewController.view.removeFromSuperview()
             oldViewController.removeFromParentViewController()
         }
-        
-        print("After Remove: \(self.childViewControllers.description)")
     }
     
     func createContainerView(){
         //Create View
-        let containerViews = UIView()
+        /*let containerViews = UIView()
         containerViews.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(containerViews)
         self.view.sendSubview(toBack: containerViews)
-        
+     
         //Height and Width Constraints
         let widthConstraint = NSLayoutConstraint(item: containerViews, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
         let heightConstraint = NSLayoutConstraint(item: containerViews, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
         
         self.view.addConstraint(widthConstraint)
         self.view.addConstraint(heightConstraint)
+        */
         
     }
     
@@ -163,7 +160,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         tabOfChildViewController += [childViewToAdd]
         tabOfChildViewControllerName += [titleOfChildren]
         tabOfChildViewControllerIconName += [iconName]
-        
         menuToReturn.append(["title":titleOfChildren, "icon":iconName])
     }
     

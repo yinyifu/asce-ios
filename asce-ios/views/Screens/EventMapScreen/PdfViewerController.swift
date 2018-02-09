@@ -9,21 +9,50 @@
 import UIKit
 
 class PdfViewerController : UIViewController{
-    var pdfAy : String?;
+    @IBInspectable var pdfAy : String?;
+    @IBInspectable var ext = "pdf"
     private var fresh : Bool = true;
-    
+    var webview : UIWebView!;
+    override func viewDidLoad() {
+        
+    }
     
     func initData(linkForPdf : String) {
         pdfAy = linkForPdf
         if let url = Bundle.main.url(forResource: linkForPdf, withExtension: "pdf"){
-            let webview = UIWebView.init(frame: self.view.frame)
+            webview = UIWebView.init(frame: self.view.frame)
             let urlRequest = URLRequest.init(url: url)
             webview.loadRequest(urlRequest)
+            webview.scalesPageToFit = true
             self.view.addSubview(webview)
             self.tabBarItem.title = linkForPdf
             self.tabBarItem.image = UIImage.init(named: "floor2")
+            
+            self.fresh = false
+        }else if let url = Bundle.main.url(forResource: linkForPdf, withExtension: "png"){
+             webview = UIWebView.init(frame: self.view.frame)
+            let urlRequest = URLRequest.init(url: url)
+            webview.loadRequest(urlRequest)
+            webview.scalesPageToFit = true
+            self.view.addSubview(webview)
+            self.tabBarItem.title = linkForPdf
+            self.tabBarItem.image = UIImage.init(named: "floor2")
+            
+            self.fresh = false
+            
+        }else if let url = Bundle.main.url(forResource: linkForPdf, withExtension: "docx"){
+             webview = UIWebView.init(frame: self.view.frame)
+            let urlRequest = URLRequest.init(url: url)
+            webview.loadRequest(urlRequest)
+            webview.scalesPageToFit = true
+            self.view.addSubview(webview)
+            self.tabBarItem.title = linkForPdf
+            self.tabBarItem.image = UIImage.init(named: "floor2")
+            
             self.fresh = false
         }
-        
+    }
+    func setIfTabImage(Uge : UIImage){
+        self.tabBarItem.image = Uge
     }
 }

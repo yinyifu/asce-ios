@@ -9,75 +9,136 @@
 import Foundation
 import UIKit
 
-class HomeViewController : UITableViewController
+class HomeViewController : UITableViewController, TableButtonDelegate
 {
     
-    lazy var descriptionText : String = "Get access to civil engineering’s leading experts and information through our many conferences--from the ASCE Convention to specialized technical and leadership conferences. These are the perfect platforms to exchange ideas, meet a diverse group of colleagues, participate in discussions, earn the latest innovations in your field, and earn professional development hours (PDHs), all at members-only discounts."
+    private var upcomingEvent : [ScheEvent] = []
+    static var testingNumber = 0
+    private var myCollectionView : MyTableCell!
+    private var upcomingCollectionView : MyTableCell!
+    
+    func buttonClicked(at path: IndexPath) {
+        let indexType = path.first!
+        if(indexType == 0){
+            let event = upcomingEvent[path.row]
+            let vc = EventLoader.generateEventDetailViewController(event)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let event = EventLoader.myEvent[path.row]
+            let vc = EventLoader.generateEventDetailViewController(event)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+
+    lazy var descriptionText : String = "Welcome to Buffalo! \r\n\tOn behalf of the 2018 Eastern Region Younger Member Council (ERYMC) Planning Committee and ASCE Buffalo Section, welcome to the Queen City, the “City of Good Neighbors” and more notably “the City of Light”. The numerous names come from our bountiful history, architecture, and proud community; which we encourage you explore over the next few days."
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getUpcomingEvent()
     }
+    
+    func getUpcomingEvent(){
+        let current = Date.init()
+        let events = EventLoader.getQueryEvents(query: "SELECT * FROM Event", tname: "Event")
+        for event in events{
+            let date = event.date
+            let hour = event.starttime
+            let dateString = "\(date) \(hour)"
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "yyyy-M-d-cccc h:mm a"
+            /* date_format_you_want_in_string from
+             * http://userguide.icu-project.org/formatparse/datetime
+             */
+            guard let dateEvent = dateFormatter.date(from: dateString) else {
+                print(dateString)
+                fatalError("ERROR: Date conversion failed due to mismatched format.")
+            }
+            if(dateEvent > current){
+                self.upcomingEvent.append(event)
+                
+            }
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.async {
+            if self.myCollectionView != nil{
+                self.myCollectionView.beginUpdate(EventLoader.myEvent)
+            }
+            if self.upcomingCollectionView != nil{
+                self.getUpcomingEvent()
+                self.upcomingCollectionView.beginUpdate(self.upcomingEvent)
+            }
+        }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
-                return 2
+                return 1
             case 1:
                 return 2
             case 2:
                 return 2
             default:
-                return 1
+                return 3
         }
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = indexPath.first!
         switch section {
         case 0:
-            if(indexPath.row == 0){
-                return 150
-            }else{
-                let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
-                return cell.heightForCell(withText: self.descriptionText)
-            }
+            
+            return 150
+            
         case 1:
+            if(self.upcomingEvent.count == 0){
+                return 0
+            }
             if(indexPath.row == 0){
-                return 45
+                return 35
             }else{
-                return 85
+                return 120
             }
         case 2:
             if(indexPath.row == 0){
-                return 45
+                return 35
             }else{
-                return 85*2+25
+                return 120
             }
         default:
-            return 224.5
+            if(indexPath.row == 0){
+                let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
+                return cell.heightForCell(withText: self.descriptionText)
+            }else if(indexPath.row == 1){
+                return 50
+            }else{
+                return 224.5
+            }
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.first!
         switch section {
         case 0:
-            if(indexPath.row == 0){
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "homeImage")!
-                return cell;
-            }else{
-                let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
-                cell.initData(self.descriptionText)
-                cell.selectionStyle = UITableViewCellSelectionStyle.none
-                cell.isUserInteractionEnabled = false
-                return cell;
-            }
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "homeImage")!
+            return cell;
         case 1:
             if(indexPath.row == 0){
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventName")!
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 return cell;
             }else{
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")!
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                let ary = self.upcomingEvent
+                self.upcomingCollectionView = cell
+                cell.initData(ary, self)
                 return cell;
             }
         case 2:
@@ -86,12 +147,32 @@ class HomeViewController : UITableViewController
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 return cell;
             }else{
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "myEventCell")!
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "upcomeEventCell")! as! MyTableCell
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                let ary = EventLoader.myEvent
+                HomeViewController.testingNumber = ary!.count
+                self.myCollectionView = cell
+                cell.initData(ary!, self)
                 return cell;
             }
         default:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "contactInfoCell")!
-            return cell;
+            if(indexPath.row == 0){
+                let cell = Bundle.main.loadNibNamed("DescriptionCell", owner: DescriptionCell.self, options: nil)![0] as! DescriptionCell
+                cell.initData(self.descriptionText)
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                cell.isUserInteractionEnabled = false
+                return cell;
+            }else if(indexPath.row == 1){
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "redmoreCell")! as! ReadMoreCell
+                cell.initData(self.navigationController!)
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                return cell;
+            }else{
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "contactInfoCell")!
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                return cell;
+            }
         }
     }
+   
 }

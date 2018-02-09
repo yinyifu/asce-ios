@@ -17,7 +17,7 @@ class Schedule : NSObject{
         self.name = name;
     }
 }
-struct ScheEvent{
+struct ScheEvent : Codable{
     var name : String;
     var starttime: String;
     var endtime: String;
@@ -32,6 +32,7 @@ struct Speaker{
     var name : String;
     var title : String;
     var profile_pic : UIImage;
+    var bio: String;
 }
 protocol EventScheProtocol
 {

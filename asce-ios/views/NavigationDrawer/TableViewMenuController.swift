@@ -132,9 +132,6 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
         return 60
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 60
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let btn = UIButton(type: UIButtonType.custom)
@@ -165,9 +162,9 @@ class TableViewMenuController: UIViewController, UITableViewDataSource, UITableV
         let widthPurcentage:CGFloat
         
         if UIDevice.current.orientation.isLandscape {
-            widthPurcentage = 0.4 //Purcentage applied when orientation is Landscape
+            widthPurcentage = 0.5 //Purcentage applied when orientation is Landscape
         } else {
-            widthPurcentage = 0.6 //Purcentage applied when orientation is Landscape
+            widthPurcentage = 0.7 //Purcentage applied when orientation is Landscape
         }
         
         var newFrame: CGRect = self.view.frame;

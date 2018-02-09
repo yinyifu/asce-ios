@@ -11,15 +11,19 @@ import UIKit
 
 class EntertainmentViewController : UIViewController
 {
-    let urlString = "http://www.visitbuffaloniagara.com/";
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let url = URL.init(string: self.urlString){
-            let urlreq = URLRequest.init(url: url)
-            let webview = UIWebView.init(frame: self.view.frame)
-            webview.loadRequest(urlreq)
-            self.view.addSubview(webview)
-        }
+    @IBAction func recp(_ sender: Any) {
+        let url = URL(string: urlString2)!
+        UIApplication.shared.openURL(url)
     }
+    @IBAction func vstp(_ sender: Any) {
+        
+        let url = URL(string: urlString)!
+        UIApplication.shared.openURL(url)
+    }
+    
+    
+   
+    let urlString = "http://www.visitbuffaloniagara.com/";
+    let urlString2 = "http://ascebuffalo.org/recommendations/"
+    
 }

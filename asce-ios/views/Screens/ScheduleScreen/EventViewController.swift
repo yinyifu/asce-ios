@@ -8,27 +8,15 @@
 
 import UIKit
 
-class EventViewController : UITableViewController, TableButtonDelegate, TableDetailParentDelegate{
-    func backClicked() {
-        self.navigationController?.show(self, sender: self)
-    }
-    
-    func speakerClicked(name speaker: String) {
-       // self.navigationController?.show(, sender: )
-        print(speaker)
-    }
-    
+class EventViewController : UITableViewController, TableButtonDelegate {
+
     func buttonClicked(at path: IndexPath) {
         let eventViewController = EventLoader.generateEventDetailViewController(self.dataAccordingToSection[path.first!][path.row])
         self.navigationController!.pushViewController(eventViewController, animated: true)
     }
     
-    func completationStub(){
-        //self.dismiss(animated: true, completion: nil)
-    }
     private var scheduleName:String?;
     private var selectedIndexPath : IndexPath?;
-    private var schedules = EventLoader.schedulee2!;
     private var _selectedSchedule: ScheEvent?;
     private var columnCount : Int!;
     private var columnDatas : Array<[String:String]>!;
@@ -42,8 +30,6 @@ class EventViewController : UITableViewController, TableButtonDelegate, TableDet
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.registerCells()
     }
     func registerCells(){
         let classname :String = NSStringFromClass(EventCell.self)
@@ -82,28 +68,13 @@ class EventViewController : UITableViewController, TableButtonDelegate, TableDet
         return 100
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentCell : EventCell = tableView.cellForRow(at: indexPath)! as! EventCell
-        let date : String = currentCell.date!
-        let time = currentCell.startLabel.text!
-        let ary = EventLoader.db.loadDataFromDB(query: "SELECT * from Event WHERE date = '\(date)' and starttime = '\(time)'", tname: "Event")
-        print(ary)
-        
-        
-        if(indexPath.row == 0){
-            _selectedSchedule = nil;
-        }else{
-            _selectedSchedule = schedules[indexPath.row - 1];
-        }
-    }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.columnDatas[section]["0"]
     }
+    
     func closeController(){
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
-    
 }

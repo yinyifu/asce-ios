@@ -23,8 +23,6 @@ struct Constants {
     static let leftButtonEnabledColor = UIColor.init(white: 245.0/255.0, alpha: 1.0)
     static let leftButtonDisabledColor = UIColor.init(white: 229.0/255.0, alpha: 1.0)
     
-    //database constants
-    static let nameArray = ["date", "starttime", "endtime", "speakers", "room", "name", "desc", "mods", "organizations"]
 }
 
 

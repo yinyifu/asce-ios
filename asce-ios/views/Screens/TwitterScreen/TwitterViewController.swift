@@ -20,7 +20,7 @@ class TwitterViewController: TWTRTimelineViewController {
         
         let client = TWTRAPIClient()
         //i believe * in search query means everything containing asce at the beginning
-        self.dataSource = TWTRSearchTimelineDataSource(searchQuery: "#asce*", apiClient: client)
-        
+        // yes you are correct
+        self.dataSource = TWTRSearchTimelineDataSource(searchQuery: "#ERYMC OR #ERYMC2018 OR #MRLC2018 OR #MRLC18 OR #ASCE", apiClient: client)
     }
 }
