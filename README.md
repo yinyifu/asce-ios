@@ -1,5 +1,5 @@
 # asce-ios
-The ASCE, MRLC 2018 conference app.
+The ASCE, MRLC 2018 app.
 
 ASCE, MRLC Stands for American Society of Civil Engineers, Multi Regional Leadership Conference.
 
