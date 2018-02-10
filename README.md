@@ -5,7 +5,7 @@ ASCE, MRLC Stands for American Society of Civil Engineers, Multi Regional Leader
 
 The app is currently Available in App Store! 
 
-[<img src="https://appletoolbox.com/wp-content/uploads/2012/10/App-Store-Icon-540x506.png " width="250">)](https://itunes.apple.com/gb/app/mrlc-2018/id1342797475?mt=8)
+[<img src="https://appletoolbox.com/wp-content/uploads/2012/10/App-Store-Icon-540x506.png " width="250">](https://itunes.apple.com/gb/app/mrlc-2018/id1342797475?mt=8)
 
 
 
